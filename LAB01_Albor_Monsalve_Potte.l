@@ -31,6 +31,14 @@ Op-div      "/"
 Op-asign    "="
 Op-mod      "%"
 
+/*OPeradores aritméticos especiales*/
+Op-MasMas          "++"
+Op-MenosMenos      "--"
+Op-MasAsig         "+="
+Op-MenosAsig       "-="
+Op-PorAsig         "*="
+Op-DivAsig         "/="    
+
 %%
 {IF}        { printf("Encontre palabra clave IF: %s\n", yytext);}
 {ELSE}      { printf("Encontre palabra clave ELSE: %s\n", yytext);}
@@ -50,6 +58,13 @@ Op-mod      "%"
 {Op-div}    { printf("Encontre Op-div = %s\n", yytext);}
 {Op-asign}  { printf("Encontre Op-asign = %s\n", yytext);}
 {Op-mod}    { printf("Encontre Op-mod = %s\n", yytext);}
+
+{Op-MasMas}     { printf("Encontre Op-MasMas = %s\n", yytext);}
+{Op-MenosMenos} { printf("Encontre Op-MenosMenos = %s\n", yytext);}
+{Op-MasAsig}    { printf("Encontre Op-MasAsig = %s\n", yytext);}
+{Op-MenosAsig}  { printf("Encontre Op-MenosAsig = %s\n", yytext);}
+{Op-PorAsig}    { printf("Encontre Op-PorAsig = %s\n", yytext);}
+{Op-DivAsig}    { printf("Encontre Op-DivAsig = %s\n", yytext);}
 
 .           { printf("No hay ningún match");}
 %%
