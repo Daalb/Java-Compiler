@@ -39,6 +39,18 @@ Op-MenosAsig       "-="
 Op-PorAsig         "*="
 Op-DivAsig         "/="    
 
+/*Delimitadores de inicio y final de bloques de instrucción*/
+Llave-a     "{"
+Llave-c     "}"
+
+/*Paréntesis y  corchetes*/
+Parent-a        "("
+Parent-c        ")"
+Corchete-a      "["
+Corchete-c      "]"
+
+
+
 %%
 {IF}        { printf("Encontre palabra clave IF: %s\n", yytext);}
 {ELSE}      { printf("Encontre palabra clave ELSE: %s\n", yytext);}
@@ -65,6 +77,13 @@ Op-DivAsig         "/="
 {Op-MenosAsig}  { printf("Encontre Op-MenosAsig = %s\n", yytext);}
 {Op-PorAsig}    { printf("Encontre Op-PorAsig = %s\n", yytext);}
 {Op-DivAsig}    { printf("Encontre Op-DivAsig = %s\n", yytext);}
+
+{Llave-a}       { printf("Encontre Llave-a = %s\n", yytext);}
+{Llave-c}       { printf("Encontre Llave-c = %s\n", yytext);}
+{Parent-a}      { printf("Encontre Parent-a = %s\n", yytext);}
+{Parent-c}      { printf("Encontre Parent-c = %s\n", yytext);}
+{Corchete-a}    { printf("Encontre Corchete-a = %s\n", yytext);}
+{Corchete-c}    { printf("Encontre Corchete-c = %s\n", yytext);}
 
 .           { printf("No hay ningún match");}
 %%
