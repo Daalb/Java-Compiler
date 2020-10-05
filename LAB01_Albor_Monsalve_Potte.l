@@ -50,13 +50,15 @@ Corchete-a      "["
 Corchete-c      "]"
 
 /*Operadores relacionales*/
-Igual       "="
+Igual       "=="
 Menor-igual "<="
 Mayor-igual ">="
-Diferente   "<>" | "!="
+Diferente   "!="
 Mayor       ">"
 Menor       "<"
 
+
+   
 
 %%
 {IF}        { printf("Encontre palabra clave IF: %s\n", yytext);}
