@@ -49,6 +49,13 @@ Parent-c        ")"
 Corchete-a      "["
 Corchete-c      "]"
 
+/*Operadores relacionales*/
+Igual       "="
+Menor-igual "<="
+Mayor-igual ">="
+Diferente   "<>" | "!="
+Mayor       ">"
+Menor       "<"
 
 
 %%
@@ -84,6 +91,13 @@ Corchete-c      "]"
 {Parent-c}      { printf("Encontre Parent-c = %s\n", yytext);}
 {Corchete-a}    { printf("Encontre Corchete-a = %s\n", yytext);}
 {Corchete-c}    { printf("Encontre Corchete-c = %s\n", yytext);}
+
+{Igual}         { printf("Encontre Igual = %s\n", yytext);}
+{Menor-igual}   { printf("Encontre Menor-igual = %s\n", yytext);}
+{Mayor-igual}   { printf("Encontre Mayor-igual = %s\n", yytext);}
+{Diferente}     { printf("Encontre Diferente = %s\n", yytext);}
+{Mayor}         { printf("Encontre Mayor = %s\n", yytext);}
+{Menor}         { printf("Encontre Menor = %s\n", yytext);}
 
 .           { printf("No hay ningún match");}
 %%
