@@ -7,7 +7,12 @@
 letra       [a-zA-Z]
 digito      [0-9]
 palabra     [a-zA-Z]*
-variable    {letra}({letra}|{digito})*
+decimal     ("."digito)?
+exp         ("e"("+"|"-")?digito)?
+Cte-ent     "-"?({digito})+
+comentario  "//"({letra} | {digito})* | "/*" ({letra} | {digito})* "*/"
+
+
 
 /*Palabras claves*/
 IF          if
@@ -17,6 +22,7 @@ WHILE       while
 DOUBLE      double
 INT         int
 STRING      String
+CHAR        char
 NEW         new
 PUBLIC      public
 CLASS       class
@@ -43,6 +49,9 @@ Op-DivAsig         "/="
 Llave-a     "{"
 Llave-c     "}"
 
+/*Final de instrucción*/
+Punto-coma  ";"
+
 /*Paréntesis y  corchetes*/
 Parent-a        "("
 Parent-c        ")"
@@ -68,6 +77,7 @@ Menor       "<"
 {DOUBLE}    { printf("Encontre palabra clave DOUBLE: %s\n", yytext);}
 {INT}       { printf("Encontre palabra clave INT: %s\n", yytext);}
 {STRING}    { printf("Encontre palabra clave STRING: %s\n", yytext);}
+{CHAR}      { printf("Encontre palabra clave CHAR: %s\n", yytext);}   
 {NEW}       { printf("Encontre palabra clave NEW: %s\n", yytext);}
 {PUBLIC}    { printf("Encontre palabra clave PUBLIC: %s\n", yytext);}
 {CLASS}     { printf("Encontre palabra clave CLASS: %s\n", yytext);}
@@ -94,6 +104,8 @@ Menor       "<"
 {Corchete-a}    { printf("Encontre Corchete-a = %s\n", yytext);}
 {Corchete-c}    { printf("Encontre Corchete-c = %s\n", yytext);}
 
+{Punto-coma}    { printf("Encontre Punto-coma = %s\n", yytext);}
+
 {Igual}         { printf("Encontre Igual = %s\n", yytext);}
 {Menor-igual}   { printf("Encontre Menor-igual = %s\n", yytext);}
 {Mayor-igual}   { printf("Encontre Mayor-igual = %s\n", yytext);}
@@ -101,7 +113,9 @@ Menor       "<"
 {Mayor}         { printf("Encontre Mayor = %s\n", yytext);}
 {Menor}         { printf("Encontre Menor = %s\n", yytext);}
 
-.           { printf("No hay ningún match");}
+{Cte-ent}       { printf("Encontre Cte-ent = %s\n", yytext);}
+
+.           { printf("No hay ningún match\n");}
 %%
 
 int main (int argc, char *argv[]){
