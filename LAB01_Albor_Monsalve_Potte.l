@@ -13,6 +13,7 @@ Cte-cadena  \"({letra}|{digito}|" ")*\"
 Cte-real    {digito}*{decimal}{exp}?
 comentario  \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
 id          {letra}({letra}|{digito})*
+arreglo     \[({Cte-ent}*(\,{Cte-ent})*|{Cte-cadena}(\,{Cte-cadena})*)\]
 
 
 /*Palabras claves*/
@@ -119,6 +120,7 @@ Menor       "<"
 {id}            { printf("Encontre Id= %s\n", yytext);}
 {comentario}    { printf("Encontre comentario = %s\n", yytext);}
 {Cte-real}      { printf("Encontre Cte-real = %s\n", yytext);}
+{arreglo}       { printf("Encontre Arreglo = %s\n", yytext);}
 
 .               { printf("No hay ningún match = %s\n",yytext);}
 
