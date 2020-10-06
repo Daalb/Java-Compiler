@@ -64,9 +64,14 @@ Corchete-c      "]"
 Igual       "=="
 Menor-igual "<="
 Mayor-igual ">="
-Diferente   "!="
+Diferente   "!="|"<>"
 Mayor       ">"
 Menor       "<"
+
+/*Operadores logicos*/
+op-y        "&&" 
+op-o        "||" 
+op-no        \!
 
 
    
@@ -121,6 +126,9 @@ Menor       "<"
 {comentario}    { printf("Encontre comentario = %s\n", yytext);}
 {Cte-real}      { printf("Encontre Cte-real = %s\n", yytext);}
 {arreglo}       { printf("Encontre Arreglo = %s\n", yytext);}
+{op-y}          { printf("Encontre op-y = %s\n", yytext);}
+{op-o}          { printf("Encontre op-o = %s\n", yytext);}
+{op-no}         { printf("Encontre op-no = %s\n", yytext);}
 
 .               { printf("No hay ningún match = %s\n",yytext);}
 
