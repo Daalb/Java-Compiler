@@ -6,10 +6,11 @@
 
 letra       [a-zA-Z]
 digito      [0-9]
-decimal     ("."digito)?
-exp         ("e"("+"|"-")?digito)?
+decimal     \.{digito}*
+exp         "e"(\-|\+)?({digito})*
 Cte-ent     "-"?({digito})+
 Cte-cadena  \"({letra}|{digito}|" ")*\"
+Cte-real    {digito}*{decimal}{exp}?
 comentario  \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
 id          {letra}({letra}|{digito})*
 
@@ -117,6 +118,7 @@ Menor       "<"
 {Cte-cadena}    { printf("Encontre Cte-cadena = %s\n", yytext);}
 {id}            { printf("Encontre Id= %s\n", yytext);}
 {comentario}    { printf("Encontre comentario = %s\n", yytext);}
+{Cte-real}      { printf("Encontre Cte-real = %s\n", yytext);}
 
 .               { printf("No hay ningún match = %s\n",yytext);}
 
