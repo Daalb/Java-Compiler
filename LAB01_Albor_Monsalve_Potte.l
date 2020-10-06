@@ -116,6 +116,7 @@ Menor       "<"
 
 {Cte-ent}       { printf("Encontre Cte-ent = %s\n", yytext);}
 {Cte-cadena}    { printf("Encontre Cte-cadena = %s\n", yytext);}
+{comentario}    { printf("Encontre comentario = %s\n", yytext);}
 
 .               { printf("No hay ningún match\n");}
 %%
