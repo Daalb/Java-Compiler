@@ -118,7 +118,8 @@ Menor       "<"
 {id}            { printf("Encontre Id= %s\n", yytext);}
 {comentario}    { printf("Encontre comentario = %s\n", yytext);}
 
-.               { printf("No hay ningún match\n");}
+.               { printf("No hay ningún match = %s\n",yytext);}
+
 %%
 
 int main (int argc, char *argv[]){

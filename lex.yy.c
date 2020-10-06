@@ -1000,11 +1000,11 @@ YY_RULE_SETUP
 case 42:
 YY_RULE_SETUP
 #line 121 "LAB01_Albor_Monsalve_Potte.l"
-{ printf("No hay ningún match\n");}
+{ printf("No hay ningún match = %s\n",yytext);}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 122 "LAB01_Albor_Monsalve_Potte.l"
+#line 123 "LAB01_Albor_Monsalve_Potte.l"
 ECHO;
 	YY_BREAK
 #line 1011 "lex.yy.c"
@@ -2012,7 +2012,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 122 "LAB01_Albor_Monsalve_Potte.l"
+#line 123 "LAB01_Albor_Monsalve_Potte.l"
 
 
 int main (int argc, char *argv[]){
