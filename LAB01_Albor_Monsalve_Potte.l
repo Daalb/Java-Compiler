@@ -10,7 +10,8 @@ palabra     [a-zA-Z]*
 decimal     ("."digito)?
 exp         ("e"("+"|"-")?digito)?
 Cte-ent     "-"?({digito})+
-comentario  "//"({letra} | {digito})* | "/*" ({letra} | {digito})* "*/"
+Cte-cadena  \"({letra}|{digito}|" ")*\"
+comentario \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
 
 
 
@@ -19,10 +20,10 @@ IF          if
 ELSE        else
 FOR         for
 WHILE       while
-DOUBLE      double
-INT         int
-STRING      String
-CHAR        char
+DOUBLE      double" "
+INT         int" "
+STRING      String" "
+CHAR        char" "
 NEW         new
 PUBLIC      public
 CLASS       class
@@ -81,7 +82,7 @@ Menor       "<"
 {NEW}       { printf("Encontre palabra clave NEW: %s\n", yytext);}
 {PUBLIC}    { printf("Encontre palabra clave PUBLIC: %s\n", yytext);}
 {CLASS}     { printf("Encontre palabra clave CLASS: %s\n", yytext);}
-{VOID}      { printf("Encontre palabra clave VOID: %s\n", yytext);}
+{VOID}      { printf("Encontre palabra clave VOID: %s\n", yytext);} 
 
 {Op-mult}   { printf("Encontre Op-mult = %s\n", yytext);}
 {Op-sum}    { printf("Encontre Op-sum = %s\n", yytext);}
@@ -114,8 +115,9 @@ Menor       "<"
 {Menor}         { printf("Encontre Menor = %s\n", yytext);}
 
 {Cte-ent}       { printf("Encontre Cte-ent = %s\n", yytext);}
+{Cte-cadena}    { printf("Encontre Cte-cadena = %s\n", yytext);}
 
-.           { printf("No hay ningún match\n");}
+.               { printf("No hay ningún match\n");}
 %%
 
 int main (int argc, char *argv[]){
