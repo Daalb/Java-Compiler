@@ -6,13 +6,12 @@
 
 letra       [a-zA-Z]
 digito      [0-9]
-palabra     [a-zA-Z]*
 decimal     ("."digito)?
 exp         ("e"("+"|"-")?digito)?
 Cte-ent     "-"?({digito})+
 Cte-cadena  \"({letra}|{digito}|" ")*\"
-comentario \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
-
+comentario  \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
+id          {letra}({letra}|{digito})*
 
 
 /*Palabras claves*/
@@ -116,6 +115,7 @@ Menor       "<"
 
 {Cte-ent}       { printf("Encontre Cte-ent = %s\n", yytext);}
 {Cte-cadena}    { printf("Encontre Cte-cadena = %s\n", yytext);}
+{id}            { printf("Encontre Id= %s\n", yytext);}
 {comentario}    { printf("Encontre comentario = %s\n", yytext);}
 
 .               { printf("No hay ningún match\n");}
