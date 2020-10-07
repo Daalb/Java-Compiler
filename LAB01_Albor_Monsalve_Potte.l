@@ -21,15 +21,15 @@ IF          if
 ELSE        else
 FOR         for
 WHILE       while
-DOUBLE      double" "
-INT         int" "
-STRING      String" "
-CHAR        char" "
-NEW         new" "
-PUBLIC      public" "
-CLASS       class" "
-STATIC      static" "
-VOID        void" "
+DOUBLE      double
+INT         int
+STRING      String
+CHAR        char
+NEW         new
+PUBLIC      public
+CLASS       class
+STATIC      static
+VOID        void
 ARGS        args
 
 /*Operadores aritméticos*/
@@ -74,70 +74,72 @@ op-y        "&&"
 op-o        "||" 
 op-no        \!
 
-
-   
+espacio     " "
+declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{id}{Op-asign}{Cte-cadena}|{DOUBLE}" "{id}{Op-asign}{Cte-real}|{CHAR}" "{id}{Op-asign}{letra}
 
 %%
-{IF}        { printf("IF ");}
-{ELSE}      { printf("ELSE ");}
-{FOR}       { printf("FOR ");}
-{WHILE}     { printf("WHILE ");}
-{DOUBLE}    { printf("DOUBLE");}
-{INT}       { printf("INT ");}
-{STRING}    { printf("STRING ");}
-{CHAR}      { printf("CHAR ");}   
-{NEW}       { printf("NEW ");}
-{PUBLIC}    { printf("PUBLIC ");}
-{CLASS}     { printf("CLASS ");}
-{VOID}      { printf("VOID ");}
-{STATIC}    { printf("STATIC ");}
-{ARGS}      { printf("ARGS ");}
+{IF}        { fprintf(yyout, "IF ");}
+{ELSE}      { fprintf(yyout, "ELSE "); }
+{FOR}       { fprintf(yyout, "FOR ");}
+{WHILE}     { fprintf(yyout, "WHILE ");}
+{DOUBLE}    { fprintf(yyout, "DOUBLE ");}
+{INT}       { fprintf(yyout, "INT ");}
+{STRING}    { fprintf(yyout, "STRING ");}
+{CHAR}      { fprintf(yyout, "CHAR ");}
+{NEW}       { fprintf(yyout, "NEW ");}
+{PUBLIC}    { fprintf(yyout, "PUBLIC "); }
+{CLASS}     { fprintf(yyout, "CLASS ");}
+{VOID}      { fprintf(yyout, "VOID ");}
+{STATIC}    { fprintf(yyout, "STATIC ");}
+{ARGS}      { fprintf(yyout, "ARGS ");}
 
-{Op-mult}   { printf("Op-mult = %s ", yytext);}
-{Op-sum}    { printf("Op-sum = %s ", yytext);}
-{Op-sust}   { printf("Op-sust = %s ", yytext);}
-{Op-div}    { printf("Op-div = %s ", yytext);}
-{Op-asign}  { printf("Op-asign = %s ", yytext);}
-{Op-mod}    { printf("Op-mod = %s ", yytext);}
+{Op-mult}   { fprintf(yyout,"Op-mult = %s ", yytext);}
+{Op-sum}    { fprintf(yyout,"Op-sum = %s ", yytext);}
+{Op-sust}   { fprintf(yyout,"Op-sust = %s ", yytext);}
+{Op-div}    { fprintf(yyout,"Op-div = %s ", yytext);}
+{Op-asign}  { fprintf(yyout,"Op-asign = %s ", yytext);}
+{Op-mod}    { fprintf(yyout,"Op-mod = %s ", yytext);}
 
-{Op-MasMas}     { printf("Op-MasMas = %s ", yytext);}
-{Op-MenosMenos} { printf("Op-MenosMenos = %s ", yytext);}
-{Op-MasAsig}    { printf("Op-MasAsig = %s ", yytext);}
-{Op-MenosAsig}  { printf("Op-MenosAsig = %s ", yytext);}
-{Op-PorAsig}    { printf("Op-PorAsig = %s ", yytext);}
-{Op-DivAsig}    { printf("Op-DivAsig = %s ", yytext);}
+{Op-MasMas}     { fprintf(yyout,"Op-MasMas = %s ", yytext);}
+{Op-MenosMenos} { fprintf(yyout,"Op-MenosMenos = %s ", yytext);}
+{Op-MasAsig}    { fprintf(yyout,"Op-MasAsig = %s ", yytext);}
+{Op-MenosAsig}  { fprintf(yyout,"Op-MenosAsig = %s ", yytext);}
+{Op-PorAsig}    { fprintf(yyout,"Op-PorAsig = %s ", yytext);}
+{Op-DivAsig}    { fprintf(yyout,"Op-DivAsig = %s ", yytext);}
 
-{Llave-a}       { printf("Llave-a = %s ", yytext);}
-{Llave-c}       { printf("Llave-c = %s ", yytext);}
-{Parent-a}      { printf("Parent-a = %s ", yytext);}
-{Parent-c}      { printf("Parent-c = %s ", yytext);}
-{Corchete-a}    { printf("Corchete-a = %s ", yytext);}
-{Corchete-c}    { printf("Corchete-c = %s ", yytext);}
+{Llave-a}       { fprintf(yyout,"Llave-a = %s ", yytext);}
+{Llave-c}       { fprintf(yyout,"Llave-c = %s ", yytext);}
+{Parent-a}      { fprintf(yyout,"Parent-a = %s ", yytext);}
+{Parent-c}      { fprintf(yyout,"Parent-c = %s ", yytext);}
+{Corchete-a}    { fprintf(yyout,"Corchete-a = %s ", yytext);}
+{Corchete-c}    { fprintf(yyout,"Corchete-c = %s ", yytext);}
 
-{Punto-coma}    { printf("Punto-coma = %s ", yytext);}
+{Punto-coma}    { fprintf(yyout,"Punto-coma = %s ", yytext);}
 
-{Igual}         { printf("Igual = %s ", yytext);}
-{Menor-igual}   { printf("Menor-igual = %s ", yytext);}
-{Mayor-igual}   { printf("Mayor-igual = %s ", yytext);}
-{Diferente}     { printf("Diferente = %s ", yytext);}
-{Mayor}         { printf("Mayor = %s ", yytext);}
-{Menor}         { printf("Menor = %s ", yytext);}
+{Igual}         { fprintf(yyout,"Igual = %s ", yytext);}
+{Menor-igual}   { fprintf(yyout,"Menor-igual = %s ", yytext);}
+{Mayor-igual}   { fprintf(yyout,"Mayor-igual = %s ", yytext);}
+{Diferente}     { fprintf(yyout,"Diferente = %s ", yytext);}
+{Mayor}         { fprintf(yyout,"Mayor = %s ", yytext);}
+{Menor}         { fprintf(yyout,"Menor = %s ", yytext);}
 
-{Cte-ent}       { printf("Cte-ent = %s ", yytext);}
-{Cte-cadena}    { printf("Cte-cadena = %s ", yytext);}
-{id}            { printf("Id= %s ", yytext);}
-{comentario}    { printf("comentario = %s ", yytext);}
-{Cte-real}      { printf("Cte-real = %s ", yytext);}
-{arreglo}       { printf("Arreglo = %s ", yytext);}
-{op-y}          { printf("op-y = %s ", yytext);}
-{op-o}          { printf("op-o = %s ", yytext);}
-{op-no}         { printf("op-no = %s ", yytext);}
+{Cte-ent}       { fprintf(yyout,"Cte-ent = %s ", yytext);}
+{Cte-cadena}    { fprintf(yyout,"Cte-cadena = %s ", yytext);}
+{id}            { fprintf(yyout,"Id= %s ", yytext);}
+{comentario}    { fprintf(yyout,"comentario = %s ", yytext);}
+{Cte-real}      { fprintf(yyout,"Cte-real = %s ", yytext);}
+{arreglo}       { fprintf(yyout,"Arreglo = %s ", yytext);}
+{op-y}          { fprintf(yyout,"op-y = %s ", yytext);}
+{op-o}          { fprintf(yyout,"op-o = %s ", yytext);}
+{op-no}         { fprintf(yyout,"op-no = %s ", yytext);}
+{espacio}       { }
 
 
-
+.               { fprintf(yyout,"Error léxico = %s ", yytext); }
 %%
 
 int main (int argc, char *argv[]){
+    extern FILE *yyin, *yyout;
     if (argc == 2){
         yyin = fopen (argv[1], "rt");
         if (yyin == NULL) {
@@ -146,6 +148,7 @@ int main (int argc, char *argv[]){
         }   
     }
     else yyin = stdin;
+    yyout = fopen("output.txt", "w"); 
     yylex();
     return 0;
 }
