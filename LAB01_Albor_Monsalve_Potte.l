@@ -21,15 +21,16 @@ IF          if
 ELSE        else
 FOR         for
 WHILE       while
-DOUBLE      double" "
-INT         int" "
-STRING      String" "
-CHAR        char" "
+DOUBLE      double
+INT         int
+STRING      String
+CHAR        char
 NEW         new
 PUBLIC      public
 CLASS       class
 STATIC      static
 VOID        void
+ARGS        args
 
 /*Operadores aritméticos*/
 Op-mult     "*"
@@ -73,68 +74,72 @@ op-y        "&&"
 op-o        "||" 
 op-no        \!
 
-
-   
+espacio     " "
+declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{id}{Op-asign}{Cte-cadena}|{DOUBLE}" "{id}{Op-asign}{Cte-real}|{CHAR}" "{id}{Op-asign}{letra}
 
 %%
-{IF}        { printf("Encontre palabra clave IF: %s\n", yytext);}
-{ELSE}      { printf("Encontre palabra clave ELSE: %s\n", yytext);}
-{FOR}       { printf("Encontre palabra clave FOR: %s\n", yytext);}
-{WHILE}     { printf("Encontre palabra clave WHILE: %s\n", yytext);}
-{DOUBLE}    { printf("Encontre palabra clave DOUBLE: %s\n", yytext);}
-{INT}       { printf("Encontre palabra clave INT: %s\n", yytext);}
-{STRING}    { printf("Encontre palabra clave STRING: %s\n", yytext);}
-{CHAR}      { printf("Encontre palabra clave CHAR: %s\n", yytext);}   
-{NEW}       { printf("Encontre palabra clave NEW: %s\n", yytext);}
-{PUBLIC}    { printf("Encontre palabra clave PUBLIC: %s\n", yytext);}
-{CLASS}     { printf("Encontre palabra clave CLASS: %s\n", yytext);}
-{VOID}      { printf("Encontre palabra clave VOID: %s\n", yytext);} 
+{IF}        { fprintf(yyout, "IF ");}
+{ELSE}      { fprintf(yyout, "ELSE "); }
+{FOR}       { fprintf(yyout, "FOR ");}
+{WHILE}     { fprintf(yyout, "WHILE ");}
+{DOUBLE}    { fprintf(yyout, "DOUBLE ");}
+{INT}       { fprintf(yyout, "INT ");}
+{STRING}    { fprintf(yyout, "STRING ");}
+{CHAR}      { fprintf(yyout, "CHAR ");}
+{NEW}       { fprintf(yyout, "NEW ");}
+{PUBLIC}    { fprintf(yyout, "PUBLIC "); }
+{CLASS}     { fprintf(yyout, "CLASS ");}
+{VOID}      { fprintf(yyout, "VOID ");}
+{STATIC}    { fprintf(yyout, "STATIC ");}
+{ARGS}      { fprintf(yyout, "ARGS ");}
 
-{Op-mult}   { printf("Encontre Op-mult = %s\n", yytext);}
-{Op-sum}    { printf("Encontre Op-sum = %s\n", yytext);}
-{Op-sust}   { printf("Encontre Op-sust = %s\n", yytext);}
-{Op-div}    { printf("Encontre Op-div = %s\n", yytext);}
-{Op-asign}  { printf("Encontre Op-asign = %s\n", yytext);}
-{Op-mod}    { printf("Encontre Op-mod = %s\n", yytext);}
+{Op-mult}   { fprintf(yyout,"Op-mult = %s ", yytext);}
+{Op-sum}    { fprintf(yyout,"Op-sum = %s ", yytext);}
+{Op-sust}   { fprintf(yyout,"Op-sust = %s ", yytext);}
+{Op-div}    { fprintf(yyout,"Op-div = %s ", yytext);}
+{Op-asign}  { fprintf(yyout,"Op-asign = %s ", yytext);}
+{Op-mod}    { fprintf(yyout,"Op-mod = %s ", yytext);}
 
-{Op-MasMas}     { printf("Encontre Op-MasMas = %s\n", yytext);}
-{Op-MenosMenos} { printf("Encontre Op-MenosMenos = %s\n", yytext);}
-{Op-MasAsig}    { printf("Encontre Op-MasAsig = %s\n", yytext);}
-{Op-MenosAsig}  { printf("Encontre Op-MenosAsig = %s\n", yytext);}
-{Op-PorAsig}    { printf("Encontre Op-PorAsig = %s\n", yytext);}
-{Op-DivAsig}    { printf("Encontre Op-DivAsig = %s\n", yytext);}
+{Op-MasMas}     { fprintf(yyout,"Op-MasMas = %s ", yytext);}
+{Op-MenosMenos} { fprintf(yyout,"Op-MenosMenos = %s ", yytext);}
+{Op-MasAsig}    { fprintf(yyout,"Op-MasAsig = %s ", yytext);}
+{Op-MenosAsig}  { fprintf(yyout,"Op-MenosAsig = %s ", yytext);}
+{Op-PorAsig}    { fprintf(yyout,"Op-PorAsig = %s ", yytext);}
+{Op-DivAsig}    { fprintf(yyout,"Op-DivAsig = %s ", yytext);}
 
-{Llave-a}       { printf("Encontre Llave-a = %s\n", yytext);}
-{Llave-c}       { printf("Encontre Llave-c = %s\n", yytext);}
-{Parent-a}      { printf("Encontre Parent-a = %s\n", yytext);}
-{Parent-c}      { printf("Encontre Parent-c = %s\n", yytext);}
-{Corchete-a}    { printf("Encontre Corchete-a = %s\n", yytext);}
-{Corchete-c}    { printf("Encontre Corchete-c = %s\n", yytext);}
+{Llave-a}       { fprintf(yyout,"Llave-a = %s ", yytext);}
+{Llave-c}       { fprintf(yyout,"Llave-c = %s ", yytext);}
+{Parent-a}      { fprintf(yyout,"Parent-a = %s ", yytext);}
+{Parent-c}      { fprintf(yyout,"Parent-c = %s ", yytext);}
+{Corchete-a}    { fprintf(yyout,"Corchete-a = %s ", yytext);}
+{Corchete-c}    { fprintf(yyout,"Corchete-c = %s ", yytext);}
 
-{Punto-coma}    { printf("Encontre Punto-coma = %s\n", yytext);}
+{Punto-coma}    { fprintf(yyout,"Punto-coma = %s ", yytext);}
 
-{Igual}         { printf("Encontre Igual = %s\n", yytext);}
-{Menor-igual}   { printf("Encontre Menor-igual = %s\n", yytext);}
-{Mayor-igual}   { printf("Encontre Mayor-igual = %s\n", yytext);}
-{Diferente}     { printf("Encontre Diferente = %s\n", yytext);}
-{Mayor}         { printf("Encontre Mayor = %s\n", yytext);}
-{Menor}         { printf("Encontre Menor = %s\n", yytext);}
+{Igual}         { fprintf(yyout,"Igual = %s ", yytext);}
+{Menor-igual}   { fprintf(yyout,"Menor-igual = %s ", yytext);}
+{Mayor-igual}   { fprintf(yyout,"Mayor-igual = %s ", yytext);}
+{Diferente}     { fprintf(yyout,"Diferente = %s ", yytext);}
+{Mayor}         { fprintf(yyout,"Mayor = %s ", yytext);}
+{Menor}         { fprintf(yyout,"Menor = %s ", yytext);}
 
-{Cte-ent}       { printf("Encontre Cte-ent = %s\n", yytext);}
-{Cte-cadena}    { printf("Encontre Cte-cadena = %s\n", yytext);}
-{id}            { printf("Encontre Id= %s\n", yytext);}
-{comentario}    { printf("Encontre comentario = %s\n", yytext);}
-{Cte-real}      { printf("Encontre Cte-real = %s\n", yytext);}
-{arreglo}       { printf("Encontre Arreglo = %s\n", yytext);}
-{op-y}          { printf("Encontre op-y = %s\n", yytext);}
-{op-o}          { printf("Encontre op-o = %s\n", yytext);}
-{op-no}         { printf("Encontre op-no = %s\n", yytext);}
+{Cte-ent}       { fprintf(yyout,"Cte-ent = %s ", yytext);}
+{Cte-cadena}    { fprintf(yyout,"Cte-cadena = %s ", yytext);}
+{id}            { fprintf(yyout,"Id= %s ", yytext);}
+{comentario}    { fprintf(yyout,"comentario = %s ", yytext);}
+{Cte-real}      { fprintf(yyout,"Cte-real = %s ", yytext);}
+{arreglo}       { fprintf(yyout,"Arreglo = %s ", yytext);}
+{op-y}          { fprintf(yyout,"op-y = %s ", yytext);}
+{op-o}          { fprintf(yyout,"op-o = %s ", yytext);}
+{op-no}         { fprintf(yyout,"op-no = %s ", yytext);}
+{espacio}       { }
 
-.               { printf("No hay ningún match = %s\n",yytext);}
 
+.               { fprintf(yyout,"Error léxico = %s ", yytext); }
 %%
 
 int main (int argc, char *argv[]){
+    extern FILE *yyin, *yyout;
     if (argc == 2){
         yyin = fopen (argv[1], "rt");
         if (yyin == NULL) {
@@ -143,6 +148,7 @@ int main (int argc, char *argv[]){
         }   
     }
     else yyin = stdin;
+    yyout = fopen("output.txt", "w"); 
     yylex();
     return 0;
 }
