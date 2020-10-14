@@ -1,19 +1,21 @@
 public class AnyThing{
     public static void main(String[] args){
         int i=1;
+        t=25;
         int j=20;
         char c;
-        String cadena;
-        double z;
-        z=14.9e-8;
-        z=12.9;
-        cadena="Hola";
-        c="a";
-        i=i*2;
+        int=2;
         for(int k=1;k<j;k++){
             i*=k;
             z/=2.0;
             //for
+            []
+            23D 
+            String="2";
+            String[];
+            lol[1][3][] = "jajaja";
+            String lol[] = new int[];
+            lol[5] = 3;
         }
     }
 }

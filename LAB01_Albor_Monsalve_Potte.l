@@ -1,6 +1,8 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+int count = 0;
+char* ids[100];
 %}
 
 
@@ -8,12 +10,12 @@ letra       [a-zA-Z]
 digito      [0-9]
 decimal     \.{digito}*
 exp         "e"(\-|\+)?({digito})*
+comentario  \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
 Cte-ent     "-"?({digito})+
 Cte-cadena  \"({letra}|{digito}|" ")*\"
 Cte-real    {digito}*{decimal}{exp}?
-comentario  \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
 id          {letra}({letra}|{digito})*
-arreglo     \[({Cte-ent}*(\,{Cte-ent})*|{Cte-cadena}(\,{Cte-cadena})*)\]
+arreglo    {id}("["({Cte-ent}*)?"]")+
 
 
 /*Palabras claves*/
@@ -30,7 +32,6 @@ PUBLIC      public
 CLASS       class
 STATIC      static
 VOID        void
-ARGS        args
 
 /*Operadores aritméticos*/
 Op-mult     "*"
@@ -75,7 +76,6 @@ op-o        "||"
 op-no        \!
 
 espacio     " "
-declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{id}{Op-asign}{Cte-cadena}|{DOUBLE}" "{id}{Op-asign}{Cte-real}|{CHAR}" "{id}{Op-asign}{letra}
 
 %%
 {IF}        { fprintf(yyout, "IF ");}
@@ -91,7 +91,6 @@ declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{i
 {CLASS}     { fprintf(yyout, "CLASS ");}
 {VOID}      { fprintf(yyout, "VOID ");}
 {STATIC}    { fprintf(yyout, "STATIC ");}
-{ARGS}      { fprintf(yyout, "ARGS ");}
 
 {Op-mult}   { fprintf(yyout,"Op-mult = %s ", yytext);}
 {Op-sum}    { fprintf(yyout,"Op-sum = %s ", yytext);}
@@ -125,13 +124,16 @@ declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{i
 
 {Cte-ent}       { fprintf(yyout,"Cte-ent = %s ", yytext);}
 {Cte-cadena}    { fprintf(yyout,"Cte-cadena = %s ", yytext);}
-{id}            { fprintf(yyout,"Id= %s ", yytext);}
+{arreglo}       { fprintf(yyout,"Arreglo = %s ", yytext);}
+
 {comentario}    { fprintf(yyout,"comentario = %s ", yytext);}
 {Cte-real}      { fprintf(yyout,"Cte-real = %s ", yytext);}
-{arreglo}       { fprintf(yyout,"Arreglo = %s ", yytext);}
+
+
 {op-y}          { fprintf(yyout,"op-y = %s ", yytext);}
 {op-o}          { fprintf(yyout,"op-o = %s ", yytext);}
 {op-no}         { fprintf(yyout,"op-no = %s ", yytext);}
+{id}            { fprintf(yyout,"Id= %s ", yytext); ids[count]=yytext; count++; }
 {espacio}       { }
 
 
@@ -150,5 +152,9 @@ int main (int argc, char *argv[]){
     else yyin = stdin;
     yyout = fopen("output.txt", "w"); 
     yylex();
+    for(int i=0;i<count;i++){
+        printf("Id= %s ", ids[i]);
+    }
+    printf("bruh=  %d",count);
     return 0;
 }
