@@ -2132,7 +2132,7 @@ int main (int argc, char *argv[]){
         }   
     }
     else yyin = stdin;
-    yyout = fopen("output.txt", "w"); 
+    yyout = fopen("salida.txt", "w"); 
     yylex();
     return 0;
 }
