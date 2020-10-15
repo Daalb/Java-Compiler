@@ -1,5 +1,5 @@
 public class AnyThing{
-    public static void main(String[] args){
+    public static void main (String[] args){
         int i=1;
         int j=20;
         char c;
@@ -10,10 +10,9 @@ public class AnyThing{
         cadena="Hola";
         c="a";
         i=i*2;
-        for(int k=1;k<j;k++){
-            i*=k;
-            z/=2.0;
-            //for
+        for (intk = 1; k < j; k++){
+                i*=k;
+                z/=2.0;
+            }
         }
     }
-}

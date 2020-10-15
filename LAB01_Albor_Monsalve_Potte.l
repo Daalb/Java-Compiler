@@ -1,19 +1,27 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+int i = 0;
+const char* id[10000];
+const char* auxiliar[10000];
+void tabla_id();
+void contador_id(const char* id_ytext);
+extern FILE *yyin, *yyout;
 %}
 
 
 letra       [a-zA-Z]
 digito      [0-9]
-decimal     \.{digito}*
-exp         "e"(\-|\+)?({digito})*
+decimal     \.{digito}+
+exp         "e"(\-|\+)({digito})+
+comentario  \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
 Cte-ent     "-"?({digito})+
 Cte-cadena  \"({letra}|{digito}|" ")*\"
-Cte-real    {digito}*{decimal}{exp}?
-comentario  \/\/({letra}|{digito}|" ")*|"/*"({letra}|{digito}|" ")*"*/"
+Cte-real    {digito}+{decimal}{exp}?
 id          {letra}({letra}|{digito})*
-arreglo     \[({Cte-ent}*(\,{Cte-ent})*|{Cte-cadena}(\,{Cte-cadena})*)\]
+errorid     ({Cte-ent}|{Cte-real})+({id})
 
 
 /*Palabras claves*/
@@ -30,7 +38,6 @@ PUBLIC      public
 CLASS       class
 STATIC      static
 VOID        void
-ARGS        args
 
 /*Operadores aritméticos*/
 Op-mult     "*"
@@ -75,7 +82,6 @@ op-o        "||"
 op-no        \!
 
 espacio     " "
-declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{id}{Op-asign}{Cte-cadena}|{DOUBLE}" "{id}{Op-asign}{Cte-real}|{CHAR}" "{id}{Op-asign}{letra}
 
 %%
 {IF}        { fprintf(yyout, "IF ");}
@@ -91,7 +97,6 @@ declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{i
 {CLASS}     { fprintf(yyout, "CLASS ");}
 {VOID}      { fprintf(yyout, "VOID ");}
 {STATIC}    { fprintf(yyout, "STATIC ");}
-{ARGS}      { fprintf(yyout, "ARGS ");}
 
 {Op-mult}   { fprintf(yyout,"Op-mult = %s ", yytext);}
 {Op-sum}    { fprintf(yyout,"Op-sum = %s ", yytext);}
@@ -125,21 +130,63 @@ declaracion ({PUBLIC}|{STATIC}" ")?{INT}" "{id}{Op-asign}{Cte-ent}|{STRING}" "{i
 
 {Cte-ent}       { fprintf(yyout,"Cte-ent = %s ", yytext);}
 {Cte-cadena}    { fprintf(yyout,"Cte-cadena = %s ", yytext);}
-{id}            { fprintf(yyout,"Id= %s ", yytext);}
+
+
 {comentario}    { fprintf(yyout,"comentario = %s ", yytext);}
 {Cte-real}      { fprintf(yyout,"Cte-real = %s ", yytext);}
-{arreglo}       { fprintf(yyout,"Arreglo = %s ", yytext);}
+
+
 {op-y}          { fprintf(yyout,"op-y = %s ", yytext);}
 {op-o}          { fprintf(yyout,"op-o = %s ", yytext);}
 {op-no}         { fprintf(yyout,"op-no = %s ", yytext);}
+{errorid}       { fprintf(yyout,"Error léxico = %s ", yytext);}
+{id}            { fprintf(yyout,"Id= %s ", yytext); contador_id(yytext); }
 {espacio}       { }
 
 
 .               { fprintf(yyout,"Error léxico = %s ", yytext); }
+<<EOF>>			{tabla_id();return 0;}
+
 %%
 
+void contador_id(const char* id_ytext){
+	char cpy_id[100];
+	char delimit[10] = " ID=";
+	strcpy(auxiliar, id);
+	strcat(cpy_id,id_ytext);
+ 	char *token;	
+	bool sw = true;
+	token = strtok(id, delimit);
+	if(i == 0){
+		strcpy(cpy_id,delimit);
+		strcat(cpy_id,id_ytext); 
+		strcat(id, cpy_id);
+		i++;
+	} else {
+		while( token != NULL && sw ) {
+		
+       		if(strcoll(token, id_ytext) == 0){
+				sw = false;
+       		}
+      		token = strtok(NULL, delimit);
+   		}
+		if(sw){
+			strcpy(cpy_id,delimit);
+			strcat(cpy_id,id_ytext);
+           	strcat(auxiliar,cpy_id);
+			i++;
+       	}
+		strcpy(id,auxiliar);		
+	}	
+}
+void tabla_id(){
+	fprintf(yyout,"\n");
+	fprintf(yyout,"TABLA DE IDENTIFICADORES: \n");
+	fprintf(yyout,"Hay %d identificadores \n", i);
+	fprintf(yyout,"%s",id);
+}
 int main (int argc, char *argv[]){
-    extern FILE *yyin, *yyout;
+    
     if (argc == 2){
         yyin = fopen (argv[1], "rt");
         if (yyin == NULL) {
@@ -148,7 +195,7 @@ int main (int argc, char *argv[]){
         }   
     }
     else yyin = stdin;
-    yyout = fopen("output.txt", "w"); 
+    yyout = fopen("salida.txt", "w"); 
     yylex();
     return 0;
 }
