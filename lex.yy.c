@@ -360,22 +360,22 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[127] =
+static const flex_int16_t yy_accept[125] =
     {   0,
         0,    0,   51,   49,   50,   48,   45,   49,   19,   49,
        28,   29,   14,   15,   16,   17,   39,   32,   38,   18,
-       37,   47,   47,   30,   31,   47,   47,   47,   47,   47,
-       47,   47,   47,   47,   47,   26,   49,   27,   36,    0,
-       40,   43,   24,   20,   22,   21,   39,   23,    0,   41,
-       25,    0,    0,   39,   46,   34,   33,   35,   47,   47,
-       47,   47,   47,   47,   47,    1,   47,   47,   47,   47,
-       47,   47,   44,   39,    0,    0,   41,    0,   42,   46,
-       47,   47,   47,   47,   47,    3,    6,    9,   47,   47,
-       47,   47,    0,   41,    0,   42,   46,   47,    8,   47,
+       37,   47,   30,   31,   47,   47,   47,   47,   47,   47,
+       47,   47,   47,   47,   26,   49,   27,   36,    0,   40,
+       43,   24,   20,   22,   21,   39,   23,    0,   41,   25,
+        0,    0,   39,   46,   34,   33,   35,   47,   47,   47,
+       47,   47,   47,    1,   47,   47,   47,   47,   47,   47,
+       44,   39,    0,    0,   41,    0,   42,   46,   47,   47,
+       47,   47,    3,    6,    9,   47,   47,   47,   47,   47,
+        0,   41,    0,   42,   46,    8,   47,   47,    2,   47,
 
-       47,    2,   47,   47,   12,   47,    0,    0,   47,   11,
-       47,   47,   47,    4,    0,   46,   42,    7,    5,   10,
-       13,    0,   42,    0,    0,    0
+       47,   47,   12,   47,    0,    0,   11,   47,   47,   47,
+       47,    4,    0,   46,   42,    5,   10,   13,    7,    0,
+       42,    0,    0,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -388,12 +388,12 @@ static const YY_CHAR yy_ec[256] =
        15,   15,   15,   15,   15,   15,   15,    1,   16,   17,
        18,   19,    1,    1,   20,   20,   20,   20,   20,   20,
        20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
-       20,   20,   21,   20,   20,   20,   20,   20,   20,   20,
-       22,    1,   23,    1,    1,    1,   24,   25,   26,   27,
+       20,   20,   20,   20,   20,   20,   20,   20,   20,   20,
+       21,    1,   22,    1,    1,    1,   23,   24,   25,   26,
 
-       28,   29,   30,   31,   32,   20,   20,   33,   20,   34,
-       35,   36,   20,   37,   38,   39,   40,   41,   42,   20,
-       20,   20,   43,   44,   45,    1,    1,    1,    1,    1,
+       27,   28,   29,   30,   31,   20,   20,   32,   20,   33,
+       34,   35,   20,   36,   37,   38,   39,   40,   41,   20,
+       20,   20,   42,   43,   44,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -410,109 +410,105 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[46] =
+static const YY_CHAR yy_meta[45] =
     {   0,
         1,    1,    2,    1,    3,    1,    1,    1,    1,    4,
         1,    5,    5,    1,    6,    1,    1,    1,    1,    6,
-        6,    1,    1,    6,    6,    6,    6,    6,    6,    6,
+        1,    1,    6,    6,    6,    6,    6,    6,    6,    6,
         6,    6,    6,    6,    6,    6,    6,    6,    6,    6,
-        6,    6,    1,    1,    1
+        6,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[133] =
+static const flex_int16_t yy_base[131] =
     {   0,
-        0,    0,  178,  179,  179,  179,  159,  171,  179,  168,
-      179,  179,  156,   35,   36,   42,   46,  179,   31,  155,
-      154,    0,  132,  179,  179,   24,  135,  136,  133,   33,
-      139,  126,  126,  129,  132,  179,  118,  179,  179,  156,
-      179,  179,  179,  179,  179,  179,   51,  179,  150,    0,
-      179,  144,  143,   56,    0,  179,  179,  179,    0,  120,
-      132,  131,  114,  115,  115,    0,  112,  108,  124,  124,
-      115,  114,  179,   60,  135,  130,    0,   64,   68,    0,
-      111,  105,  103,  114,  110,    0,    0,    0,  104,   95,
-      105,   94,  111,  179,   72,   76,   81,   88,    0,   80,
+        0,    0,  175,  176,  176,  176,  156,  168,  176,  165,
+      176,  176,  153,   34,   35,   41,   45,  176,  152,  151,
+      150,    0,  176,  176,   16,  133,  134,  131,   21,  137,
+      124,  124,  127,  130,  176,  116,  176,  176,  153,  176,
+      176,  176,  176,  176,  176,   49,  176,  147,    0,  176,
+      141,  140,   53,    0,  176,  176,  176,    0,  131,  130,
+      113,  114,  114,    0,  111,  107,  123,   33,  115,  114,
+      176,   58,  134,  129,    0,   62,   66,    0,  106,  104,
+      116,  111,    0,    0,    0,  105,   98,  102,  105,   94,
+      110,  176,   70,   74,   79,    0,   84,   85,    0,   81,
 
-       78,    0,   77,   75,    0,   72,   82,   75,   56,    0,
-       54,   52,   48,    0,   86,   91,   93,    0,    0,    0,
-        0,   55,  100,  104,  108,  179,  122,  124,   59,  129,
-      134,   41
+       76,   65,    0,   69,   82,   77,    0,   61,   59,   55,
+       47,    0,   87,   92,   93,    0,    0,    0,    0,   57,
+       98,  103,  107,  176,  121,  123,   61,  128,  133,   57
     } ;
 
-static const flex_int16_t yy_def[133] =
+static const flex_int16_t yy_def[131] =
     {   0,
-      126,    1,  126,  126,  126,  126,  126,  127,  126,  126,
-      126,  126,  126,  126,  126,  126,  128,  126,  126,  126,
-      126,  129,  129,  126,  126,  129,  129,  129,  129,  129,
-      129,  129,  129,  129,  129,  126,  126,  126,  126,  127,
-      126,  126,  126,  126,  126,  126,  128,  126,  130,  131,
-      126,  126,  126,  128,  132,  126,  126,  126,  129,  129,
-      129,  129,  129,  129,  129,  129,  129,  129,  129,  129,
-      129,  129,  126,  128,  130,  126,  131,  128,  128,  132,
-      129,  129,  129,  129,  129,  129,  129,  129,  129,  129,
-      129,  129,  126,  126,  128,  128,  132,  129,  129,  129,
+      124,    1,  124,  124,  124,  124,  124,  125,  124,  124,
+      124,  124,  124,  124,  124,  124,  126,  124,  124,  124,
+      124,  127,  124,  124,  127,  127,  127,  127,  127,  127,
+      127,  127,  127,  127,  124,  124,  124,  124,  125,  124,
+      124,  124,  124,  124,  124,  126,  124,  128,  129,  124,
+      124,  124,  126,  130,  124,  124,  124,  127,  127,  127,
+      127,  127,  127,  127,  127,  127,  127,  127,  127,  127,
+      124,  126,  128,  124,  129,  126,  126,  130,  127,  127,
+      127,  127,  127,  127,  127,  127,  127,  127,  127,  127,
+      124,  124,  126,  126,  130,  127,  127,  127,  127,  127,
 
-      129,  129,  129,  129,  129,  129,  128,  126,  129,  129,
-      129,  129,  129,  129,  128,  132,  128,  129,  129,  129,
-      129,  126,  128,  128,  128,    0,  126,  126,  126,  126,
-      126,  126
+      127,  127,  127,  127,  126,  124,  127,  127,  127,  127,
+      127,  127,  126,  130,  126,  127,  127,  127,  127,  124,
+      126,  126,  126,    0,  124,  124,  124,  124,  124,  124
     } ;
 
-static const flex_int16_t yy_nxt[225] =
+static const flex_int16_t yy_nxt[221] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
        14,   15,    4,   16,   17,   18,   19,   20,   21,   22,
-       23,   24,   25,   22,   22,   26,   27,   28,   29,   22,
-       22,   30,   22,   31,   22,   32,   22,   33,   22,   22,
-       34,   35,   36,   37,   38,   44,   80,   46,   56,   39,
-       47,   49,   45,   48,   61,   50,   62,   52,   53,   51,
-       54,   66,   52,  126,   59,   74,   67,   52,   53,  124,
-       54,   52,   93,  121,   74,   52,  126,  120,   95,   52,
-      126,  119,   96,   52,   93,  118,   95,   52,   93,  117,
-       96,  108,  108,   52,  126,   97,  115,   52,   93,  114,
+       23,   24,   22,   22,   25,   26,   27,   28,   22,   22,
+       29,   22,   30,   22,   31,   22,   32,   22,   22,   33,
+       34,   35,   36,   37,   43,   59,   45,   60,   64,   46,
+       48,   44,   47,   65,   49,   87,   51,   52,   50,   53,
+       51,  124,   78,   72,   51,   52,   58,   53,   88,   51,
+       91,  122,   72,   51,  124,  119,   93,   51,  124,  118,
+       94,   51,   91,  117,   93,   51,   91,  116,   94,  106,
+      106,  115,   95,   51,  124,  112,  113,  111,   51,   91,
 
-      115,  122,  122,   97,   52,  126,  113,  123,  112,  116,
-      111,   52,   93,  116,  123,   52,  126,  110,  125,   52,
-       93,  109,  125,   40,   40,  107,  106,   40,   55,   55,
-       75,  105,   75,  104,   75,   77,  103,  102,  101,   77,
-      100,   99,   98,   94,   76,   92,   91,   90,   89,   88,
-       87,   86,   85,   84,   83,   82,   81,   79,   78,   76,
-       41,   73,   72,   71,   70,   69,   68,   65,   64,   63,
-       60,   58,   57,   43,   42,   41,   39,  126,    3,  126,
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+       95,  113,  120,  120,   51,  124,  110,  121,  114,   51,
+       91,  109,  121,  114,   51,  124,  108,  123,   51,   91,
+      107,  123,   39,   39,  105,  104,   39,   54,   54,   73,
+      103,   73,  102,   73,   75,  101,  100,   99,   75,   98,
+       97,   96,   92,   74,   90,   89,   86,   85,   84,   83,
+       82,   81,   80,   79,   77,   76,   74,   40,   71,   70,
+       69,   68,   67,   66,   63,   62,   61,   57,   56,   55,
+       42,   41,   40,   38,  124,    3,  124,  124,  124,  124,
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124,
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124,
 
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
-      126,  126,  126,  126
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124,
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124
     } ;
 
-static const flex_int16_t yy_chk[225] =
+static const flex_int16_t yy_chk[221] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,   14,  132,   15,   19,   19,
-       15,   16,   14,   15,   26,   16,   26,   17,   17,   16,
-       17,   30,   47,   47,  129,   47,   30,   54,   54,  122,
-       54,   74,   74,  113,   74,   78,   78,  112,   78,   79,
-       79,  111,   79,   95,   95,  109,   95,   96,   96,  108,
-       96,   97,   97,  107,  107,   79,  107,  115,  115,  106,
+        1,    1,    1,    1,   14,   25,   15,   25,   29,   15,
+       16,   14,   15,   29,   16,   68,   17,   17,   16,   17,
+       46,   46,  130,   46,   53,   53,  127,   53,   68,   72,
+       72,  120,   72,   76,   76,  111,   76,   77,   77,  110,
+       77,   93,   93,  109,   93,   94,   94,  108,   94,   95,
+       95,  106,   77,  105,  105,  104,  105,  102,  113,  113,
 
-      115,  116,  116,   96,  117,  117,  104,  117,  103,  107,
-      101,  123,  123,  115,  123,  124,  124,  100,  124,  125,
-      125,   98,  125,  127,  127,   93,   92,  127,  128,  128,
-      130,   91,  130,   90,  130,  131,   89,   85,   84,  131,
-       83,   82,   81,   76,   75,   72,   71,   70,   69,   68,
-       67,   65,   64,   63,   62,   61,   60,   53,   52,   49,
-       40,   37,   35,   34,   33,   32,   31,   29,   28,   27,
-       23,   21,   20,   13,   10,    8,    7,    3,  126,  126,
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
+       94,  113,  114,  114,  115,  115,  101,  115,  105,  121,
+      121,  100,  121,  113,  122,  122,   98,  122,  123,  123,
+       97,  123,  125,  125,   91,   90,  125,  126,  126,  128,
+       89,  128,   88,  128,  129,   87,   86,   82,  129,   81,
+       80,   79,   74,   73,   70,   69,   67,   66,   65,   63,
+       62,   61,   60,   59,   52,   51,   48,   39,   36,   34,
+       33,   32,   31,   30,   28,   27,   26,   21,   20,   19,
+       13,   10,    8,    7,    3,  124,  124,  124,  124,  124,
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124,
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124,
 
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
-      126,  126,  126,  126,  126,  126,  126,  126,  126,  126,
-      126,  126,  126,  126
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124,
+      124,  124,  124,  124,  124,  124,  124,  124,  124,  124
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -541,16 +537,8 @@ const char* auxiliar[10000];
 void tabla_id();
 void contador_id(const char* id_ytext);
 extern FILE *yyin, *yyout;
-#line 545 "lex.yy.c"
-/*Palabras claves*/
-/*Operadores aritméticos*/
-/*OPeradores aritméticos especiales*/
-/*Delimitadores de inicio y final de bloques de instrucción*/
-/*Final de instrucción*/
-/*Paréntesis y  corchetes*/
-/*Operadores relacionales*/
-/*Operadores logicos*/
-#line 554 "lex.yy.c"
+#line 541 "lex.yy.c"
+#line 542 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -767,9 +755,9 @@ YY_DECL
 		}
 
 	{
-#line 86 "LAB01_Albor_Monsalve_Potte.l"
+#line 27 "LAB01_Albor_Monsalve_Potte.l"
 
-#line 773 "lex.yy.c"
+#line 761 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -796,13 +784,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 127 )
+				if ( yy_current_state >= 125 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 179 );
+		while ( yy_base[yy_current_state] != 176 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -828,259 +816,259 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 87 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "IF ");}
+#line 28 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "IF "); return(IF);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 88 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "ELSE "); }
+#line 29 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "ELSE "); return(ELSE); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 89 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "FOR ");}
+#line 30 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "FOR "); return(FOR);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 90 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "WHILE ");}
+#line 31 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "WHILE "); return(WHILE);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 91 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "DOUBLE ");}
+#line 32 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "DOUBLE "); return(DOUBLE);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 92 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "INT ");}
+#line 33 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "INT "); return(INT);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 93 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "STRING ");}
+#line 34 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "STRING "); return(STRING);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 94 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "CHAR ");}
+#line 35 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "CHAR "); return(CHAR);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 95 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "NEW ");}
+#line 36 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "NEW "); return(NEW);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 96 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "PUBLIC "); }
+#line 37 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "PUBLIC "); return(PUBLIC);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 97 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "CLASS ");}
+#line 38 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "CLASS "); return(CLASS);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 98 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "VOID ");}
+#line 39 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "VOID "); return(VOID);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 99 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout, "STATIC ");}
+#line 40 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout, "STATIC "); return(STATIC);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 101 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-mult = %s ", yytext);}
+#line 42 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-mult = %s ", yytext); return(MULT);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 102 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-sum = %s ", yytext);}
+#line 43 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-sum = %s ", yytext); return(SUMA);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 103 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-sust = %s ", yytext);}
+#line 44 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-sust = %s ", yytext); return(RESTA);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 104 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-div = %s ", yytext);}
+#line 45 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-div = %s ", yytext); return(DIV);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 105 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-asign = %s ", yytext);}
+#line 46 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-asign = %s ", yytext); return(ASIG);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 106 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-mod = %s ", yytext);}
+#line 47 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-mod = %s ", yytext); return(MOD);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 108 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-MasMas = %s ", yytext);}
+#line 49 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-MasMas = %s ", yytext); return(MASMAS);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 109 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-MenosMenos = %s ", yytext);}
+#line 50 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-MenosMenos = %s ", yytext); return(MENMEN);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 110 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-MasAsig = %s ", yytext);}
+#line 51 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-MasAsig = %s ", yytext); return(ASIGMAS);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 111 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-MenosAsig = %s ", yytext);}
+#line 52 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-MenosAsig = %s ", yytext); return(ASIGMEN);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 112 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-PorAsig = %s ", yytext);}
+#line 53 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-PorAsig = %s ", yytext); return(ASIGMULT);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 113 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Op-DivAsig = %s ", yytext);}
+#line 54 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Op-DivAsig = %s ", yytext); return(ASIGDIV);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 115 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Llave-a = %s ", yytext);}
+#line 56 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Llave-a = %s ", yytext); return(LLAVEA);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 116 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Llave-c = %s ", yytext);}
+#line 57 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Llave-c = %s ", yytext); return(LLAVEC);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 117 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Parent-a = %s ", yytext);}
+#line 58 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Parent-a = %s ", yytext); return(PARENTA);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 118 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Parent-c = %s ", yytext);}
+#line 59 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Parent-c = %s ", yytext); return(PARENTC);}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 119 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Corchete-a = %s ", yytext);}
+#line 60 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Corchete-a = %s ", yytext); return(CORCHETEA);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 120 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Corchete-c = %s ", yytext);}
+#line 61 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Corchete-c = %s ", yytext); return(CORCHETEC);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 122 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Punto-coma = %s ", yytext);}
+#line 63 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Punto-coma = %s ", yytext); return(PUNTOCOMA);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 124 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Igual = %s ", yytext);}
+#line 65 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Igual = %s ", yytext); return(IGUAL);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 125 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Menor-igual = %s ", yytext);}
+#line 66 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Menor-igual = %s ", yytext); return(MENORIGUAL);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 126 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Mayor-igual = %s ", yytext);}
+#line 67 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Mayor-igual = %s ", yytext); return(MAYORIGUAL);}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 127 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Diferente = %s ", yytext);}
+#line 68 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Diferente = %s ", yytext);return(DIFERENTE);}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 128 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Mayor = %s ", yytext);}
+#line 69 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Mayor = %s ", yytext); return(MAYOR);}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 129 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Menor = %s ", yytext);}
+#line 70 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Menor = %s ", yytext); return(MENOR);}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 131 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Cte-ent = %s ", yytext);}
+#line 72 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Cte-ent = %s ", yytext);return(ENTERO);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 132 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Cte-cadena = %s ", yytext);}
+#line 73 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Cte-cadena = %s ", yytext);return(CADENA);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 135 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"comentario = %s ", yytext);}
+#line 76 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"comentario = %s ", yytext);return(COMENTARIO);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 136 "LAB01_Albor_Monsalve_Potte.l"
-{ fprintf(yyout,"Cte-real = %s ", yytext);}
+#line 77 "LAB01_Albor_Monsalve_Potte.l"
+{ fprintf(yyout,"Cte-real = %s ", yytext);return(REAL);}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 139 "LAB01_Albor_Monsalve_Potte.l"
+#line 80 "LAB01_Albor_Monsalve_Potte.l"
 { fprintf(yyout,"op-y = %s ", yytext);}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 140 "LAB01_Albor_Monsalve_Potte.l"
+#line 81 "LAB01_Albor_Monsalve_Potte.l"
 { fprintf(yyout,"op-o = %s ", yytext);}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 141 "LAB01_Albor_Monsalve_Potte.l"
+#line 82 "LAB01_Albor_Monsalve_Potte.l"
 { fprintf(yyout,"op-no = %s ", yytext);}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 142 "LAB01_Albor_Monsalve_Potte.l"
+#line 83 "LAB01_Albor_Monsalve_Potte.l"
 { fprintf(yyout,"Error léxico = %s ", yytext);}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 143 "LAB01_Albor_Monsalve_Potte.l"
+#line 84 "LAB01_Albor_Monsalve_Potte.l"
 { fprintf(yyout,"Id= %s ", yytext); contador_id(yytext); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 144 "LAB01_Albor_Monsalve_Potte.l"
+#line 85 "LAB01_Albor_Monsalve_Potte.l"
 { }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 147 "LAB01_Albor_Monsalve_Potte.l"
+#line 88 "LAB01_Albor_Monsalve_Potte.l"
 { fprintf(yyout,"Error léxico = %s ", yytext); }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 148 "LAB01_Albor_Monsalve_Potte.l"
+#line 89 "LAB01_Albor_Monsalve_Potte.l"
 {tabla_id();return 0;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 150 "LAB01_Albor_Monsalve_Potte.l"
+#line 91 "LAB01_Albor_Monsalve_Potte.l"
 ECHO;
 	YY_BREAK
-#line 1084 "lex.yy.c"
+#line 1072 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1375,7 +1363,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 127 )
+			if ( yy_current_state >= 125 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1403,11 +1391,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 127 )
+		if ( yy_current_state >= 125 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 126);
+	yy_is_jam = (yy_current_state == 124);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -2083,7 +2071,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 150 "LAB01_Albor_Monsalve_Potte.l"
+#line 91 "LAB01_Albor_Monsalve_Potte.l"
 
 
 void contador_id(const char* id_ytext){

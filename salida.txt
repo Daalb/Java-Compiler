@@ -1,9 +1,9 @@
 PUBLIC CLASS Id= AnyThing Llave-a = { 
-PUBLIC STATIC VOID Id= main Parent-a = ( STRING Corchete-a = [ Corchete-c = ] Id= args Parent-c = ) Llave-a = { 
+PUBLIC STATIC VOID Id= main Parent-a = ( Id= String Corchete-a = [ Corchete-c = ] Id= args Parent-c = ) Llave-a = { 
 INT Id= i Op-asign = = Cte-ent = 1 Punto-coma = ; 
 INT Id= j Op-asign = = Cte-ent = 20 Punto-coma = ; 
 CHAR Id= c Punto-coma = ; 
-STRING Id= cadena Punto-coma = ; 
+Id= String Id= cadena Punto-coma = ; 
 DOUBLE Id= z Punto-coma = ; 
 Id= z Op-asign = = Cte-real = 14.9e-8 Punto-coma = ; 
 Id= z Op-asign = = Cte-real = 12.9 Punto-coma = ; 
@@ -17,5 +17,5 @@ Llave-c = }
 Llave-c = } 
 Llave-c = } 
 TABLA DE IDENTIFICADORES: 
-Hay 10 identificadores 
- ID=AnyThing ID=main ID=args ID=i ID=j ID=c ID=cadena ID=z ID=intk ID=k
+Hay 11 identificadores 
+ ID=AnyThing ID=main ID=String ID=args ID=i ID=j ID=c ID=cadena ID=z ID=intk ID=k

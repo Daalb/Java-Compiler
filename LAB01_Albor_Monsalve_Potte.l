@@ -22,123 +22,64 @@ Cte-cadena  \"({letra}|{digito}|" ")*\"
 Cte-real    {digito}+{decimal}{exp}?
 id          {letra}({letra}|{digito})*
 errorid     ({Cte-ent}|{Cte-real})+({id})
-
-
-/*Palabras claves*/
-IF          if
-ELSE        else
-FOR         for
-WHILE       while
-DOUBLE      double
-INT         int
-STRING      String
-CHAR        char
-NEW         new
-PUBLIC      public
-CLASS       class
-STATIC      static
-VOID        void
-
-/*Operadores aritméticos*/
-Op-mult     "*"
-Op-sum      "+"
-Op-sust     "-"
-Op-div      "/"
-Op-asign    "="
-Op-mod      "%"
-
-/*OPeradores aritméticos especiales*/
-Op-MasMas          "++"
-Op-MenosMenos      "--"
-Op-MasAsig         "+="
-Op-MenosAsig       "-="
-Op-PorAsig         "*="
-Op-DivAsig         "/="    
-
-/*Delimitadores de inicio y final de bloques de instrucción*/
-Llave-a     "{"
-Llave-c     "}"
-
-/*Final de instrucción*/
-Punto-coma  ";"
-
-/*Paréntesis y  corchetes*/
-Parent-a        "("
-Parent-c        ")"
-Corchete-a      "["
-Corchete-c      "]"
-
-/*Operadores relacionales*/
-Igual       "=="
-Menor-igual "<="
-Mayor-igual ">="
-Diferente   "!="|"<>"
-Mayor       ">"
-Menor       "<"
-
-/*Operadores logicos*/
-op-y        "&&" 
-op-o        "||" 
-op-no        \!
-
 espacio     " "
 
 %%
-{IF}        { fprintf(yyout, "IF ");}
-{ELSE}      { fprintf(yyout, "ELSE "); }
-{FOR}       { fprintf(yyout, "FOR ");}
-{WHILE}     { fprintf(yyout, "WHILE ");}
-{DOUBLE}    { fprintf(yyout, "DOUBLE ");}
-{INT}       { fprintf(yyout, "INT ");}
-{STRING}    { fprintf(yyout, "STRING ");}
-{CHAR}      { fprintf(yyout, "CHAR ");}
-{NEW}       { fprintf(yyout, "NEW ");}
-{PUBLIC}    { fprintf(yyout, "PUBLIC "); }
-{CLASS}     { fprintf(yyout, "CLASS ");}
-{VOID}      { fprintf(yyout, "VOID ");}
-{STATIC}    { fprintf(yyout, "STATIC ");}
+"if"        { fprintf(yyout, "IF "); return(IF);}
+"else"      { fprintf(yyout, "ELSE "); return(ELSE); }
+"for"       { fprintf(yyout, "FOR "); return(FOR);}
+"while"     { fprintf(yyout, "WHILE "); return(WHILE);}
+"double"    { fprintf(yyout, "DOUBLE "); return(DOUBLE);}
+"int"       { fprintf(yyout, "INT "); return(INT);}
+"string"    { fprintf(yyout, "STRING "); return(STRING);}
+"char"      { fprintf(yyout, "CHAR "); return(CHAR);}
+"new"       { fprintf(yyout, "NEW "); return(NEW);}
+"public"    { fprintf(yyout, "PUBLIC "); return(PUBLIC);}
+"class"     { fprintf(yyout, "CLASS "); return(CLASS);}
+"void"      { fprintf(yyout, "VOID "); return(VOID);}
+"static"    { fprintf(yyout, "STATIC "); return(STATIC);}
 
-{Op-mult}   { fprintf(yyout,"Op-mult = %s ", yytext);}
-{Op-sum}    { fprintf(yyout,"Op-sum = %s ", yytext);}
-{Op-sust}   { fprintf(yyout,"Op-sust = %s ", yytext);}
-{Op-div}    { fprintf(yyout,"Op-div = %s ", yytext);}
-{Op-asign}  { fprintf(yyout,"Op-asign = %s ", yytext);}
-{Op-mod}    { fprintf(yyout,"Op-mod = %s ", yytext);}
+"*"  		{ fprintf(yyout,"Op-mult = %s ", yytext); return(MULT);}
+"+"			{ fprintf(yyout,"Op-sum = %s ", yytext); return(SUMA);}
+"-"  		{ fprintf(yyout,"Op-sust = %s ", yytext); return(RESTA);}
+"/"  		{ fprintf(yyout,"Op-div = %s ", yytext); return(DIV);}
+"="  		{ fprintf(yyout,"Op-asign = %s ", yytext); return(ASIG);}
+"%"   		{ fprintf(yyout,"Op-mod = %s ", yytext); return(MOD);}
 
-{Op-MasMas}     { fprintf(yyout,"Op-MasMas = %s ", yytext);}
-{Op-MenosMenos} { fprintf(yyout,"Op-MenosMenos = %s ", yytext);}
-{Op-MasAsig}    { fprintf(yyout,"Op-MasAsig = %s ", yytext);}
-{Op-MenosAsig}  { fprintf(yyout,"Op-MenosAsig = %s ", yytext);}
-{Op-PorAsig}    { fprintf(yyout,"Op-PorAsig = %s ", yytext);}
-{Op-DivAsig}    { fprintf(yyout,"Op-DivAsig = %s ", yytext);}
+"++"            { fprintf(yyout,"Op-MasMas = %s ", yytext); return(MASMAS);}
+"--"		    { fprintf(yyout,"Op-MenosMenos = %s ", yytext); return(MENMEN);}
+"+="    		{ fprintf(yyout,"Op-MasAsig = %s ", yytext); return(ASIGMAS);}
+"-="            { fprintf(yyout,"Op-MenosAsig = %s ", yytext); return(ASIGMEN);}
+"*="            { fprintf(yyout,"Op-PorAsig = %s ", yytext); return(ASIGMULT);}
+"/="   			{ fprintf(yyout,"Op-DivAsig = %s ", yytext); return(ASIGDIV);}
 
-{Llave-a}       { fprintf(yyout,"Llave-a = %s ", yytext);}
-{Llave-c}       { fprintf(yyout,"Llave-c = %s ", yytext);}
-{Parent-a}      { fprintf(yyout,"Parent-a = %s ", yytext);}
-{Parent-c}      { fprintf(yyout,"Parent-c = %s ", yytext);}
-{Corchete-a}    { fprintf(yyout,"Corchete-a = %s ", yytext);}
-{Corchete-c}    { fprintf(yyout,"Corchete-c = %s ", yytext);}
+"{"       		{ fprintf(yyout,"Llave-a = %s ", yytext); return(LLAVEA);}
+"}"             { fprintf(yyout,"Llave-c = %s ", yytext); return(LLAVEC);}
+"("      		{ fprintf(yyout,"Parent-a = %s ", yytext); return(PARENTA);}
+")"      		{ fprintf(yyout,"Parent-c = %s ", yytext); return(PARENTC);}
+"["    			{ fprintf(yyout,"Corchete-a = %s ", yytext); return(CORCHETEA);}
+"]"    			{ fprintf(yyout,"Corchete-c = %s ", yytext); return(CORCHETEC);}
 
-{Punto-coma}    { fprintf(yyout,"Punto-coma = %s ", yytext);}
+";"    			{ fprintf(yyout,"Punto-coma = %s ", yytext); return(PUNTOCOMA);}
 
-{Igual}         { fprintf(yyout,"Igual = %s ", yytext);}
-{Menor-igual}   { fprintf(yyout,"Menor-igual = %s ", yytext);}
-{Mayor-igual}   { fprintf(yyout,"Mayor-igual = %s ", yytext);}
-{Diferente}     { fprintf(yyout,"Diferente = %s ", yytext);}
-{Mayor}         { fprintf(yyout,"Mayor = %s ", yytext);}
-{Menor}         { fprintf(yyout,"Menor = %s ", yytext);}
+"=="            { fprintf(yyout,"Igual = %s ", yytext); return(IGUAL);}
+"<="            { fprintf(yyout,"Menor-igual = %s ", yytext); return(MENORIGUAL);}
+">="            { fprintf(yyout,"Mayor-igual = %s ", yytext); return(MAYORIGUAL);}
+"!="            { fprintf(yyout,"Diferente = %s ", yytext);return(DIFERENTE);}
+">"         	{ fprintf(yyout,"Mayor = %s ", yytext); return(MAYOR);}
+"<"         	{ fprintf(yyout,"Menor = %s ", yytext); return(MENOR);}
 
-{Cte-ent}       { fprintf(yyout,"Cte-ent = %s ", yytext);}
-{Cte-cadena}    { fprintf(yyout,"Cte-cadena = %s ", yytext);}
-
-
-{comentario}    { fprintf(yyout,"comentario = %s ", yytext);}
-{Cte-real}      { fprintf(yyout,"Cte-real = %s ", yytext);}
+{Cte-ent}       { fprintf(yyout,"Cte-ent = %s ", yytext);return(ENTERO);}
+{Cte-cadena}    { fprintf(yyout,"Cte-cadena = %s ", yytext);return(CADENA);}
 
 
-{op-y}          { fprintf(yyout,"op-y = %s ", yytext);}
-{op-o}          { fprintf(yyout,"op-o = %s ", yytext);}
-{op-no}         { fprintf(yyout,"op-no = %s ", yytext);}
+{comentario}    { fprintf(yyout,"comentario = %s ", yytext);return(COMENTARIO);}
+{Cte-real}      { fprintf(yyout,"Cte-real = %s ", yytext);return(REAL);}
+
+
+"&&"          	{ fprintf(yyout,"op-y = %s ", yytext);}
+"||"          	{ fprintf(yyout,"op-o = %s ", yytext);}
+"!"         	{ fprintf(yyout,"op-no = %s ", yytext);}
 {errorid}       { fprintf(yyout,"Error léxico = %s ", yytext);}
 {id}            { fprintf(yyout,"Id= %s ", yytext); contador_id(yytext); }
 {espacio}       { }
