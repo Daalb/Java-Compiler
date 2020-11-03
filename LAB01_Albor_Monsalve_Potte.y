@@ -1,0 +1,15 @@
+%{
+    #include <string.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+}%
+
+%token IF ELSE FOR WHILE 
+%token DOUBLE INT STRING CHAR
+%token NEW PUBLIC CLASS RETURN STATIC
+%token MULT SUMA RESTA DIV ASIG MOD 
+%token MASMAS MENMEN ASIGMAS ASIGMEN ASIGMULT ASIGDIV
+%token LLAVEA LLAVEC PARENTA PARENTC CORCHETEA CORCHETEC PUNTOCOMA
+
+%start inicio
+%%
