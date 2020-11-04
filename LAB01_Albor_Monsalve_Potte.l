@@ -77,9 +77,9 @@ espacio     " "
 {Cte-real}      { fprintf(yyout,"Cte-real = %s ", yytext);return(REAL);}
 
 
-"&&"          	{ fprintf(yyout,"op-y = %s ", yytext);}
-"||"          	{ fprintf(yyout,"op-o = %s ", yytext);}
-"!"         	{ fprintf(yyout,"op-no = %s ", yytext);}
+"&&"          	{ fprintf(yyout,"op-y = %s ", yytext);return(AND);}
+"||"          	{ fprintf(yyout,"op-o = %s ", yytext);return(OR);}
+"!"         	{ fprintf(yyout,"op-no = %s ", yytext);return(NOT);}
 {errorid}       { fprintf(yyout,"Error léxico = %s ", yytext);}
 {id}            { fprintf(yyout,"Id= %s ", yytext); contador_id(yytext); }
 {espacio}       { }
