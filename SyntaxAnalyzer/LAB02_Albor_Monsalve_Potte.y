@@ -23,8 +23,12 @@
 %start init
 %%
 
-init    : IF PARENTA ID PARENTC
+init    : ejemplo
+		| init ejemplo	
         ;
+
+ejemplo : IF PARENTA ID PARENTC PUNTOCOMA
+		;	
 
 %%
 
