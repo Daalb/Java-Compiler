@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "LAB02_Albor_Monsalve_Potte.tab.h"
 #include <stdbool.h>
 int i = 0;
 const char* id[10000];

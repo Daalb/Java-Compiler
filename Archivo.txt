@@ -10,7 +10,7 @@ public class AnyThing{
         cadena="Hola";
         c="a";
         i=i*2;
-        for (int k = 1; k < j; k++){
+        for (intk = 1; k < j; k++){
                 i*=k;
                 z/=2.0;
             }
