@@ -68,14 +68,14 @@
 /* First part of user prologue.  */
 #line 1 "LAB02_Albor_Monsalve_Potte.y"
 
+	#include <string.h>
     #include <stdio.h>
     #include <stdlib.h>
-
 	extern int yylex();
-	extern int yyparse();
-	extern FILE* yyin;
+	extern FILE * yyin;
 	extern FILE * yyout;
 	extern int yylineno;
+	extern int cerror;
 	extern char *yytext;
 	int errores = 0;
 	void yyerror(const char *s);
@@ -496,16 +496,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  5
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   7
+#define YYLAST   22
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  50
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  3
+#define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  4
+#define YYNRULES  8
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  10
+#define YYNSTATES  27
 
 #define YYUNDEFTOK  2
 #define YYMAXUTOK   304
@@ -557,7 +557,7 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    26,    26,    27,    30
+       0,    26,    26,    27,    30,    31,    34,    35,    38
 };
 #endif
 
@@ -573,7 +573,7 @@ static const char *const yytname[] =
   "LLAVEA", "LLAVEC", "PARENTA", "PARENTC", "CORCHETEA", "CORCHETEC",
   "PUNTOCOMA", "IGUAL", "MENORIGUAL", "MAYORIGUAL", "DIFERENTE", "MAYOR",
   "MENOR", "ENTERO", "CADENA", "COMENTARIO", "REAL", "ID", "$accept",
-  "init", "ejemplo", YY_NULLPTR
+  "init", "funct_init", "main", "statements", YY_NULLPTR
 };
 #endif
 
@@ -604,7 +604,9 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -2,   -32,     0,   -46,   -45,   -46,   -46,   -30,   -32,   -46
+      -9,    -8,     2,   -46,   -45,   -46,   -46,   -26,   -12,    -7,
+     -46,   -24,    -6,   -46,   -42,   -23,     3,   -21,   -20,   -36,
+     -16,   -14,   -17,   -46,   -46,   -13,   -46
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -612,19 +614,21 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     0,     0,     2,     0,     1,     3,     0,     0,     4
+       0,     0,     0,     2,     0,     1,     3,     0,     0,     0,
+       4,     0,     0,     5,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     8,     6,     0,     7
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -46,   -46,     5
+     -46,   -46,    20,   -46,   -46
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3
+      -1,     2,     3,    11,    25
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -632,31 +636,37 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       5,     1,     4,     1,     7,     8,     9,     6
+       9,    23,     5,     1,     7,     4,     8,    15,    12,    13,
+      14,    16,    17,    20,     1,    18,    24,    19,    22,    21,
+      26,    10,     6
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,     3,    34,     3,    49,    35,    38,     2
+      12,    18,     0,    12,    49,    13,    32,    49,    15,    33,
+      16,    34,     9,    49,    12,    36,    33,    37,    32,    35,
+      33,    33,     2
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,    51,    52,    34,     0,    52,    49,    35,    38
+       0,    12,    51,    52,    13,     0,    52,    49,    32,    12,
+      33,    53,    15,    33,    16,    49,    34,     9,    36,    37,
+      49,    35,    32,    18,    33,    54,    33
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    50,    51,    51,    52
+       0,    50,    51,    51,    52,    52,    53,    53,    54
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     1,     2,     5
+       0,     2,     1,     2,     5,     6,    12,    13,     1
 };
 
 
@@ -1352,7 +1362,7 @@ yyreduce:
   switch (yyn)
     {
 
-#line 1356 "LAB02_Albor_Monsalve_Potte.tab.c"
+#line 1366 "LAB02_Albor_Monsalve_Potte.tab.c"
 
       default: break;
     }
@@ -1584,16 +1594,14 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 33 "LAB02_Albor_Monsalve_Potte.y"
+#line 41 "LAB02_Albor_Monsalve_Potte.y"
 
 
 int main(){
 	yyin=fopen("Archivo.txt","r");
 	yyout=fopen("ArchivoSalida.txt","w");
 	do {
-	
 		yyparse();
-
 	} while(!feof(yyin));
 
 	if(errores==0){
@@ -1602,13 +1610,13 @@ int main(){
 	}	
 }
 
-void yyerror (const char *s) {
+void yyerror(const char *s) {
     errores++;
 	if(strcmp(yytext,"\n")==0){
-		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",(yylineno-1),s);
-		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",(yylineno-1),s);
+		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
+		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
 	}else{
-		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",yylineno,s);
-		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",yylineno,s);
+		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
+		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
 	}
 }

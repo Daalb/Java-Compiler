@@ -1,2 +1,1 @@
-
-No hubo ningun error sintactico.
+La línea 2 tiene un error de tipo: syntax error

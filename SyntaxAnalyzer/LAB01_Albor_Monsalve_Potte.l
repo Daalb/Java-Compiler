@@ -1,9 +1,10 @@
 %{
 #include <stdio.h>
 #include "LAB02_Albor_Monsalve_Potte.tab.h"
+int cerror=0;
 %}
 
-%option yylineno
+
 letra       [a-zA-Z]
 digito      [0-9]
 decimal     \.{digito}+
@@ -74,6 +75,6 @@ espacio     " "
 "!"         	{ return(NOT);}
 {id}			{ return(ID);}
 {espacio}       { }
-
+\n              {cerror++;}
 %%
 

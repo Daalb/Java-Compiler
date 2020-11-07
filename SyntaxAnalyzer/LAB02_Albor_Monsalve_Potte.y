@@ -1,12 +1,12 @@
 %{
+	#include <string.h>
     #include <stdio.h>
     #include <stdlib.h>
-
 	extern int yylex();
-	extern int yyparse();
-	extern FILE* yyin;
+	extern FILE * yyin;
 	extern FILE * yyout;
 	extern int yylineno;
+	extern int cerror;
 	extern char *yytext;
 	int errores = 0;
 	void yyerror(const char *s);
@@ -23,12 +23,38 @@
 %start init
 %%
 
-init    : ejemplo
-		| init ejemplo	
+init    : 
+		funct_init
+		| init funct_init
         ;
 
-ejemplo : IF PARENTA ID PARENTC PUNTOCOMA
-		;	
+funct_init	: 
+			tipo id parametros bloque
+			;
+
+bloque	:
+		LLAVEA LLAVEC
+		| LLAVEA contenido LLAVEC	
+		;
+
+contenido	:
+			statement
+			| contenido statement
+			;
+
+statement	:
+			expresion
+			| condicional
+			| ciclo
+			;
+
+expresion	:
+			asignacion PUNTOCOMA
+			
+asignacion	:
+			
+	
+
 
 %%
 
@@ -36,9 +62,7 @@ int main(){
 	yyin=fopen("Archivo.txt","r");
 	yyout=fopen("ArchivoSalida.txt","w");
 	do {
-	
 		yyparse();
-
 	} while(!feof(yyin));
 
 	if(errores==0){
@@ -47,13 +71,13 @@ int main(){
 	}	
 }
 
-void yyerror (const char *s) {
+void yyerror(const char *s) {
     errores++;
 	if(strcmp(yytext,"\n")==0){
-		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",(yylineno-1),s);
-		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",(yylineno-1),s);
+		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
+		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
 	}else{
-		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",yylineno,s);
-		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",yylineno,s);
+		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
+		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
 	}
 }
