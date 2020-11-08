@@ -28,10 +28,14 @@ init    : funct_init
         ;
 
 funct_init	:	PUBLIC CLASS ID LLAVEA func_main LLAVEC
-			|	PUBLIC CLASS ID LLAVEA LLAVEC	
+			|	PUBLIC CLASS ID LLAVEA LLAVEC
+			|	PUBLIC CLASS ID LLAVEA error LLAVEC {yyerrok; yyclearin;}
+			|	error funct_init {yyerrok; yyclearin;}
+			|	funct_init error {yyerrok; yyclearin;} 
 			;
 
 func_main	:	PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
+			|	error func_main {yyerrok;yyclearin;}
 			;
 
 bloque	:	LLAVEA LLAVEC
@@ -40,6 +44,7 @@ bloque	:	LLAVEA LLAVEC
 
 contenido	:	statement
 			|	contenido statement
+			| 	error statement {yyerrok; yyclearin;}
 			;
 
 statement	:	expresion

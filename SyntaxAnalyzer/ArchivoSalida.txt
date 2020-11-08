@@ -1,1 +1,6 @@
-No hubo ningun error sintactico.
+La línea 1 tiene un error de tipo: syntax error
+La línea 5 tiene un error de tipo: syntax error
+La línea 7 tiene un error de tipo: syntax error
+La línea 8 tiene un error de tipo: syntax error
+La línea 11 tiene un error de tipo: syntax error
+La línea 12 tiene un error de tipo: syntax error
