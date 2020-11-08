@@ -1,0 +1,1875 @@
+Terminales no usados en la gramática
+
+    NEW
+    COMENTARIO
+
+
+Estado 42 conflictos: 1 desplazamiento/reducción
+Estado 81 conflictos: 1 reducción/reducción
+Estado 98 conflictos: 2 reducción/reducción
+Estado 100 conflictos: 5 desplazamiento/reducción
+Estado 103 conflictos: 2 reducción/reducción
+Estado 104 conflictos: 2 reducción/reducción
+Estado 138 conflictos: 5 desplazamiento/reducción
+Estado 139 conflictos: 5 desplazamiento/reducción
+Estado 140 conflictos: 5 desplazamiento/reducción
+Estado 141 conflictos: 5 desplazamiento/reducción
+Estado 142 conflictos: 5 desplazamiento/reducción
+
+
+Gramática
+
+    0 $accept: init $end
+
+    1 init: funct_init
+    2     | init funct_init
+
+    3 funct_init: PUBLIC CLASS ID LLAVEA func_main LLAVEC
+    4           | PUBLIC CLASS ID LLAVEA LLAVEC
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
+
+    6 bloque: LLAVEA LLAVEC
+    7       | LLAVEA contenido LLAVEC
+
+    8 contenido: statement
+    9          | contenido statement
+
+   10 statement: expresion
+   11          | condicional
+   12          | ciclo
+
+   13 expresion: assig_st PUNTOCOMA
+   14          | assig_st2 PUNTOCOMA
+   15          | assig_st3 PUNTOCOMA
+   16          | assig_especial PUNTOCOMA
+   17          | operador_incre PUNTOCOMA
+
+   18 condicional: IF PARENTA expre PARENTC bloque
+   19            | IF PARENTA expre PARENTC bloque ELSE bloque
+
+   20 ciclo: WHILE PARENTA expre PARENTC bloque
+   21      | FOR PARENTA assig_st PUNTOCOMA comparacion PUNTOCOMA assig_especial PARENTC bloque
+
+   22 expre: condicional_expr
+   23      | comparacion
+
+   24 comparacion: PARENTA comparacion PARENTC
+   25            | exp_simple MENORIGUAL exp_simple
+   26            | exp_simple MAYORIGUAL exp_simple
+   27            | exp_simple DIFERENTE exp_simple
+   28            | exp_simple IGUAL exp_simple
+   29            | exp_simple MENOR exp_simple
+   30            | exp_simple MAYOR exp_simple
+   31            | ID
+   32            | condicional_expr
+
+   33 condicional_expr: or_ex
+   34                 | and_ex
+   35                 | not_ex
+
+   36 not_ex: NOT comparacion
+
+   37 or_ex: comparacion OR comparacion
+   38      | OR condicional_expr
+
+   39 and_ex: comparacion AND comparacion
+   40       | AND condicional_expr
+
+   41 assig_especial: ID MENMEN
+   42               | ID MASMAS
+   43               | ID ASIG assig_especial
+   44               | operador_incre
+
+   45 operador_incre: ID ope_espcial exp_simple
+
+   46 assig_st: tipo ID
+   47         | assig_st ASIG exp_simple
+   48         | assig_st ASIG assig_st2
+   49         | assig_st ASIG anidar
+
+   50 assig_st3: ID ASIG assig_st2
+   51          | ID ASIG anidar
+
+   52 assig_st2: exp_simple
+   53          | assig_st2 operador asig_compleja
+
+   54 anidar: PARENTA asig_compleja PARENTC
+   55       | anidar operador anidar
+
+   56 asig_compleja: exp_simple
+   57              | asig_compleja operador asig_compleja
+   58              | anidar operador asig_compleja
+   59              | asig_compleja operador anidar
+
+   60 operador: SUMA
+   61         | RESTA
+   62         | MULT
+   63         | DIV
+   64         | MOD
+
+   65 exp_simple: CADENA
+   66           | ENTERO
+   67           | ID
+   68           | REAL
+
+   69 tipo: INT
+   70     | STRING
+   71     | DOUBLE
+   72     | CHAR
+
+   73 ope_espcial: ASIGMAS
+   74            | ASIGDIV
+   75            | ASIGMEN
+   76            | ASIGMULT
+
+
+Terminales con las reglas donde aparecen
+
+    $end (0) 0
+    error (256)
+    IF (258) 18 19
+    ELSE (259) 19
+    FOR (260) 21
+    WHILE (261) 20
+    DOUBLE (262) 71
+    INT (263) 69
+    STRING (264) 5 70
+    CHAR (265) 72
+    NEW (266)
+    PUBLIC (267) 3 4 5
+    CLASS (268) 3 4
+    STATIC (269) 5
+    VOID (270) 5
+    MULT (271) 62
+    SUMA (272) 60
+    RESTA (273) 61
+    DIV (274) 63
+    ASIG (275) 43 47 48 49 50 51
+    MOD (276) 64
+    AND (277) 39 40
+    OR (278) 37 38
+    NOT (279) 36
+    MASMAS (280) 42
+    MENMEN (281) 41
+    ASIGMAS (282) 73
+    ASIGMEN (283) 75
+    ASIGMULT (284) 76
+    ASIGDIV (285) 74
+    LLAVEA (286) 3 4 6 7
+    LLAVEC (287) 3 4 6 7
+    PARENTA (288) 5 18 19 20 21 24 54
+    PARENTC (289) 5 18 19 20 21 24 54
+    CORCHETEA (290) 5
+    CORCHETEC (291) 5
+    PUNTOCOMA (292) 13 14 15 16 17 21
+    IGUAL (293) 28
+    MENORIGUAL (294) 25
+    MAYORIGUAL (295) 26
+    DIFERENTE (296) 27
+    MAYOR (297) 30
+    MENOR (298) 29
+    ENTERO (299) 66
+    CADENA (300) 65
+    COMENTARIO (301)
+    REAL (302) 68
+    ID (303) 3 4 5 31 41 42 43 45 46 50 51 67
+
+
+No terminales con las reglas donde aparecen
+
+    $accept (49)
+        on left: 0
+    init (50)
+        on left: 1 2
+        on right: 0 2
+    funct_init (51)
+        on left: 3 4
+        on right: 1 2
+    func_main (52)
+        on left: 5
+        on right: 3
+    bloque (53)
+        on left: 6 7
+        on right: 5 18 19 20 21
+    contenido (54)
+        on left: 8 9
+        on right: 7 9
+    statement (55)
+        on left: 10 11 12
+        on right: 8 9
+    expresion (56)
+        on left: 13 14 15 16 17
+        on right: 10
+    condicional (57)
+        on left: 18 19
+        on right: 11
+    ciclo (58)
+        on left: 20 21
+        on right: 12
+    expre (59)
+        on left: 22 23
+        on right: 18 19 20
+    comparacion (60)
+        on left: 24 25 26 27 28 29 30 31 32
+        on right: 21 23 24 36 37 39
+    condicional_expr (61)
+        on left: 33 34 35
+        on right: 22 32 38 40
+    not_ex (62)
+        on left: 36
+        on right: 35
+    or_ex (63)
+        on left: 37 38
+        on right: 33
+    and_ex (64)
+        on left: 39 40
+        on right: 34
+    assig_especial (65)
+        on left: 41 42 43 44
+        on right: 16 21 43
+    operador_incre (66)
+        on left: 45
+        on right: 17 44
+    assig_st (67)
+        on left: 46 47 48 49
+        on right: 13 21 47 48 49
+    assig_st3 (68)
+        on left: 50 51
+        on right: 15
+    assig_st2 (69)
+        on left: 52 53
+        on right: 14 48 50 53
+    anidar (70)
+        on left: 54 55
+        on right: 49 51 55 58 59
+    asig_compleja (71)
+        on left: 56 57 58 59
+        on right: 53 54 57 58 59
+    operador (72)
+        on left: 60 61 62 63 64
+        on right: 53 55 57 58 59
+    exp_simple (73)
+        on left: 65 66 67 68
+        on right: 25 26 27 28 29 30 45 47 52 56
+    tipo (74)
+        on left: 69 70 71 72
+        on right: 46
+    ope_espcial (75)
+        on left: 73 74 75 76
+        on right: 45
+
+
+Estado 0
+
+    0 $accept: . init $end
+
+    PUBLIC  desplazar e ir al estado 1
+
+    init        ir al estado 2
+    funct_init  ir al estado 3
+
+
+Estado 1
+
+    3 funct_init: PUBLIC . CLASS ID LLAVEA func_main LLAVEC
+    4           | PUBLIC . CLASS ID LLAVEA LLAVEC
+
+    CLASS  desplazar e ir al estado 4
+
+
+Estado 2
+
+    0 $accept: init . $end
+    2 init: init . funct_init
+
+    $end    desplazar e ir al estado 5
+    PUBLIC  desplazar e ir al estado 1
+
+    funct_init  ir al estado 6
+
+
+Estado 3
+
+    1 init: funct_init .
+
+    $default  reduce usando la regla 1 (init)
+
+
+Estado 4
+
+    3 funct_init: PUBLIC CLASS . ID LLAVEA func_main LLAVEC
+    4           | PUBLIC CLASS . ID LLAVEA LLAVEC
+
+    ID  desplazar e ir al estado 7
+
+
+Estado 5
+
+    0 $accept: init $end .
+
+    $default  aceptar
+
+
+Estado 6
+
+    2 init: init funct_init .
+
+    $default  reduce usando la regla 2 (init)
+
+
+Estado 7
+
+    3 funct_init: PUBLIC CLASS ID . LLAVEA func_main LLAVEC
+    4           | PUBLIC CLASS ID . LLAVEA LLAVEC
+
+    LLAVEA  desplazar e ir al estado 8
+
+
+Estado 8
+
+    3 funct_init: PUBLIC CLASS ID LLAVEA . func_main LLAVEC
+    4           | PUBLIC CLASS ID LLAVEA . LLAVEC
+
+    PUBLIC  desplazar e ir al estado 9
+    LLAVEC  desplazar e ir al estado 10
+
+    func_main  ir al estado 11
+
+
+Estado 9
+
+    5 func_main: PUBLIC . STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
+
+    STATIC  desplazar e ir al estado 12
+
+
+Estado 10
+
+    4 funct_init: PUBLIC CLASS ID LLAVEA LLAVEC .
+
+    $default  reduce usando la regla 4 (funct_init)
+
+
+Estado 11
+
+    3 funct_init: PUBLIC CLASS ID LLAVEA func_main . LLAVEC
+
+    LLAVEC  desplazar e ir al estado 13
+
+
+Estado 12
+
+    5 func_main: PUBLIC STATIC . VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
+
+    VOID  desplazar e ir al estado 14
+
+
+Estado 13
+
+    3 funct_init: PUBLIC CLASS ID LLAVEA func_main LLAVEC .
+
+    $default  reduce usando la regla 3 (funct_init)
+
+
+Estado 14
+
+    5 func_main: PUBLIC STATIC VOID . ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
+
+    ID  desplazar e ir al estado 15
+
+
+Estado 15
+
+    5 func_main: PUBLIC STATIC VOID ID . PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
+
+    PARENTA  desplazar e ir al estado 16
+
+
+Estado 16
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA . STRING CORCHETEA CORCHETEC ID PARENTC bloque
+
+    STRING  desplazar e ir al estado 17
+
+
+Estado 17
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA STRING . CORCHETEA CORCHETEC ID PARENTC bloque
+
+    CORCHETEA  desplazar e ir al estado 18
+
+
+Estado 18
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA . CORCHETEC ID PARENTC bloque
+
+    CORCHETEC  desplazar e ir al estado 19
+
+
+Estado 19
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC . ID PARENTC bloque
+
+    ID  desplazar e ir al estado 20
+
+
+Estado 20
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID . PARENTC bloque
+
+    PARENTC  desplazar e ir al estado 21
+
+
+Estado 21
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC . bloque
+
+    LLAVEA  desplazar e ir al estado 22
+
+    bloque  ir al estado 23
+
+
+Estado 22
+
+    6 bloque: LLAVEA . LLAVEC
+    7       | LLAVEA . contenido LLAVEC
+
+    IF      desplazar e ir al estado 24
+    FOR     desplazar e ir al estado 25
+    WHILE   desplazar e ir al estado 26
+    DOUBLE  desplazar e ir al estado 27
+    INT     desplazar e ir al estado 28
+    STRING  desplazar e ir al estado 29
+    CHAR    desplazar e ir al estado 30
+    LLAVEC  desplazar e ir al estado 31
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 35
+
+    contenido       ir al estado 36
+    statement       ir al estado 37
+    expresion       ir al estado 38
+    condicional     ir al estado 39
+    ciclo           ir al estado 40
+    assig_especial  ir al estado 41
+    operador_incre  ir al estado 42
+    assig_st        ir al estado 43
+    assig_st3       ir al estado 44
+    assig_st2       ir al estado 45
+    exp_simple      ir al estado 46
+    tipo            ir al estado 47
+
+
+Estado 23
+
+    5 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque .
+
+    $default  reduce usando la regla 5 (func_main)
+
+
+Estado 24
+
+   18 condicional: IF . PARENTA expre PARENTC bloque
+   19            | IF . PARENTA expre PARENTC bloque ELSE bloque
+
+    PARENTA  desplazar e ir al estado 48
+
+
+Estado 25
+
+   21 ciclo: FOR . PARENTA assig_st PUNTOCOMA comparacion PUNTOCOMA assig_especial PARENTC bloque
+
+    PARENTA  desplazar e ir al estado 49
+
+
+Estado 26
+
+   20 ciclo: WHILE . PARENTA expre PARENTC bloque
+
+    PARENTA  desplazar e ir al estado 50
+
+
+Estado 27
+
+   71 tipo: DOUBLE .
+
+    $default  reduce usando la regla 71 (tipo)
+
+
+Estado 28
+
+   69 tipo: INT .
+
+    $default  reduce usando la regla 69 (tipo)
+
+
+Estado 29
+
+   70 tipo: STRING .
+
+    $default  reduce usando la regla 70 (tipo)
+
+
+Estado 30
+
+   72 tipo: CHAR .
+
+    $default  reduce usando la regla 72 (tipo)
+
+
+Estado 31
+
+    6 bloque: LLAVEA LLAVEC .
+
+    $default  reduce usando la regla 6 (bloque)
+
+
+Estado 32
+
+   66 exp_simple: ENTERO .
+
+    $default  reduce usando la regla 66 (exp_simple)
+
+
+Estado 33
+
+   65 exp_simple: CADENA .
+
+    $default  reduce usando la regla 65 (exp_simple)
+
+
+Estado 34
+
+   68 exp_simple: REAL .
+
+    $default  reduce usando la regla 68 (exp_simple)
+
+
+Estado 35
+
+   41 assig_especial: ID . MENMEN
+   42               | ID . MASMAS
+   43               | ID . ASIG assig_especial
+   45 operador_incre: ID . ope_espcial exp_simple
+   50 assig_st3: ID . ASIG assig_st2
+   51          | ID . ASIG anidar
+   67 exp_simple: ID .
+
+    ASIG      desplazar e ir al estado 51
+    MASMAS    desplazar e ir al estado 52
+    MENMEN    desplazar e ir al estado 53
+    ASIGMAS   desplazar e ir al estado 54
+    ASIGMEN   desplazar e ir al estado 55
+    ASIGMULT  desplazar e ir al estado 56
+    ASIGDIV   desplazar e ir al estado 57
+
+    $default  reduce usando la regla 67 (exp_simple)
+
+    ope_espcial  ir al estado 58
+
+
+Estado 36
+
+    7 bloque: LLAVEA contenido . LLAVEC
+    9 contenido: contenido . statement
+
+    IF      desplazar e ir al estado 24
+    FOR     desplazar e ir al estado 25
+    WHILE   desplazar e ir al estado 26
+    DOUBLE  desplazar e ir al estado 27
+    INT     desplazar e ir al estado 28
+    STRING  desplazar e ir al estado 29
+    CHAR    desplazar e ir al estado 30
+    LLAVEC  desplazar e ir al estado 59
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 35
+
+    statement       ir al estado 60
+    expresion       ir al estado 38
+    condicional     ir al estado 39
+    ciclo           ir al estado 40
+    assig_especial  ir al estado 41
+    operador_incre  ir al estado 42
+    assig_st        ir al estado 43
+    assig_st3       ir al estado 44
+    assig_st2       ir al estado 45
+    exp_simple      ir al estado 46
+    tipo            ir al estado 47
+
+
+Estado 37
+
+    8 contenido: statement .
+
+    $default  reduce usando la regla 8 (contenido)
+
+
+Estado 38
+
+   10 statement: expresion .
+
+    $default  reduce usando la regla 10 (statement)
+
+
+Estado 39
+
+   11 statement: condicional .
+
+    $default  reduce usando la regla 11 (statement)
+
+
+Estado 40
+
+   12 statement: ciclo .
+
+    $default  reduce usando la regla 12 (statement)
+
+
+Estado 41
+
+   16 expresion: assig_especial . PUNTOCOMA
+
+    PUNTOCOMA  desplazar e ir al estado 61
+
+
+Estado 42
+
+   17 expresion: operador_incre . PUNTOCOMA
+   44 assig_especial: operador_incre .
+
+    PUNTOCOMA  desplazar e ir al estado 62
+
+    PUNTOCOMA  [reduce usando la regla 44 (assig_especial)]
+
+
+Estado 43
+
+   13 expresion: assig_st . PUNTOCOMA
+   47 assig_st: assig_st . ASIG exp_simple
+   48         | assig_st . ASIG assig_st2
+   49         | assig_st . ASIG anidar
+
+    ASIG       desplazar e ir al estado 63
+    PUNTOCOMA  desplazar e ir al estado 64
+
+
+Estado 44
+
+   15 expresion: assig_st3 . PUNTOCOMA
+
+    PUNTOCOMA  desplazar e ir al estado 65
+
+
+Estado 45
+
+   14 expresion: assig_st2 . PUNTOCOMA
+   53 assig_st2: assig_st2 . operador asig_compleja
+
+    MULT       desplazar e ir al estado 66
+    SUMA       desplazar e ir al estado 67
+    RESTA      desplazar e ir al estado 68
+    DIV        desplazar e ir al estado 69
+    MOD        desplazar e ir al estado 70
+    PUNTOCOMA  desplazar e ir al estado 71
+
+    operador  ir al estado 72
+
+
+Estado 46
+
+   52 assig_st2: exp_simple .
+
+    $default  reduce usando la regla 52 (assig_st2)
+
+
+Estado 47
+
+   46 assig_st: tipo . ID
+
+    ID  desplazar e ir al estado 73
+
+
+Estado 48
+
+   18 condicional: IF PARENTA . expre PARENTC bloque
+   19            | IF PARENTA . expre PARENTC bloque ELSE bloque
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    expre             ir al estado 79
+    comparacion       ir al estado 80
+    condicional_expr  ir al estado 81
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 49
+
+   21 ciclo: FOR PARENTA . assig_st PUNTOCOMA comparacion PUNTOCOMA assig_especial PARENTC bloque
+
+    DOUBLE  desplazar e ir al estado 27
+    INT     desplazar e ir al estado 28
+    STRING  desplazar e ir al estado 29
+    CHAR    desplazar e ir al estado 30
+
+    assig_st  ir al estado 86
+    tipo      ir al estado 47
+
+
+Estado 50
+
+   20 ciclo: WHILE PARENTA . expre PARENTC bloque
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    expre             ir al estado 87
+    comparacion       ir al estado 80
+    condicional_expr  ir al estado 81
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 51
+
+   43 assig_especial: ID ASIG . assig_especial
+   50 assig_st3: ID ASIG . assig_st2
+   51          | ID ASIG . anidar
+
+    PARENTA  desplazar e ir al estado 88
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 89
+
+    assig_especial  ir al estado 90
+    operador_incre  ir al estado 91
+    assig_st2       ir al estado 92
+    anidar          ir al estado 93
+    exp_simple      ir al estado 46
+
+
+Estado 52
+
+   42 assig_especial: ID MASMAS .
+
+    $default  reduce usando la regla 42 (assig_especial)
+
+
+Estado 53
+
+   41 assig_especial: ID MENMEN .
+
+    $default  reduce usando la regla 41 (assig_especial)
+
+
+Estado 54
+
+   73 ope_espcial: ASIGMAS .
+
+    $default  reduce usando la regla 73 (ope_espcial)
+
+
+Estado 55
+
+   75 ope_espcial: ASIGMEN .
+
+    $default  reduce usando la regla 75 (ope_espcial)
+
+
+Estado 56
+
+   76 ope_espcial: ASIGMULT .
+
+    $default  reduce usando la regla 76 (ope_espcial)
+
+
+Estado 57
+
+   74 ope_espcial: ASIGDIV .
+
+    $default  reduce usando la regla 74 (ope_espcial)
+
+
+Estado 58
+
+   45 operador_incre: ID ope_espcial . exp_simple
+
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 94
+
+    exp_simple  ir al estado 95
+
+
+Estado 59
+
+    7 bloque: LLAVEA contenido LLAVEC .
+
+    $default  reduce usando la regla 7 (bloque)
+
+
+Estado 60
+
+    9 contenido: contenido statement .
+
+    $default  reduce usando la regla 9 (contenido)
+
+
+Estado 61
+
+   16 expresion: assig_especial PUNTOCOMA .
+
+    $default  reduce usando la regla 16 (expresion)
+
+
+Estado 62
+
+   17 expresion: operador_incre PUNTOCOMA .
+
+    $default  reduce usando la regla 17 (expresion)
+
+
+Estado 63
+
+   47 assig_st: assig_st ASIG . exp_simple
+   48         | assig_st ASIG . assig_st2
+   49         | assig_st ASIG . anidar
+
+    PARENTA  desplazar e ir al estado 88
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 94
+
+    assig_st2   ir al estado 96
+    anidar      ir al estado 97
+    exp_simple  ir al estado 98
+
+
+Estado 64
+
+   13 expresion: assig_st PUNTOCOMA .
+
+    $default  reduce usando la regla 13 (expresion)
+
+
+Estado 65
+
+   15 expresion: assig_st3 PUNTOCOMA .
+
+    $default  reduce usando la regla 15 (expresion)
+
+
+Estado 66
+
+   62 operador: MULT .
+
+    $default  reduce usando la regla 62 (operador)
+
+
+Estado 67
+
+   60 operador: SUMA .
+
+    $default  reduce usando la regla 60 (operador)
+
+
+Estado 68
+
+   61 operador: RESTA .
+
+    $default  reduce usando la regla 61 (operador)
+
+
+Estado 69
+
+   63 operador: DIV .
+
+    $default  reduce usando la regla 63 (operador)
+
+
+Estado 70
+
+   64 operador: MOD .
+
+    $default  reduce usando la regla 64 (operador)
+
+
+Estado 71
+
+   14 expresion: assig_st2 PUNTOCOMA .
+
+    $default  reduce usando la regla 14 (expresion)
+
+
+Estado 72
+
+   53 assig_st2: assig_st2 operador . asig_compleja
+
+    PARENTA  desplazar e ir al estado 88
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 94
+
+    anidar         ir al estado 99
+    asig_compleja  ir al estado 100
+    exp_simple     ir al estado 101
+
+
+Estado 73
+
+   46 assig_st: tipo ID .
+
+    $default  reduce usando la regla 46 (assig_st)
+
+
+Estado 74
+
+   40 and_ex: AND . condicional_expr
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    comparacion       ir al estado 102
+    condicional_expr  ir al estado 103
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 75
+
+   38 or_ex: OR . condicional_expr
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    comparacion       ir al estado 102
+    condicional_expr  ir al estado 104
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 76
+
+   36 not_ex: NOT . comparacion
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    comparacion       ir al estado 105
+    condicional_expr  ir al estado 106
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 77
+
+   24 comparacion: PARENTA . comparacion PARENTC
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    comparacion       ir al estado 107
+    condicional_expr  ir al estado 106
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 78
+
+   31 comparacion: ID .
+   67 exp_simple: ID .
+
+    AND        reduce usando la regla 31 (comparacion)
+    OR         reduce usando la regla 31 (comparacion)
+    PARENTC    reduce usando la regla 31 (comparacion)
+    PUNTOCOMA  reduce usando la regla 31 (comparacion)
+    $default   reduce usando la regla 67 (exp_simple)
+
+
+Estado 79
+
+   18 condicional: IF PARENTA expre . PARENTC bloque
+   19            | IF PARENTA expre . PARENTC bloque ELSE bloque
+
+    PARENTC  desplazar e ir al estado 108
+
+
+Estado 80
+
+   23 expre: comparacion .
+   37 or_ex: comparacion . OR comparacion
+   39 and_ex: comparacion . AND comparacion
+
+    AND  desplazar e ir al estado 109
+    OR   desplazar e ir al estado 110
+
+    $default  reduce usando la regla 23 (expre)
+
+
+Estado 81
+
+   22 expre: condicional_expr .
+   32 comparacion: condicional_expr .
+
+    PARENTC   reduce usando la regla 22 (expre)
+    PARENTC   [reduce usando la regla 32 (comparacion)]
+    $default  reduce usando la regla 32 (comparacion)
+
+
+Estado 82
+
+   35 condicional_expr: not_ex .
+
+    $default  reduce usando la regla 35 (condicional_expr)
+
+
+Estado 83
+
+   33 condicional_expr: or_ex .
+
+    $default  reduce usando la regla 33 (condicional_expr)
+
+
+Estado 84
+
+   34 condicional_expr: and_ex .
+
+    $default  reduce usando la regla 34 (condicional_expr)
+
+
+Estado 85
+
+   25 comparacion: exp_simple . MENORIGUAL exp_simple
+   26            | exp_simple . MAYORIGUAL exp_simple
+   27            | exp_simple . DIFERENTE exp_simple
+   28            | exp_simple . IGUAL exp_simple
+   29            | exp_simple . MENOR exp_simple
+   30            | exp_simple . MAYOR exp_simple
+
+    IGUAL       desplazar e ir al estado 111
+    MENORIGUAL  desplazar e ir al estado 112
+    MAYORIGUAL  desplazar e ir al estado 113
+    DIFERENTE   desplazar e ir al estado 114
+    MAYOR       desplazar e ir al estado 115
+    MENOR       desplazar e ir al estado 116
+
+
+Estado 86
+
+   21 ciclo: FOR PARENTA assig_st . PUNTOCOMA comparacion PUNTOCOMA assig_especial PARENTC bloque
+   47 assig_st: assig_st . ASIG exp_simple
+   48         | assig_st . ASIG assig_st2
+   49         | assig_st . ASIG anidar
+
+    ASIG       desplazar e ir al estado 63
+    PUNTOCOMA  desplazar e ir al estado 117
+
+
+Estado 87
+
+   20 ciclo: WHILE PARENTA expre . PARENTC bloque
+
+    PARENTC  desplazar e ir al estado 118
+
+
+Estado 88
+
+   54 anidar: PARENTA . asig_compleja PARENTC
+
+    PARENTA  desplazar e ir al estado 88
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 94
+
+    anidar         ir al estado 99
+    asig_compleja  ir al estado 119
+    exp_simple     ir al estado 101
+
+
+Estado 89
+
+   41 assig_especial: ID . MENMEN
+   42               | ID . MASMAS
+   43               | ID . ASIG assig_especial
+   45 operador_incre: ID . ope_espcial exp_simple
+   67 exp_simple: ID .
+
+    ASIG      desplazar e ir al estado 120
+    MASMAS    desplazar e ir al estado 52
+    MENMEN    desplazar e ir al estado 53
+    ASIGMAS   desplazar e ir al estado 54
+    ASIGMEN   desplazar e ir al estado 55
+    ASIGMULT  desplazar e ir al estado 56
+    ASIGDIV   desplazar e ir al estado 57
+
+    $default  reduce usando la regla 67 (exp_simple)
+
+    ope_espcial  ir al estado 58
+
+
+Estado 90
+
+   43 assig_especial: ID ASIG assig_especial .
+
+    $default  reduce usando la regla 43 (assig_especial)
+
+
+Estado 91
+
+   44 assig_especial: operador_incre .
+
+    $default  reduce usando la regla 44 (assig_especial)
+
+
+Estado 92
+
+   50 assig_st3: ID ASIG assig_st2 .
+   53 assig_st2: assig_st2 . operador asig_compleja
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    $default  reduce usando la regla 50 (assig_st3)
+
+    operador  ir al estado 72
+
+
+Estado 93
+
+   51 assig_st3: ID ASIG anidar .
+   55 anidar: anidar . operador anidar
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    $default  reduce usando la regla 51 (assig_st3)
+
+    operador  ir al estado 121
+
+
+Estado 94
+
+   67 exp_simple: ID .
+
+    $default  reduce usando la regla 67 (exp_simple)
+
+
+Estado 95
+
+   45 operador_incre: ID ope_espcial exp_simple .
+
+    $default  reduce usando la regla 45 (operador_incre)
+
+
+Estado 96
+
+   48 assig_st: assig_st ASIG assig_st2 .
+   53 assig_st2: assig_st2 . operador asig_compleja
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    $default  reduce usando la regla 48 (assig_st)
+
+    operador  ir al estado 72
+
+
+Estado 97
+
+   49 assig_st: assig_st ASIG anidar .
+   55 anidar: anidar . operador anidar
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    $default  reduce usando la regla 49 (assig_st)
+
+    operador  ir al estado 121
+
+
+Estado 98
+
+   47 assig_st: assig_st ASIG exp_simple .
+   52 assig_st2: exp_simple .
+
+    ASIG       reduce usando la regla 47 (assig_st)
+    ASIG       [reduce usando la regla 52 (assig_st2)]
+    PUNTOCOMA  reduce usando la regla 47 (assig_st)
+    PUNTOCOMA  [reduce usando la regla 52 (assig_st2)]
+    $default   reduce usando la regla 52 (assig_st2)
+
+
+Estado 99
+
+   55 anidar: anidar . operador anidar
+   58 asig_compleja: anidar . operador asig_compleja
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    operador  ir al estado 122
+
+
+Estado 100
+
+   53 assig_st2: assig_st2 operador asig_compleja .
+   57 asig_compleja: asig_compleja . operador asig_compleja
+   59              | asig_compleja . operador anidar
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    MULT      [reduce usando la regla 53 (assig_st2)]
+    SUMA      [reduce usando la regla 53 (assig_st2)]
+    RESTA     [reduce usando la regla 53 (assig_st2)]
+    DIV       [reduce usando la regla 53 (assig_st2)]
+    MOD       [reduce usando la regla 53 (assig_st2)]
+    $default  reduce usando la regla 53 (assig_st2)
+
+    operador  ir al estado 123
+
+
+Estado 101
+
+   56 asig_compleja: exp_simple .
+
+    $default  reduce usando la regla 56 (asig_compleja)
+
+
+Estado 102
+
+   37 or_ex: comparacion . OR comparacion
+   39 and_ex: comparacion . AND comparacion
+
+    AND  desplazar e ir al estado 109
+    OR   desplazar e ir al estado 110
+
+
+Estado 103
+
+   32 comparacion: condicional_expr .
+   40 and_ex: AND condicional_expr .
+
+    AND        reduce usando la regla 32 (comparacion)
+    AND        [reduce usando la regla 40 (and_ex)]
+    OR         reduce usando la regla 32 (comparacion)
+    OR         [reduce usando la regla 40 (and_ex)]
+    PARENTC    reduce usando la regla 40 (and_ex)
+    PUNTOCOMA  reduce usando la regla 40 (and_ex)
+    $default   reduce usando la regla 32 (comparacion)
+
+
+Estado 104
+
+   32 comparacion: condicional_expr .
+   38 or_ex: OR condicional_expr .
+
+    AND        reduce usando la regla 32 (comparacion)
+    AND        [reduce usando la regla 38 (or_ex)]
+    OR         reduce usando la regla 32 (comparacion)
+    OR         [reduce usando la regla 38 (or_ex)]
+    PARENTC    reduce usando la regla 38 (or_ex)
+    PUNTOCOMA  reduce usando la regla 38 (or_ex)
+    $default   reduce usando la regla 32 (comparacion)
+
+
+Estado 105
+
+   36 not_ex: NOT comparacion .
+   37 or_ex: comparacion . OR comparacion
+   39 and_ex: comparacion . AND comparacion
+
+    $default  reduce usando la regla 36 (not_ex)
+
+
+Estado 106
+
+   32 comparacion: condicional_expr .
+
+    $default  reduce usando la regla 32 (comparacion)
+
+
+Estado 107
+
+   24 comparacion: PARENTA comparacion . PARENTC
+   37 or_ex: comparacion . OR comparacion
+   39 and_ex: comparacion . AND comparacion
+
+    AND      desplazar e ir al estado 109
+    OR       desplazar e ir al estado 110
+    PARENTC  desplazar e ir al estado 124
+
+
+Estado 108
+
+   18 condicional: IF PARENTA expre PARENTC . bloque
+   19            | IF PARENTA expre PARENTC . bloque ELSE bloque
+
+    LLAVEA  desplazar e ir al estado 22
+
+    bloque  ir al estado 125
+
+
+Estado 109
+
+   39 and_ex: comparacion AND . comparacion
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    comparacion       ir al estado 126
+    condicional_expr  ir al estado 106
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 110
+
+   37 or_ex: comparacion OR . comparacion
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    comparacion       ir al estado 127
+    condicional_expr  ir al estado 106
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 111
+
+   28 comparacion: exp_simple IGUAL . exp_simple
+
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 94
+
+    exp_simple  ir al estado 128
+
+
+Estado 112
+
+   25 comparacion: exp_simple MENORIGUAL . exp_simple
+
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 94
+
+    exp_simple  ir al estado 129
+
+
+Estado 113
+
+   26 comparacion: exp_simple MAYORIGUAL . exp_simple
+
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 94
+
+    exp_simple  ir al estado 130
+
+
+Estado 114
+
+   27 comparacion: exp_simple DIFERENTE . exp_simple
+
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 94
+
+    exp_simple  ir al estado 131
+
+
+Estado 115
+
+   30 comparacion: exp_simple MAYOR . exp_simple
+
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 94
+
+    exp_simple  ir al estado 132
+
+
+Estado 116
+
+   29 comparacion: exp_simple MENOR . exp_simple
+
+    ENTERO  desplazar e ir al estado 32
+    CADENA  desplazar e ir al estado 33
+    REAL    desplazar e ir al estado 34
+    ID      desplazar e ir al estado 94
+
+    exp_simple  ir al estado 133
+
+
+Estado 117
+
+   21 ciclo: FOR PARENTA assig_st PUNTOCOMA . comparacion PUNTOCOMA assig_especial PARENTC bloque
+
+    AND      desplazar e ir al estado 74
+    OR       desplazar e ir al estado 75
+    NOT      desplazar e ir al estado 76
+    PARENTA  desplazar e ir al estado 77
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 78
+
+    comparacion       ir al estado 134
+    condicional_expr  ir al estado 106
+    not_ex            ir al estado 82
+    or_ex             ir al estado 83
+    and_ex            ir al estado 84
+    exp_simple        ir al estado 85
+
+
+Estado 118
+
+   20 ciclo: WHILE PARENTA expre PARENTC . bloque
+
+    LLAVEA  desplazar e ir al estado 22
+
+    bloque  ir al estado 135
+
+
+Estado 119
+
+   54 anidar: PARENTA asig_compleja . PARENTC
+   57 asig_compleja: asig_compleja . operador asig_compleja
+   59              | asig_compleja . operador anidar
+
+    MULT     desplazar e ir al estado 66
+    SUMA     desplazar e ir al estado 67
+    RESTA    desplazar e ir al estado 68
+    DIV      desplazar e ir al estado 69
+    MOD      desplazar e ir al estado 70
+    PARENTC  desplazar e ir al estado 136
+
+    operador  ir al estado 123
+
+
+Estado 120
+
+   43 assig_especial: ID ASIG . assig_especial
+
+    ID  desplazar e ir al estado 137
+
+    assig_especial  ir al estado 90
+    operador_incre  ir al estado 91
+
+
+Estado 121
+
+   55 anidar: anidar operador . anidar
+
+    PARENTA  desplazar e ir al estado 88
+
+    anidar  ir al estado 138
+
+
+Estado 122
+
+   55 anidar: anidar operador . anidar
+   58 asig_compleja: anidar operador . asig_compleja
+
+    PARENTA  desplazar e ir al estado 88
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 94
+
+    anidar         ir al estado 139
+    asig_compleja  ir al estado 140
+    exp_simple     ir al estado 101
+
+
+Estado 123
+
+   57 asig_compleja: asig_compleja operador . asig_compleja
+   59              | asig_compleja operador . anidar
+
+    PARENTA  desplazar e ir al estado 88
+    ENTERO   desplazar e ir al estado 32
+    CADENA   desplazar e ir al estado 33
+    REAL     desplazar e ir al estado 34
+    ID       desplazar e ir al estado 94
+
+    anidar         ir al estado 141
+    asig_compleja  ir al estado 142
+    exp_simple     ir al estado 101
+
+
+Estado 124
+
+   24 comparacion: PARENTA comparacion PARENTC .
+
+    $default  reduce usando la regla 24 (comparacion)
+
+
+Estado 125
+
+   18 condicional: IF PARENTA expre PARENTC bloque .
+   19            | IF PARENTA expre PARENTC bloque . ELSE bloque
+
+    ELSE  desplazar e ir al estado 143
+
+    $default  reduce usando la regla 18 (condicional)
+
+
+Estado 126
+
+   37 or_ex: comparacion . OR comparacion
+   39 and_ex: comparacion . AND comparacion
+   39       | comparacion AND comparacion .
+
+    $default  reduce usando la regla 39 (and_ex)
+
+
+Estado 127
+
+   37 or_ex: comparacion . OR comparacion
+   37      | comparacion OR comparacion .
+   39 and_ex: comparacion . AND comparacion
+
+    $default  reduce usando la regla 37 (or_ex)
+
+
+Estado 128
+
+   28 comparacion: exp_simple IGUAL exp_simple .
+
+    $default  reduce usando la regla 28 (comparacion)
+
+
+Estado 129
+
+   25 comparacion: exp_simple MENORIGUAL exp_simple .
+
+    $default  reduce usando la regla 25 (comparacion)
+
+
+Estado 130
+
+   26 comparacion: exp_simple MAYORIGUAL exp_simple .
+
+    $default  reduce usando la regla 26 (comparacion)
+
+
+Estado 131
+
+   27 comparacion: exp_simple DIFERENTE exp_simple .
+
+    $default  reduce usando la regla 27 (comparacion)
+
+
+Estado 132
+
+   30 comparacion: exp_simple MAYOR exp_simple .
+
+    $default  reduce usando la regla 30 (comparacion)
+
+
+Estado 133
+
+   29 comparacion: exp_simple MENOR exp_simple .
+
+    $default  reduce usando la regla 29 (comparacion)
+
+
+Estado 134
+
+   21 ciclo: FOR PARENTA assig_st PUNTOCOMA comparacion . PUNTOCOMA assig_especial PARENTC bloque
+   37 or_ex: comparacion . OR comparacion
+   39 and_ex: comparacion . AND comparacion
+
+    AND        desplazar e ir al estado 109
+    OR         desplazar e ir al estado 110
+    PUNTOCOMA  desplazar e ir al estado 144
+
+
+Estado 135
+
+   20 ciclo: WHILE PARENTA expre PARENTC bloque .
+
+    $default  reduce usando la regla 20 (ciclo)
+
+
+Estado 136
+
+   54 anidar: PARENTA asig_compleja PARENTC .
+
+    $default  reduce usando la regla 54 (anidar)
+
+
+Estado 137
+
+   41 assig_especial: ID . MENMEN
+   42               | ID . MASMAS
+   43               | ID . ASIG assig_especial
+   45 operador_incre: ID . ope_espcial exp_simple
+
+    ASIG      desplazar e ir al estado 120
+    MASMAS    desplazar e ir al estado 52
+    MENMEN    desplazar e ir al estado 53
+    ASIGMAS   desplazar e ir al estado 54
+    ASIGMEN   desplazar e ir al estado 55
+    ASIGMULT  desplazar e ir al estado 56
+    ASIGDIV   desplazar e ir al estado 57
+
+    ope_espcial  ir al estado 58
+
+
+Estado 138
+
+   55 anidar: anidar . operador anidar
+   55       | anidar operador anidar .
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    MULT      [reduce usando la regla 55 (anidar)]
+    SUMA      [reduce usando la regla 55 (anidar)]
+    RESTA     [reduce usando la regla 55 (anidar)]
+    DIV       [reduce usando la regla 55 (anidar)]
+    MOD       [reduce usando la regla 55 (anidar)]
+    $default  reduce usando la regla 55 (anidar)
+
+    operador  ir al estado 121
+
+
+Estado 139
+
+   55 anidar: anidar . operador anidar
+   55       | anidar operador anidar .
+   58 asig_compleja: anidar . operador asig_compleja
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    MULT      [reduce usando la regla 55 (anidar)]
+    SUMA      [reduce usando la regla 55 (anidar)]
+    RESTA     [reduce usando la regla 55 (anidar)]
+    DIV       [reduce usando la regla 55 (anidar)]
+    MOD       [reduce usando la regla 55 (anidar)]
+    $default  reduce usando la regla 55 (anidar)
+
+    operador  ir al estado 122
+
+
+Estado 140
+
+   57 asig_compleja: asig_compleja . operador asig_compleja
+   58              | anidar operador asig_compleja .
+   59              | asig_compleja . operador anidar
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    MULT      [reduce usando la regla 58 (asig_compleja)]
+    SUMA      [reduce usando la regla 58 (asig_compleja)]
+    RESTA     [reduce usando la regla 58 (asig_compleja)]
+    DIV       [reduce usando la regla 58 (asig_compleja)]
+    MOD       [reduce usando la regla 58 (asig_compleja)]
+    $default  reduce usando la regla 58 (asig_compleja)
+
+    operador  ir al estado 123
+
+
+Estado 141
+
+   55 anidar: anidar . operador anidar
+   58 asig_compleja: anidar . operador asig_compleja
+   59              | asig_compleja operador anidar .
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    MULT      [reduce usando la regla 59 (asig_compleja)]
+    SUMA      [reduce usando la regla 59 (asig_compleja)]
+    RESTA     [reduce usando la regla 59 (asig_compleja)]
+    DIV       [reduce usando la regla 59 (asig_compleja)]
+    MOD       [reduce usando la regla 59 (asig_compleja)]
+    $default  reduce usando la regla 59 (asig_compleja)
+
+    operador  ir al estado 122
+
+
+Estado 142
+
+   57 asig_compleja: asig_compleja . operador asig_compleja
+   57              | asig_compleja operador asig_compleja .
+   59              | asig_compleja . operador anidar
+
+    MULT   desplazar e ir al estado 66
+    SUMA   desplazar e ir al estado 67
+    RESTA  desplazar e ir al estado 68
+    DIV    desplazar e ir al estado 69
+    MOD    desplazar e ir al estado 70
+
+    MULT      [reduce usando la regla 57 (asig_compleja)]
+    SUMA      [reduce usando la regla 57 (asig_compleja)]
+    RESTA     [reduce usando la regla 57 (asig_compleja)]
+    DIV       [reduce usando la regla 57 (asig_compleja)]
+    MOD       [reduce usando la regla 57 (asig_compleja)]
+    $default  reduce usando la regla 57 (asig_compleja)
+
+    operador  ir al estado 123
+
+
+Estado 143
+
+   19 condicional: IF PARENTA expre PARENTC bloque ELSE . bloque
+
+    LLAVEA  desplazar e ir al estado 22
+
+    bloque  ir al estado 145
+
+
+Estado 144
+
+   21 ciclo: FOR PARENTA assig_st PUNTOCOMA comparacion PUNTOCOMA . assig_especial PARENTC bloque
+
+    ID  desplazar e ir al estado 137
+
+    assig_especial  ir al estado 146
+    operador_incre  ir al estado 91
+
+
+Estado 145
+
+   19 condicional: IF PARENTA expre PARENTC bloque ELSE bloque .
+
+    $default  reduce usando la regla 19 (condicional)
+
+
+Estado 146
+
+   21 ciclo: FOR PARENTA assig_st PUNTOCOMA comparacion PUNTOCOMA assig_especial . PARENTC bloque
+
+    PARENTC  desplazar e ir al estado 147
+
+
+Estado 147
+
+   21 ciclo: FOR PARENTA assig_st PUNTOCOMA comparacion PUNTOCOMA assig_especial PARENTC . bloque
+
+    LLAVEA  desplazar e ir al estado 22
+
+    bloque  ir al estado 148
+
+
+Estado 148
+
+   21 ciclo: FOR PARENTA assig_st PUNTOCOMA comparacion PUNTOCOMA assig_especial PARENTC bloque .
+
+    $default  reduce usando la regla 21 (ciclo)

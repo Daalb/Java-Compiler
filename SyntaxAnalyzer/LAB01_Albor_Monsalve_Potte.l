@@ -24,7 +24,7 @@ espacio     " "
 "while"     { return(WHILE);}
 "double"    { return(DOUBLE);}
 "int"       {  return(INT);}
-"string"    { return(STRING);}
+"String"    { return(STRING);}
 "char"      {  return(CHAR);}
 "new"       { return(NEW);}
 "public"    {  return(PUBLIC);}
