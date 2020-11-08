@@ -66,7 +66,7 @@ espacio     " "
 {Cte-cadena}    { return(CADENA);}
 
 
-{comentario}    { return(COMENTARIO);}
+{comentario}    { }
 {Cte-real}      { return(REAL);}
 
 

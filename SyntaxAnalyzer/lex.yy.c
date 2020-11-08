@@ -997,7 +997,7 @@ YY_RULE_SETUP
 case 41:
 YY_RULE_SETUP
 #line 69 "LAB01_Albor_Monsalve_Potte.l"
-{ return(COMENTARIO);}
+{ }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
