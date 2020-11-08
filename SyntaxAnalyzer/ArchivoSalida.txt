@@ -1,1 +1,0 @@
-La línea 3 tiene un error de tipo: syntax error
