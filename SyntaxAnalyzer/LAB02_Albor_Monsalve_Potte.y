@@ -105,6 +105,7 @@ assig_st	:	tipo ID
 			| assig_st ASIG exp_simple
 			| assig_st ASIG assig_st2
 			| assig_st ASIG anidar
+			| assig_st ',' assig_st
 			;
 
 assig_st3	:	ID ASIG assig_st2

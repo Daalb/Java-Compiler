@@ -68,6 +68,7 @@ espacio     " "
 
 {comentario}    { }
 {Cte-real}      { return(REAL);}
+","              {return (',');}
 
 
 "&&"          	{ return(AND);}
