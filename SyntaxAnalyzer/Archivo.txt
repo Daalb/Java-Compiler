@@ -1,8 +1,11 @@
 public class AnyThing{
     public static void main (String[] args){
     float x==2.4;
+    int vec [] = new int [20];
+    vec [1] = vec [2];
     int yy=0;
     float lo;
+    int j,m;
     j = 2*y++5;
     }
 }

@@ -57,6 +57,8 @@ expresion	:		assig_st PUNTOCOMA
 				|	assig_st3 PUNTOCOMA
 				|	assig_especial PUNTOCOMA
 				|	operador_incre PUNTOCOMA
+				|	asig_vec PUNTOCOMA
+				|	declaraciones PUNTOCOMA
 				;
 
 condicional	:	IF PARENTA expre PARENTC bloque
@@ -98,21 +100,43 @@ and_ex	:	comparacion AND	comparacion
 		;
 
 assig_especial	:	ID MENMEN 
-				|	ID MASMAS
-				|	ID ASIG assig_especial 
+				|	ID MASMAS 
 				|	operador_incre
+				|	ID size	
 				;
 
 operador_incre	:	ID ope_espcial exp_simple
 				;
 
+declaraciones	:	tipo ID
+			| declaraciones ',' ID
+		;
+
+
 assig_st	:	tipo ID	
 			| assig_st ASIG exp_simple
 			| assig_st ASIG assig_st2
 			| assig_st ASIG anidar
+			| assig_st dcl_vector 
 			| assig_st ',' assig_st
 			;
 
+dcl_vector		: corchetes dcl_vector size
+			|	ASIG NEW tipo
+			;
+
+asig_vec	:	ID size
+			|	ID size ASIG exp_simple
+			|	ID size ASIG assig_especial
+			;
+
+size            :       CORCHETEA ENTERO CORCHETEC
+			| size CORCHETEA ENTERO CORCHETEC
+			;
+
+corchetes	:	CORCHETEA CORCHETEC
+			;
+        
 assig_st3	:	ID ASIG assig_st2
 			|	ID ASIG anidar
 			;
