@@ -1,2 +1,4 @@
 La línea 19 tiene un error de tipo: syntax error
+La línea 22 tiene un error de tipo: syntax error
 La línea 25 tiene un error de tipo: syntax error
+La línea 26 tiene un error de tipo: syntax error

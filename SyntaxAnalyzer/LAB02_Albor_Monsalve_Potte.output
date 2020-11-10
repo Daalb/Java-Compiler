@@ -1,22 +1,22 @@
-Terminals unused in grammar
+Terminales no usados en la gramática
 
     COMENTARIO
 
 
-State 14 conflicts: 1 shift/reduce
-State 15 conflicts: 10 shift/reduce
-State 32 conflicts: 1 shift/reduce
-State 33 conflicts: 13 reduce/reduce
-State 48 conflicts: 1 shift/reduce
-State 82 conflicts: 1 reduce/reduce
-State 95 conflicts: 1 reduce/reduce
-State 115 conflicts: 2 reduce/reduce
-State 116 conflicts: 2 reduce/reduce
-State 150 conflicts: 1 reduce/reduce
-State 155 conflicts: 1 shift/reduce
+Estado 14 conflictos: 1 desplazamiento/reducción
+Estado 15 conflictos: 10 desplazamiento/reducción
+Estado 32 conflictos: 1 desplazamiento/reducción
+Estado 33 conflictos: 13 reducción/reducción
+Estado 48 conflictos: 1 desplazamiento/reducción
+Estado 82 conflictos: 1 reducción/reducción
+Estado 95 conflictos: 1 reducción/reducción
+Estado 115 conflictos: 2 reducción/reducción
+Estado 116 conflictos: 2 reducción/reducción
+Estado 150 conflictos: 1 reducción/reducción
+Estado 155 conflictos: 1 desplazamiento/reducción
 
 
-Grammar
+Gramática
 
     0 $accept: init $end
 
@@ -164,7 +164,7 @@ Grammar
   105 asig_dec_aum: ID ASIG idaumdec
 
 
-Terminals, with rules where they appear
+Terminales con las reglas donde aparecen
 
     $end (0) 0
     '(' (40) 58
@@ -221,7 +221,7 @@ Terminals, with rules where they appear
     ID (303) 3 4 5 9 42 52 53 54 55 56 57 61 62 68 70 74 75 76 77 78 81 82 91 103 104 105
 
 
-Nonterminals, with rules where they appear
+No terminales con las reglas donde aparecen
 
     $accept (54)
         on left: 0
@@ -341,156 +341,156 @@ Nonterminals, with rules where they appear
         on right: 23
 
 
-State 0
+Estado 0
 
     0 $accept: . init $end
 
-    error   shift, and go to state 1
-    IF      shift, and go to state 2
-    FOR     shift, and go to state 3
-    WHILE   shift, and go to state 4
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    PUBLIC  shift, and go to state 9
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    ID      shift, and go to state 12
+    error   desplazar e ir al estado 1
+    IF      desplazar e ir al estado 2
+    FOR     desplazar e ir al estado 3
+    WHILE   desplazar e ir al estado 4
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    PUBLIC  desplazar e ir al estado 9
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    ID      desplazar e ir al estado 12
 
-    init                go to state 13
-    funct_init          go to state 14
-    contenido           go to state 15
-    statement           go to state 16
-    expresion           go to state 17
-    condicional         go to state 18
-    ciclo               go to state 19
-    asig_simple         go to state 20
-    asig_oper           go to state 21
-    asig_opernotipo     go to state 22
-    asig_oper2          go to state 23
-    declaracion         go to state 24
-    iniciar_vec         go to state 25
-    asig_vec            go to state 26
-    asig_newvalorvec    go to state 27
-    tipo                go to state 28
-    aumento_decremento  go to state 29
-    idaumdec            go to state 30
-    asig_dec_aum        go to state 31
+    init                ir al estado 13
+    funct_init          ir al estado 14
+    contenido           ir al estado 15
+    statement           ir al estado 16
+    expresion           ir al estado 17
+    condicional         ir al estado 18
+    ciclo               ir al estado 19
+    asig_simple         ir al estado 20
+    asig_oper           ir al estado 21
+    asig_opernotipo     ir al estado 22
+    asig_oper2          ir al estado 23
+    declaracion         ir al estado 24
+    iniciar_vec         ir al estado 25
+    asig_vec            ir al estado 26
+    asig_newvalorvec    ir al estado 27
+    tipo                ir al estado 28
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 30
+    asig_dec_aum        ir al estado 31
 
 
-State 1
+Estado 1
 
     6 funct_init: error . funct_init
    15 contenido: error . statement
 
-    error   shift, and go to state 1
-    IF      shift, and go to state 2
-    FOR     shift, and go to state 3
-    WHILE   shift, and go to state 4
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    PUBLIC  shift, and go to state 9
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    ID      shift, and go to state 12
+    error   desplazar e ir al estado 1
+    IF      desplazar e ir al estado 2
+    FOR     desplazar e ir al estado 3
+    WHILE   desplazar e ir al estado 4
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    PUBLIC  desplazar e ir al estado 9
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    ID      desplazar e ir al estado 12
 
-    funct_init          go to state 32
-    contenido           go to state 15
-    statement           go to state 33
-    expresion           go to state 17
-    condicional         go to state 18
-    ciclo               go to state 19
-    asig_simple         go to state 20
-    asig_oper           go to state 21
-    asig_opernotipo     go to state 22
-    asig_oper2          go to state 23
-    declaracion         go to state 24
-    iniciar_vec         go to state 25
-    asig_vec            go to state 26
-    asig_newvalorvec    go to state 27
-    tipo                go to state 28
-    aumento_decremento  go to state 29
-    idaumdec            go to state 30
-    asig_dec_aum        go to state 31
+    funct_init          ir al estado 32
+    contenido           ir al estado 15
+    statement           ir al estado 33
+    expresion           ir al estado 17
+    condicional         ir al estado 18
+    ciclo               ir al estado 19
+    asig_simple         ir al estado 20
+    asig_oper           ir al estado 21
+    asig_opernotipo     ir al estado 22
+    asig_oper2          ir al estado 23
+    declaracion         ir al estado 24
+    iniciar_vec         ir al estado 25
+    asig_vec            ir al estado 26
+    asig_newvalorvec    ir al estado 27
+    tipo                ir al estado 28
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 30
+    asig_dec_aum        ir al estado 31
 
 
-State 2
+Estado 2
 
    29 condicional: IF . PARENTA expre PARENTC bloque
    30            | IF . PARENTA expre PARENTC bloque ELSE bloque
 
-    PARENTA  shift, and go to state 34
+    PARENTA  desplazar e ir al estado 34
 
 
-State 3
+Estado 3
 
    32 ciclo: FOR . PARENTA asig_simple PUNTOCOMA comparacion PUNTOCOMA idaumdec PARENTC bloque
 
-    PARENTA  shift, and go to state 35
+    PARENTA  desplazar e ir al estado 35
 
 
-State 4
+Estado 4
 
    31 ciclo: WHILE . PARENTA expre PARENTC bloque
 
-    PARENTA  shift, and go to state 36
+    PARENTA  desplazar e ir al estado 36
 
 
-State 5
+Estado 5
 
    95 tipo: DOUBLE .
 
-    $default  reduce using rule 95 (tipo)
+    $default  reduce usando la regla 95 (tipo)
 
 
-State 6
+Estado 6
 
    93 tipo: INT .
 
-    $default  reduce using rule 93 (tipo)
+    $default  reduce usando la regla 93 (tipo)
 
 
-State 7
+Estado 7
 
    94 tipo: STRING .
 
-    $default  reduce using rule 94 (tipo)
+    $default  reduce usando la regla 94 (tipo)
 
 
-State 8
+Estado 8
 
    96 tipo: CHAR .
 
-    $default  reduce using rule 96 (tipo)
+    $default  reduce usando la regla 96 (tipo)
 
 
-State 9
+Estado 9
 
     3 funct_init: PUBLIC . CLASS ID LLAVEA func_main LLAVEC
     4           | PUBLIC . CLASS ID LLAVEA LLAVEC
     5           | PUBLIC . CLASS ID LLAVEA error LLAVEC
 
-    CLASS  shift, and go to state 37
+    CLASS  desplazar e ir al estado 37
 
 
-State 10
+Estado 10
 
   101 aumento_decremento: MASMAS .
 
-    $default  reduce using rule 101 (aumento_decremento)
+    $default  reduce usando la regla 101 (aumento_decremento)
 
 
-State 11
+Estado 11
 
   102 aumento_decremento: MENMEN .
 
-    $default  reduce using rule 102 (aumento_decremento)
+    $default  reduce usando la regla 102 (aumento_decremento)
 
 
-State 12
+Estado 12
 
    52 asig_simple: ID . ASIG exp_simple
    56 asig_opernotipo: ID . ASIG operacionCompleja
@@ -501,216 +501,216 @@ State 12
   103 idaumdec: ID . aumento_decremento
   105 asig_dec_aum: ID . ASIG idaumdec
 
-    ASIG       shift, and go to state 38
-    MASMAS     shift, and go to state 10
-    MENMEN     shift, and go to state 11
-    ASIGMAS    shift, and go to state 39
-    ASIGMEN    shift, and go to state 40
-    ASIGMULT   shift, and go to state 41
-    ASIGDIV    shift, and go to state 42
-    CORCHETEA  shift, and go to state 43
+    ASIG       desplazar e ir al estado 38
+    MASMAS     desplazar e ir al estado 10
+    MENMEN     desplazar e ir al estado 11
+    ASIGMAS    desplazar e ir al estado 39
+    ASIGMEN    desplazar e ir al estado 40
+    ASIGMULT   desplazar e ir al estado 41
+    ASIGDIV    desplazar e ir al estado 42
+    CORCHETEA  desplazar e ir al estado 43
 
-    size                go to state 44
-    ope_especial        go to state 45
-    aumento_decremento  go to state 46
+    size                ir al estado 44
+    ope_especial        ir al estado 45
+    aumento_decremento  ir al estado 46
 
 
-State 13
+Estado 13
 
     0 $accept: init . $end
     2 init: init . funct_init
 
-    $end    shift, and go to state 47
-    error   shift, and go to state 1
-    IF      shift, and go to state 2
-    FOR     shift, and go to state 3
-    WHILE   shift, and go to state 4
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    PUBLIC  shift, and go to state 9
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    ID      shift, and go to state 12
+    $end    desplazar e ir al estado 47
+    error   desplazar e ir al estado 1
+    IF      desplazar e ir al estado 2
+    FOR     desplazar e ir al estado 3
+    WHILE   desplazar e ir al estado 4
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    PUBLIC  desplazar e ir al estado 9
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    ID      desplazar e ir al estado 12
 
-    funct_init          go to state 48
-    contenido           go to state 15
-    statement           go to state 16
-    expresion           go to state 17
-    condicional         go to state 18
-    ciclo               go to state 19
-    asig_simple         go to state 20
-    asig_oper           go to state 21
-    asig_opernotipo     go to state 22
-    asig_oper2          go to state 23
-    declaracion         go to state 24
-    iniciar_vec         go to state 25
-    asig_vec            go to state 26
-    asig_newvalorvec    go to state 27
-    tipo                go to state 28
-    aumento_decremento  go to state 29
-    idaumdec            go to state 30
-    asig_dec_aum        go to state 31
+    funct_init          ir al estado 48
+    contenido           ir al estado 15
+    statement           ir al estado 16
+    expresion           ir al estado 17
+    condicional         ir al estado 18
+    ciclo               ir al estado 19
+    asig_simple         ir al estado 20
+    asig_oper           ir al estado 21
+    asig_opernotipo     ir al estado 22
+    asig_oper2          ir al estado 23
+    declaracion         ir al estado 24
+    iniciar_vec         ir al estado 25
+    asig_vec            ir al estado 26
+    asig_newvalorvec    ir al estado 27
+    tipo                ir al estado 28
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 30
+    asig_dec_aum        ir al estado 31
 
 
-State 14
+Estado 14
 
     1 init: funct_init .
     7 funct_init: funct_init . error
 
-    error  shift, and go to state 49
+    error  desplazar e ir al estado 49
 
-    $end    reduce using rule 1 (init)
-    error   [reduce using rule 1 (init)]
-    IF      reduce using rule 1 (init)
-    FOR     reduce using rule 1 (init)
-    WHILE   reduce using rule 1 (init)
-    DOUBLE  reduce using rule 1 (init)
-    INT     reduce using rule 1 (init)
-    STRING  reduce using rule 1 (init)
-    CHAR    reduce using rule 1 (init)
-    PUBLIC  reduce using rule 1 (init)
-    MASMAS  reduce using rule 1 (init)
-    MENMEN  reduce using rule 1 (init)
-    ID      reduce using rule 1 (init)
+    $end    reduce usando la regla 1 (init)
+    error   [reduce usando la regla 1 (init)]
+    IF      reduce usando la regla 1 (init)
+    FOR     reduce usando la regla 1 (init)
+    WHILE   reduce usando la regla 1 (init)
+    DOUBLE  reduce usando la regla 1 (init)
+    INT     reduce usando la regla 1 (init)
+    STRING  reduce usando la regla 1 (init)
+    CHAR    reduce usando la regla 1 (init)
+    PUBLIC  reduce usando la regla 1 (init)
+    MASMAS  reduce usando la regla 1 (init)
+    MENMEN  reduce usando la regla 1 (init)
+    ID      reduce usando la regla 1 (init)
 
 
-State 15
+Estado 15
 
     8 funct_init: contenido .
    14 contenido: contenido . statement
 
-    IF      shift, and go to state 2
-    FOR     shift, and go to state 3
-    WHILE   shift, and go to state 4
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    ID      shift, and go to state 12
+    IF      desplazar e ir al estado 2
+    FOR     desplazar e ir al estado 3
+    WHILE   desplazar e ir al estado 4
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    ID      desplazar e ir al estado 12
 
-    IF        [reduce using rule 8 (funct_init)]
-    FOR       [reduce using rule 8 (funct_init)]
-    WHILE     [reduce using rule 8 (funct_init)]
-    DOUBLE    [reduce using rule 8 (funct_init)]
-    INT       [reduce using rule 8 (funct_init)]
-    STRING    [reduce using rule 8 (funct_init)]
-    CHAR      [reduce using rule 8 (funct_init)]
-    MASMAS    [reduce using rule 8 (funct_init)]
-    MENMEN    [reduce using rule 8 (funct_init)]
-    ID        [reduce using rule 8 (funct_init)]
-    $default  reduce using rule 8 (funct_init)
+    IF        [reduce usando la regla 8 (funct_init)]
+    FOR       [reduce usando la regla 8 (funct_init)]
+    WHILE     [reduce usando la regla 8 (funct_init)]
+    DOUBLE    [reduce usando la regla 8 (funct_init)]
+    INT       [reduce usando la regla 8 (funct_init)]
+    STRING    [reduce usando la regla 8 (funct_init)]
+    CHAR      [reduce usando la regla 8 (funct_init)]
+    MASMAS    [reduce usando la regla 8 (funct_init)]
+    MENMEN    [reduce usando la regla 8 (funct_init)]
+    ID        [reduce usando la regla 8 (funct_init)]
+    $default  reduce usando la regla 8 (funct_init)
 
-    statement           go to state 50
-    expresion           go to state 17
-    condicional         go to state 18
-    ciclo               go to state 19
-    asig_simple         go to state 20
-    asig_oper           go to state 21
-    asig_opernotipo     go to state 22
-    asig_oper2          go to state 23
-    declaracion         go to state 24
-    iniciar_vec         go to state 25
-    asig_vec            go to state 26
-    asig_newvalorvec    go to state 27
-    tipo                go to state 28
-    aumento_decremento  go to state 29
-    idaumdec            go to state 30
-    asig_dec_aum        go to state 31
+    statement           ir al estado 50
+    expresion           ir al estado 17
+    condicional         ir al estado 18
+    ciclo               ir al estado 19
+    asig_simple         ir al estado 20
+    asig_oper           ir al estado 21
+    asig_opernotipo     ir al estado 22
+    asig_oper2          ir al estado 23
+    declaracion         ir al estado 24
+    iniciar_vec         ir al estado 25
+    asig_vec            ir al estado 26
+    asig_newvalorvec    ir al estado 27
+    tipo                ir al estado 28
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 30
+    asig_dec_aum        ir al estado 31
 
 
-State 16
+Estado 16
 
    13 contenido: statement .
 
-    $default  reduce using rule 13 (contenido)
+    $default  reduce usando la regla 13 (contenido)
 
 
-State 17
+Estado 17
 
    16 statement: expresion .
 
-    $default  reduce using rule 16 (statement)
+    $default  reduce usando la regla 16 (statement)
 
 
-State 18
+Estado 18
 
    17 statement: condicional .
 
-    $default  reduce using rule 17 (statement)
+    $default  reduce usando la regla 17 (statement)
 
 
-State 19
+Estado 19
 
    18 statement: ciclo .
 
-    $default  reduce using rule 18 (statement)
+    $default  reduce usando la regla 18 (statement)
 
 
-State 20
+Estado 20
 
    20 expresion: asig_simple . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 51
+    PUNTOCOMA  desplazar e ir al estado 51
 
 
-State 21
+Estado 21
 
    21 expresion: asig_oper . PUNTOCOMA
    55 asig_oper: asig_oper . ',' tipo ID ASIG operacionCompleja
 
-    PUNTOCOMA  shift, and go to state 52
-    ','        shift, and go to state 53
+    PUNTOCOMA  desplazar e ir al estado 52
+    ','        desplazar e ir al estado 53
 
 
-State 22
+Estado 22
 
    26 expresion: asig_opernotipo . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 54
+    PUNTOCOMA  desplazar e ir al estado 54
 
 
-State 23
+Estado 23
 
    25 expresion: asig_oper2 . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 55
+    PUNTOCOMA  desplazar e ir al estado 55
 
 
-State 24
+Estado 24
 
    24 expresion: declaracion . PUNTOCOMA
    62 declaracion: declaracion . ',' ID
 
-    PUNTOCOMA  shift, and go to state 56
-    ','        shift, and go to state 57
+    PUNTOCOMA  desplazar e ir al estado 56
+    ','        desplazar e ir al estado 57
 
 
-State 25
+Estado 25
 
    19 expresion: iniciar_vec . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 58
+    PUNTOCOMA  desplazar e ir al estado 58
 
 
-State 26
+Estado 26
 
    27 expresion: asig_vec . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 59
+    PUNTOCOMA  desplazar e ir al estado 59
 
 
-State 27
+Estado 27
 
    28 expresion: asig_newvalorvec . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 60
+    PUNTOCOMA  desplazar e ir al estado 60
 
 
-State 28
+Estado 28
 
    53 asig_simple: tipo . ID ASIG exp_simple
    54 asig_oper: tipo . ID ASIG operacionCompleja
@@ -719,220 +719,220 @@ State 28
    77 asig_newvalorvec: tipo . ID size ASIG ID size
    78                 | tipo . ID size ASIG operacionCompleja
 
-    CORCHETEA  shift, and go to state 61
-    ID         shift, and go to state 62
-    '{'        shift, and go to state 63
+    CORCHETEA  desplazar e ir al estado 61
+    ID         desplazar e ir al estado 62
+    '{'        desplazar e ir al estado 63
 
-    dcls_vector  go to state 64
-    dcl_vector1  go to state 65
-    dcl_vector2  go to state 66
-    dcl_vector3  go to state 67
-    corchetes    go to state 68
+    dcls_vector  ir al estado 64
+    dcl_vector1  ir al estado 65
+    dcl_vector2  ir al estado 66
+    dcl_vector3  ir al estado 67
+    corchetes    ir al estado 68
 
 
-State 29
+Estado 29
 
   104 idaumdec: aumento_decremento . ID
 
-    ID  shift, and go to state 69
+    ID  desplazar e ir al estado 69
 
 
-State 30
+Estado 30
 
    22 expresion: idaumdec . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 70
+    PUNTOCOMA  desplazar e ir al estado 70
 
 
-State 31
+Estado 31
 
    23 expresion: asig_dec_aum . PUNTOCOMA
 
-    PUNTOCOMA  shift, and go to state 71
+    PUNTOCOMA  desplazar e ir al estado 71
 
 
-State 32
+Estado 32
 
     6 funct_init: error funct_init .
     7           | funct_init . error
 
-    error  shift, and go to state 49
+    error  desplazar e ir al estado 49
 
-    $end    reduce using rule 6 (funct_init)
-    error   [reduce using rule 6 (funct_init)]
-    IF      reduce using rule 6 (funct_init)
-    FOR     reduce using rule 6 (funct_init)
-    WHILE   reduce using rule 6 (funct_init)
-    DOUBLE  reduce using rule 6 (funct_init)
-    INT     reduce using rule 6 (funct_init)
-    STRING  reduce using rule 6 (funct_init)
-    CHAR    reduce using rule 6 (funct_init)
-    PUBLIC  reduce using rule 6 (funct_init)
-    MASMAS  reduce using rule 6 (funct_init)
-    MENMEN  reduce using rule 6 (funct_init)
-    ID      reduce using rule 6 (funct_init)
+    $end    reduce usando la regla 6 (funct_init)
+    error   [reduce usando la regla 6 (funct_init)]
+    IF      reduce usando la regla 6 (funct_init)
+    FOR     reduce usando la regla 6 (funct_init)
+    WHILE   reduce usando la regla 6 (funct_init)
+    DOUBLE  reduce usando la regla 6 (funct_init)
+    INT     reduce usando la regla 6 (funct_init)
+    STRING  reduce usando la regla 6 (funct_init)
+    CHAR    reduce usando la regla 6 (funct_init)
+    PUBLIC  reduce usando la regla 6 (funct_init)
+    MASMAS  reduce usando la regla 6 (funct_init)
+    MENMEN  reduce usando la regla 6 (funct_init)
+    ID      reduce usando la regla 6 (funct_init)
 
 
-State 33
+Estado 33
 
    13 contenido: statement .
    15          | error statement .
 
-    $end      reduce using rule 13 (contenido)
-    $end      [reduce using rule 15 (contenido)]
-    error     reduce using rule 13 (contenido)
-    error     [reduce using rule 15 (contenido)]
-    IF        reduce using rule 13 (contenido)
-    IF        [reduce using rule 15 (contenido)]
-    FOR       reduce using rule 13 (contenido)
-    FOR       [reduce using rule 15 (contenido)]
-    WHILE     reduce using rule 13 (contenido)
-    WHILE     [reduce using rule 15 (contenido)]
-    DOUBLE    reduce using rule 13 (contenido)
-    DOUBLE    [reduce using rule 15 (contenido)]
-    INT       reduce using rule 13 (contenido)
-    INT       [reduce using rule 15 (contenido)]
-    STRING    reduce using rule 13 (contenido)
-    STRING    [reduce using rule 15 (contenido)]
-    CHAR      reduce using rule 13 (contenido)
-    CHAR      [reduce using rule 15 (contenido)]
-    PUBLIC    reduce using rule 13 (contenido)
-    PUBLIC    [reduce using rule 15 (contenido)]
-    MASMAS    reduce using rule 13 (contenido)
-    MASMAS    [reduce using rule 15 (contenido)]
-    MENMEN    reduce using rule 13 (contenido)
-    MENMEN    [reduce using rule 15 (contenido)]
-    ID        reduce using rule 13 (contenido)
-    ID        [reduce using rule 15 (contenido)]
-    $default  reduce using rule 13 (contenido)
+    $end      reduce usando la regla 13 (contenido)
+    $end      [reduce usando la regla 15 (contenido)]
+    error     reduce usando la regla 13 (contenido)
+    error     [reduce usando la regla 15 (contenido)]
+    IF        reduce usando la regla 13 (contenido)
+    IF        [reduce usando la regla 15 (contenido)]
+    FOR       reduce usando la regla 13 (contenido)
+    FOR       [reduce usando la regla 15 (contenido)]
+    WHILE     reduce usando la regla 13 (contenido)
+    WHILE     [reduce usando la regla 15 (contenido)]
+    DOUBLE    reduce usando la regla 13 (contenido)
+    DOUBLE    [reduce usando la regla 15 (contenido)]
+    INT       reduce usando la regla 13 (contenido)
+    INT       [reduce usando la regla 15 (contenido)]
+    STRING    reduce usando la regla 13 (contenido)
+    STRING    [reduce usando la regla 15 (contenido)]
+    CHAR      reduce usando la regla 13 (contenido)
+    CHAR      [reduce usando la regla 15 (contenido)]
+    PUBLIC    reduce usando la regla 13 (contenido)
+    PUBLIC    [reduce usando la regla 15 (contenido)]
+    MASMAS    reduce usando la regla 13 (contenido)
+    MASMAS    [reduce usando la regla 15 (contenido)]
+    MENMEN    reduce usando la regla 13 (contenido)
+    MENMEN    [reduce usando la regla 15 (contenido)]
+    ID        reduce usando la regla 13 (contenido)
+    ID        [reduce usando la regla 15 (contenido)]
+    $default  reduce usando la regla 13 (contenido)
 
 
-State 34
+Estado 34
 
    29 condicional: IF PARENTA . expre PARENTC bloque
    30            | IF PARENTA . expre PARENTC bloque ELSE bloque
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    expre             go to state 80
-    comparacion       go to state 81
-    condicional_expr  go to state 82
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    expre             ir al estado 80
+    comparacion       ir al estado 81
+    condicional_expr  ir al estado 82
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 35
+Estado 35
 
    32 ciclo: FOR PARENTA . asig_simple PUNTOCOMA comparacion PUNTOCOMA idaumdec PARENTC bloque
 
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    ID      shift, and go to state 87
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    ID      desplazar e ir al estado 87
 
-    asig_simple  go to state 88
-    tipo         go to state 89
+    asig_simple  ir al estado 88
+    tipo         ir al estado 89
 
 
-State 36
+Estado 36
 
    31 ciclo: WHILE PARENTA . expre PARENTC bloque
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    expre             go to state 90
-    comparacion       go to state 81
-    condicional_expr  go to state 82
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    expre             ir al estado 90
+    comparacion       ir al estado 81
+    condicional_expr  ir al estado 82
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 37
+Estado 37
 
     3 funct_init: PUBLIC CLASS . ID LLAVEA func_main LLAVEC
     4           | PUBLIC CLASS . ID LLAVEA LLAVEC
     5           | PUBLIC CLASS . ID LLAVEA error LLAVEC
 
-    ID  shift, and go to state 91
+    ID  desplazar e ir al estado 91
 
 
-State 38
+Estado 38
 
    52 asig_simple: ID ASIG . exp_simple
    56 asig_opernotipo: ID ASIG . operacionCompleja
   105 asig_dec_aum: ID ASIG . idaumdec
 
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 92
-    '('     shift, and go to state 93
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 92
+    '('     desplazar e ir al estado 93
 
-    operacionCompleja   go to state 94
-    exp_simple          go to state 95
-    aumento_decremento  go to state 29
-    idaumdec            go to state 96
+    operacionCompleja   ir al estado 94
+    exp_simple          ir al estado 95
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 96
 
 
-State 39
+Estado 39
 
    97 ope_especial: ASIGMAS .
 
-    $default  reduce using rule 97 (ope_especial)
+    $default  reduce usando la regla 97 (ope_especial)
 
 
-State 40
+Estado 40
 
    99 ope_especial: ASIGMEN .
 
-    $default  reduce using rule 99 (ope_especial)
+    $default  reduce usando la regla 99 (ope_especial)
 
 
-State 41
+Estado 41
 
   100 ope_especial: ASIGMULT .
 
-    $default  reduce using rule 100 (ope_especial)
+    $default  reduce usando la regla 100 (ope_especial)
 
 
-State 42
+Estado 42
 
    98 ope_especial: ASIGDIV .
 
-    $default  reduce using rule 98 (ope_especial)
+    $default  reduce usando la regla 98 (ope_especial)
 
 
-State 43
+Estado 43
 
    79 size: CORCHETEA . ENTERO CORCHETEC
    81     | CORCHETEA . ID CORCHETEC
 
-    ENTERO  shift, and go to state 97
-    ID      shift, and go to state 98
+    ENTERO  desplazar e ir al estado 97
+    ID      desplazar e ir al estado 98
 
 
-State 44
+Estado 44
 
    74 asig_vec: ID size .
    75         | ID size . ASIG ID size
@@ -940,159 +940,159 @@ State 44
    80 size: size . CORCHETEA ENTERO CORCHETEC
    82     | size . CORCHETEA ID CORCHETEC
 
-    ASIG       shift, and go to state 99
-    CORCHETEA  shift, and go to state 100
+    ASIG       desplazar e ir al estado 99
+    CORCHETEA  desplazar e ir al estado 100
 
-    $default  reduce using rule 74 (asig_vec)
+    $default  reduce usando la regla 74 (asig_vec)
 
 
-State 45
+Estado 45
 
    57 asig_oper2: ID ope_especial . operacionCompleja
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
-    '('     shift, and go to state 93
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
+    '('     desplazar e ir al estado 93
 
-    operacionCompleja  go to state 102
-    exp_simple         go to state 103
+    operacionCompleja  ir al estado 102
+    exp_simple         ir al estado 103
 
 
-State 46
+Estado 46
 
   103 idaumdec: ID aumento_decremento .
 
-    $default  reduce using rule 103 (idaumdec)
+    $default  reduce usando la regla 103 (idaumdec)
 
 
-State 47
+Estado 47
 
     0 $accept: init $end .
 
-    $default  accept
+    $default  aceptar
 
 
-State 48
+Estado 48
 
     2 init: init funct_init .
     7 funct_init: funct_init . error
 
-    error  shift, and go to state 49
+    error  desplazar e ir al estado 49
 
-    $end    reduce using rule 2 (init)
-    error   [reduce using rule 2 (init)]
-    IF      reduce using rule 2 (init)
-    FOR     reduce using rule 2 (init)
-    WHILE   reduce using rule 2 (init)
-    DOUBLE  reduce using rule 2 (init)
-    INT     reduce using rule 2 (init)
-    STRING  reduce using rule 2 (init)
-    CHAR    reduce using rule 2 (init)
-    PUBLIC  reduce using rule 2 (init)
-    MASMAS  reduce using rule 2 (init)
-    MENMEN  reduce using rule 2 (init)
-    ID      reduce using rule 2 (init)
+    $end    reduce usando la regla 2 (init)
+    error   [reduce usando la regla 2 (init)]
+    IF      reduce usando la regla 2 (init)
+    FOR     reduce usando la regla 2 (init)
+    WHILE   reduce usando la regla 2 (init)
+    DOUBLE  reduce usando la regla 2 (init)
+    INT     reduce usando la regla 2 (init)
+    STRING  reduce usando la regla 2 (init)
+    CHAR    reduce usando la regla 2 (init)
+    PUBLIC  reduce usando la regla 2 (init)
+    MASMAS  reduce usando la regla 2 (init)
+    MENMEN  reduce usando la regla 2 (init)
+    ID      reduce usando la regla 2 (init)
 
 
-State 49
+Estado 49
 
     7 funct_init: funct_init error .
 
-    $default  reduce using rule 7 (funct_init)
+    $default  reduce usando la regla 7 (funct_init)
 
 
-State 50
+Estado 50
 
    14 contenido: contenido statement .
 
-    $default  reduce using rule 14 (contenido)
+    $default  reduce usando la regla 14 (contenido)
 
 
-State 51
+Estado 51
 
    20 expresion: asig_simple PUNTOCOMA .
 
-    $default  reduce using rule 20 (expresion)
+    $default  reduce usando la regla 20 (expresion)
 
 
-State 52
+Estado 52
 
    21 expresion: asig_oper PUNTOCOMA .
 
-    $default  reduce using rule 21 (expresion)
+    $default  reduce usando la regla 21 (expresion)
 
 
-State 53
+Estado 53
 
    55 asig_oper: asig_oper ',' . tipo ID ASIG operacionCompleja
 
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
 
-    tipo  go to state 104
+    tipo  ir al estado 104
 
 
-State 54
+Estado 54
 
    26 expresion: asig_opernotipo PUNTOCOMA .
 
-    $default  reduce using rule 26 (expresion)
+    $default  reduce usando la regla 26 (expresion)
 
 
-State 55
+Estado 55
 
    25 expresion: asig_oper2 PUNTOCOMA .
 
-    $default  reduce using rule 25 (expresion)
+    $default  reduce usando la regla 25 (expresion)
 
 
-State 56
+Estado 56
 
    24 expresion: declaracion PUNTOCOMA .
 
-    $default  reduce using rule 24 (expresion)
+    $default  reduce usando la regla 24 (expresion)
 
 
-State 57
+Estado 57
 
    62 declaracion: declaracion ',' . ID
 
-    ID  shift, and go to state 105
+    ID  desplazar e ir al estado 105
 
 
-State 58
+Estado 58
 
    19 expresion: iniciar_vec PUNTOCOMA .
 
-    $default  reduce using rule 19 (expresion)
+    $default  reduce usando la regla 19 (expresion)
 
 
-State 59
+Estado 59
 
    27 expresion: asig_vec PUNTOCOMA .
 
-    $default  reduce using rule 27 (expresion)
+    $default  reduce usando la regla 27 (expresion)
 
 
-State 60
+Estado 60
 
    28 expresion: asig_newvalorvec PUNTOCOMA .
 
-    $default  reduce using rule 28 (expresion)
+    $default  reduce usando la regla 28 (expresion)
 
 
-State 61
+Estado 61
 
    83 corchetes: CORCHETEA . CORCHETEC
 
-    CORCHETEC  shift, and go to state 106
+    CORCHETEC  desplazar e ir al estado 106
 
 
-State 62
+Estado 62
 
    53 asig_simple: tipo ID . ASIG exp_simple
    54 asig_oper: tipo ID . ASIG operacionCompleja
@@ -1101,259 +1101,259 @@ State 62
    77 asig_newvalorvec: tipo ID . size ASIG ID size
    78                 | tipo ID . size ASIG operacionCompleja
 
-    ASIG       shift, and go to state 107
-    CORCHETEA  shift, and go to state 43
+    ASIG       desplazar e ir al estado 107
+    CORCHETEA  desplazar e ir al estado 43
 
-    $default  reduce using rule 61 (declaracion)
+    $default  reduce usando la regla 61 (declaracion)
 
-    size  go to state 108
+    size  ir al estado 108
 
 
-State 63
+Estado 63
 
    71 dcl_vector3: '{' . lista '}'
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    lista       go to state 109
-    exp_simple  go to state 110
+    lista       ir al estado 109
+    exp_simple  ir al estado 110
 
 
-State 64
+Estado 64
 
    63 iniciar_vec: tipo dcls_vector .
 
-    $default  reduce using rule 63 (iniciar_vec)
+    $default  reduce usando la regla 63 (iniciar_vec)
 
 
-State 65
+Estado 65
 
    64 dcls_vector: dcl_vector1 .
 
-    $default  reduce using rule 64 (dcls_vector)
+    $default  reduce usando la regla 64 (dcls_vector)
 
 
-State 66
+Estado 66
 
    65 dcls_vector: dcl_vector2 .
 
-    $default  reduce using rule 65 (dcls_vector)
+    $default  reduce usando la regla 65 (dcls_vector)
 
 
-State 67
+Estado 67
 
    66 dcls_vector: dcl_vector3 .
 
-    $default  reduce using rule 66 (dcls_vector)
+    $default  reduce usando la regla 66 (dcls_vector)
 
 
-State 68
+Estado 68
 
    67 dcl_vector1: corchetes . dcl_vector1 size
    69 dcl_vector2: corchetes . dcl_vector2
    70            | corchetes . ID
 
-    CORCHETEA  shift, and go to state 61
-    ID         shift, and go to state 111
+    CORCHETEA  desplazar e ir al estado 61
+    ID         desplazar e ir al estado 111
 
-    dcl_vector1  go to state 112
-    dcl_vector2  go to state 113
-    corchetes    go to state 68
+    dcl_vector1  ir al estado 112
+    dcl_vector2  ir al estado 113
+    corchetes    ir al estado 68
 
 
-State 69
+Estado 69
 
   104 idaumdec: aumento_decremento ID .
 
-    $default  reduce using rule 104 (idaumdec)
+    $default  reduce usando la regla 104 (idaumdec)
 
 
-State 70
+Estado 70
 
    22 expresion: idaumdec PUNTOCOMA .
 
-    $default  reduce using rule 22 (expresion)
+    $default  reduce usando la regla 22 (expresion)
 
 
-State 71
+Estado 71
 
    23 expresion: asig_dec_aum PUNTOCOMA .
 
-    $default  reduce using rule 23 (expresion)
+    $default  reduce usando la regla 23 (expresion)
 
 
-State 72
+Estado 72
 
    51 and_ex: AND . condicional_expr
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    comparacion       go to state 114
-    condicional_expr  go to state 115
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    comparacion       ir al estado 114
+    condicional_expr  ir al estado 115
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 73
+Estado 73
 
    49 or_ex: OR . condicional_expr
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    comparacion       go to state 114
-    condicional_expr  go to state 116
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    comparacion       ir al estado 114
+    condicional_expr  ir al estado 116
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 74
+Estado 74
 
    47 not_ex: NOT . comparacion
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    comparacion       go to state 117
-    condicional_expr  go to state 118
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    comparacion       ir al estado 117
+    condicional_expr  ir al estado 118
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 75
+Estado 75
 
    35 comparacion: PARENTA . comparacion PARENTC
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    comparacion       go to state 119
-    condicional_expr  go to state 118
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    comparacion       ir al estado 119
+    condicional_expr  ir al estado 118
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 76
+Estado 76
 
    90 exp_simple: ENTERO .
 
-    $default  reduce using rule 90 (exp_simple)
+    $default  reduce usando la regla 90 (exp_simple)
 
 
-State 77
+Estado 77
 
    89 exp_simple: CADENA .
 
-    $default  reduce using rule 89 (exp_simple)
+    $default  reduce usando la regla 89 (exp_simple)
 
 
-State 78
+Estado 78
 
    92 exp_simple: REAL .
 
-    $default  reduce using rule 92 (exp_simple)
+    $default  reduce usando la regla 92 (exp_simple)
 
 
-State 79
+Estado 79
 
    42 comparacion: ID .
    91 exp_simple: ID .
 
-    AND        reduce using rule 42 (comparacion)
-    OR         reduce using rule 42 (comparacion)
-    PARENTC    reduce using rule 42 (comparacion)
-    PUNTOCOMA  reduce using rule 42 (comparacion)
-    $default   reduce using rule 91 (exp_simple)
+    AND        reduce usando la regla 42 (comparacion)
+    OR         reduce usando la regla 42 (comparacion)
+    PARENTC    reduce usando la regla 42 (comparacion)
+    PUNTOCOMA  reduce usando la regla 42 (comparacion)
+    $default   reduce usando la regla 91 (exp_simple)
 
 
-State 80
+Estado 80
 
    29 condicional: IF PARENTA expre . PARENTC bloque
    30            | IF PARENTA expre . PARENTC bloque ELSE bloque
 
-    PARENTC  shift, and go to state 120
+    PARENTC  desplazar e ir al estado 120
 
 
-State 81
+Estado 81
 
    34 expre: comparacion .
    48 or_ex: comparacion . OR comparacion
    50 and_ex: comparacion . AND comparacion
 
-    AND  shift, and go to state 121
-    OR   shift, and go to state 122
+    AND  desplazar e ir al estado 121
+    OR   desplazar e ir al estado 122
 
-    $default  reduce using rule 34 (expre)
+    $default  reduce usando la regla 34 (expre)
 
 
-State 82
+Estado 82
 
    33 expre: condicional_expr .
    43 comparacion: condicional_expr .
 
-    PARENTC   reduce using rule 33 (expre)
-    PARENTC   [reduce using rule 43 (comparacion)]
-    $default  reduce using rule 43 (comparacion)
+    PARENTC   reduce usando la regla 33 (expre)
+    PARENTC   [reduce usando la regla 43 (comparacion)]
+    $default  reduce usando la regla 43 (comparacion)
 
 
-State 83
+Estado 83
 
    46 condicional_expr: not_ex .
 
-    $default  reduce using rule 46 (condicional_expr)
+    $default  reduce usando la regla 46 (condicional_expr)
 
 
-State 84
+Estado 84
 
    44 condicional_expr: or_ex .
 
-    $default  reduce using rule 44 (condicional_expr)
+    $default  reduce usando la regla 44 (condicional_expr)
 
 
-State 85
+Estado 85
 
    45 condicional_expr: and_ex .
 
-    $default  reduce using rule 45 (condicional_expr)
+    $default  reduce usando la regla 45 (condicional_expr)
 
 
-State 86
+Estado 86
 
    36 comparacion: exp_simple . MENORIGUAL exp_simple
    37            | exp_simple . MAYORIGUAL exp_simple
@@ -1362,1297 +1362,1297 @@ State 86
    40            | exp_simple . MENOR exp_simple
    41            | exp_simple . MAYOR exp_simple
 
-    IGUAL       shift, and go to state 123
-    MENORIGUAL  shift, and go to state 124
-    MAYORIGUAL  shift, and go to state 125
-    DIFERENTE   shift, and go to state 126
-    MAYOR       shift, and go to state 127
-    MENOR       shift, and go to state 128
+    IGUAL       desplazar e ir al estado 123
+    MENORIGUAL  desplazar e ir al estado 124
+    MAYORIGUAL  desplazar e ir al estado 125
+    DIFERENTE   desplazar e ir al estado 126
+    MAYOR       desplazar e ir al estado 127
+    MENOR       desplazar e ir al estado 128
 
 
-State 87
+Estado 87
 
    52 asig_simple: ID . ASIG exp_simple
 
-    ASIG  shift, and go to state 129
+    ASIG  desplazar e ir al estado 129
 
 
-State 88
+Estado 88
 
    32 ciclo: FOR PARENTA asig_simple . PUNTOCOMA comparacion PUNTOCOMA idaumdec PARENTC bloque
 
-    PUNTOCOMA  shift, and go to state 130
+    PUNTOCOMA  desplazar e ir al estado 130
 
 
-State 89
+Estado 89
 
    53 asig_simple: tipo . ID ASIG exp_simple
 
-    ID  shift, and go to state 131
+    ID  desplazar e ir al estado 131
 
 
-State 90
+Estado 90
 
    31 ciclo: WHILE PARENTA expre . PARENTC bloque
 
-    PARENTC  shift, and go to state 132
+    PARENTC  desplazar e ir al estado 132
 
 
-State 91
+Estado 91
 
     3 funct_init: PUBLIC CLASS ID . LLAVEA func_main LLAVEC
     4           | PUBLIC CLASS ID . LLAVEA LLAVEC
     5           | PUBLIC CLASS ID . LLAVEA error LLAVEC
 
-    LLAVEA  shift, and go to state 133
+    LLAVEA  desplazar e ir al estado 133
 
 
-State 92
+Estado 92
 
    91 exp_simple: ID .
   103 idaumdec: ID . aumento_decremento
 
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
 
-    $default  reduce using rule 91 (exp_simple)
+    $default  reduce usando la regla 91 (exp_simple)
 
-    aumento_decremento  go to state 46
+    aumento_decremento  ir al estado 46
 
 
-State 93
+Estado 93
 
    58 operacionCompleja: '(' . operacionCompleja ')'
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
-    '('     shift, and go to state 93
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
+    '('     desplazar e ir al estado 93
 
-    operacionCompleja  go to state 134
-    exp_simple         go to state 103
+    operacionCompleja  ir al estado 134
+    exp_simple         ir al estado 103
 
 
-State 94
+Estado 94
 
    56 asig_opernotipo: ID ASIG operacionCompleja .
    59 operacionCompleja: operacionCompleja . operador exp_simple
 
-    MULT   shift, and go to state 135
-    SUMA   shift, and go to state 136
-    RESTA  shift, and go to state 137
-    DIV    shift, and go to state 138
-    MOD    shift, and go to state 139
+    MULT   desplazar e ir al estado 135
+    SUMA   desplazar e ir al estado 136
+    RESTA  desplazar e ir al estado 137
+    DIV    desplazar e ir al estado 138
+    MOD    desplazar e ir al estado 139
 
-    $default  reduce using rule 56 (asig_opernotipo)
+    $default  reduce usando la regla 56 (asig_opernotipo)
 
-    operador  go to state 140
+    operador  ir al estado 140
 
 
-State 95
+Estado 95
 
    52 asig_simple: ID ASIG exp_simple .
    60 operacionCompleja: exp_simple .
 
-    PUNTOCOMA  reduce using rule 52 (asig_simple)
-    PUNTOCOMA  [reduce using rule 60 (operacionCompleja)]
-    $default   reduce using rule 60 (operacionCompleja)
+    PUNTOCOMA  reduce usando la regla 52 (asig_simple)
+    PUNTOCOMA  [reduce usando la regla 60 (operacionCompleja)]
+    $default   reduce usando la regla 60 (operacionCompleja)
 
 
-State 96
+Estado 96
 
   105 asig_dec_aum: ID ASIG idaumdec .
 
-    $default  reduce using rule 105 (asig_dec_aum)
+    $default  reduce usando la regla 105 (asig_dec_aum)
 
 
-State 97
+Estado 97
 
    79 size: CORCHETEA ENTERO . CORCHETEC
 
-    CORCHETEC  shift, and go to state 141
+    CORCHETEC  desplazar e ir al estado 141
 
 
-State 98
+Estado 98
 
    81 size: CORCHETEA ID . CORCHETEC
 
-    CORCHETEC  shift, and go to state 142
+    CORCHETEC  desplazar e ir al estado 142
 
 
-State 99
+Estado 99
 
    75 asig_vec: ID size ASIG . ID size
    76         | ID size ASIG . operacionCompleja
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 143
-    '('     shift, and go to state 93
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 143
+    '('     desplazar e ir al estado 93
 
-    operacionCompleja  go to state 144
-    exp_simple         go to state 103
+    operacionCompleja  ir al estado 144
+    exp_simple         ir al estado 103
 
 
-State 100
+Estado 100
 
    80 size: size CORCHETEA . ENTERO CORCHETEC
    82     | size CORCHETEA . ID CORCHETEC
 
-    ENTERO  shift, and go to state 145
-    ID      shift, and go to state 146
+    ENTERO  desplazar e ir al estado 145
+    ID      desplazar e ir al estado 146
 
 
-State 101
+Estado 101
 
    91 exp_simple: ID .
 
-    $default  reduce using rule 91 (exp_simple)
+    $default  reduce usando la regla 91 (exp_simple)
 
 
-State 102
+Estado 102
 
    57 asig_oper2: ID ope_especial operacionCompleja .
    59 operacionCompleja: operacionCompleja . operador exp_simple
 
-    MULT   shift, and go to state 135
-    SUMA   shift, and go to state 136
-    RESTA  shift, and go to state 137
-    DIV    shift, and go to state 138
-    MOD    shift, and go to state 139
+    MULT   desplazar e ir al estado 135
+    SUMA   desplazar e ir al estado 136
+    RESTA  desplazar e ir al estado 137
+    DIV    desplazar e ir al estado 138
+    MOD    desplazar e ir al estado 139
 
-    $default  reduce using rule 57 (asig_oper2)
+    $default  reduce usando la regla 57 (asig_oper2)
 
-    operador  go to state 140
+    operador  ir al estado 140
 
 
-State 103
+Estado 103
 
    60 operacionCompleja: exp_simple .
 
-    $default  reduce using rule 60 (operacionCompleja)
+    $default  reduce usando la regla 60 (operacionCompleja)
 
 
-State 104
+Estado 104
 
    55 asig_oper: asig_oper ',' tipo . ID ASIG operacionCompleja
 
-    ID  shift, and go to state 147
+    ID  desplazar e ir al estado 147
 
 
-State 105
+Estado 105
 
    62 declaracion: declaracion ',' ID .
 
-    $default  reduce using rule 62 (declaracion)
+    $default  reduce usando la regla 62 (declaracion)
 
 
-State 106
+Estado 106
 
    83 corchetes: CORCHETEA CORCHETEC .
 
-    $default  reduce using rule 83 (corchetes)
+    $default  reduce usando la regla 83 (corchetes)
 
 
-State 107
+Estado 107
 
    53 asig_simple: tipo ID ASIG . exp_simple
    54 asig_oper: tipo ID ASIG . operacionCompleja
    68 dcl_vector1: ID ASIG . NEW tipo
 
-    NEW     shift, and go to state 148
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
-    '('     shift, and go to state 93
+    NEW     desplazar e ir al estado 148
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
+    '('     desplazar e ir al estado 93
 
-    operacionCompleja  go to state 149
-    exp_simple         go to state 150
+    operacionCompleja  ir al estado 149
+    exp_simple         ir al estado 150
 
 
-State 108
+Estado 108
 
    77 asig_newvalorvec: tipo ID size . ASIG ID size
    78                 | tipo ID size . ASIG operacionCompleja
    80 size: size . CORCHETEA ENTERO CORCHETEC
    82     | size . CORCHETEA ID CORCHETEC
 
-    ASIG       shift, and go to state 151
-    CORCHETEA  shift, and go to state 100
+    ASIG       desplazar e ir al estado 151
+    CORCHETEA  desplazar e ir al estado 100
 
 
-State 109
+Estado 109
 
    71 dcl_vector3: '{' lista . '}'
    73 lista: lista . ',' exp_simple
 
-    ','  shift, and go to state 152
-    '}'  shift, and go to state 153
+    ','  desplazar e ir al estado 152
+    '}'  desplazar e ir al estado 153
 
 
-State 110
+Estado 110
 
    72 lista: exp_simple .
 
-    $default  reduce using rule 72 (lista)
+    $default  reduce usando la regla 72 (lista)
 
 
-State 111
+Estado 111
 
    68 dcl_vector1: ID . ASIG NEW tipo
    70 dcl_vector2: corchetes ID .
 
-    ASIG  shift, and go to state 154
+    ASIG  desplazar e ir al estado 154
 
-    $default  reduce using rule 70 (dcl_vector2)
+    $default  reduce usando la regla 70 (dcl_vector2)
 
 
-State 112
+Estado 112
 
    67 dcl_vector1: corchetes dcl_vector1 . size
 
-    CORCHETEA  shift, and go to state 43
+    CORCHETEA  desplazar e ir al estado 43
 
-    size  go to state 155
+    size  ir al estado 155
 
 
-State 113
+Estado 113
 
    69 dcl_vector2: corchetes dcl_vector2 .
 
-    $default  reduce using rule 69 (dcl_vector2)
+    $default  reduce usando la regla 69 (dcl_vector2)
 
 
-State 114
+Estado 114
 
    48 or_ex: comparacion . OR comparacion
    50 and_ex: comparacion . AND comparacion
 
-    AND  shift, and go to state 121
-    OR   shift, and go to state 122
+    AND  desplazar e ir al estado 121
+    OR   desplazar e ir al estado 122
 
 
-State 115
+Estado 115
 
    43 comparacion: condicional_expr .
    51 and_ex: AND condicional_expr .
 
-    AND        reduce using rule 43 (comparacion)
-    AND        [reduce using rule 51 (and_ex)]
-    OR         reduce using rule 43 (comparacion)
-    OR         [reduce using rule 51 (and_ex)]
-    PARENTC    reduce using rule 51 (and_ex)
-    PUNTOCOMA  reduce using rule 51 (and_ex)
-    $default   reduce using rule 43 (comparacion)
+    AND        reduce usando la regla 43 (comparacion)
+    AND        [reduce usando la regla 51 (and_ex)]
+    OR         reduce usando la regla 43 (comparacion)
+    OR         [reduce usando la regla 51 (and_ex)]
+    PARENTC    reduce usando la regla 51 (and_ex)
+    PUNTOCOMA  reduce usando la regla 51 (and_ex)
+    $default   reduce usando la regla 43 (comparacion)
 
 
-State 116
+Estado 116
 
    43 comparacion: condicional_expr .
    49 or_ex: OR condicional_expr .
 
-    AND        reduce using rule 43 (comparacion)
-    AND        [reduce using rule 49 (or_ex)]
-    OR         reduce using rule 43 (comparacion)
-    OR         [reduce using rule 49 (or_ex)]
-    PARENTC    reduce using rule 49 (or_ex)
-    PUNTOCOMA  reduce using rule 49 (or_ex)
-    $default   reduce using rule 43 (comparacion)
+    AND        reduce usando la regla 43 (comparacion)
+    AND        [reduce usando la regla 49 (or_ex)]
+    OR         reduce usando la regla 43 (comparacion)
+    OR         [reduce usando la regla 49 (or_ex)]
+    PARENTC    reduce usando la regla 49 (or_ex)
+    PUNTOCOMA  reduce usando la regla 49 (or_ex)
+    $default   reduce usando la regla 43 (comparacion)
 
 
-State 117
+Estado 117
 
    47 not_ex: NOT comparacion .
    48 or_ex: comparacion . OR comparacion
    50 and_ex: comparacion . AND comparacion
 
-    $default  reduce using rule 47 (not_ex)
+    $default  reduce usando la regla 47 (not_ex)
 
 
-State 118
+Estado 118
 
    43 comparacion: condicional_expr .
 
-    $default  reduce using rule 43 (comparacion)
+    $default  reduce usando la regla 43 (comparacion)
 
 
-State 119
+Estado 119
 
    35 comparacion: PARENTA comparacion . PARENTC
    48 or_ex: comparacion . OR comparacion
    50 and_ex: comparacion . AND comparacion
 
-    AND      shift, and go to state 121
-    OR       shift, and go to state 122
-    PARENTC  shift, and go to state 156
+    AND      desplazar e ir al estado 121
+    OR       desplazar e ir al estado 122
+    PARENTC  desplazar e ir al estado 156
 
 
-State 120
+Estado 120
 
    29 condicional: IF PARENTA expre PARENTC . bloque
    30            | IF PARENTA expre PARENTC . bloque ELSE bloque
 
-    LLAVEA  shift, and go to state 157
+    LLAVEA  desplazar e ir al estado 157
 
-    bloque  go to state 158
+    bloque  ir al estado 158
 
 
-State 121
+Estado 121
 
    50 and_ex: comparacion AND . comparacion
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    comparacion       go to state 159
-    condicional_expr  go to state 118
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    comparacion       ir al estado 159
+    condicional_expr  ir al estado 118
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 122
+Estado 122
 
    48 or_ex: comparacion OR . comparacion
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    comparacion       go to state 160
-    condicional_expr  go to state 118
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    comparacion       ir al estado 160
+    condicional_expr  ir al estado 118
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 123
+Estado 123
 
    39 comparacion: exp_simple IGUAL . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 161
+    exp_simple  ir al estado 161
 
 
-State 124
+Estado 124
 
    36 comparacion: exp_simple MENORIGUAL . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 162
+    exp_simple  ir al estado 162
 
 
-State 125
+Estado 125
 
    37 comparacion: exp_simple MAYORIGUAL . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 163
+    exp_simple  ir al estado 163
 
 
-State 126
+Estado 126
 
    38 comparacion: exp_simple DIFERENTE . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 164
+    exp_simple  ir al estado 164
 
 
-State 127
+Estado 127
 
    41 comparacion: exp_simple MAYOR . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 165
+    exp_simple  ir al estado 165
 
 
-State 128
+Estado 128
 
    40 comparacion: exp_simple MENOR . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 166
+    exp_simple  ir al estado 166
 
 
-State 129
+Estado 129
 
    52 asig_simple: ID ASIG . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 167
+    exp_simple  ir al estado 167
 
 
-State 130
+Estado 130
 
    32 ciclo: FOR PARENTA asig_simple PUNTOCOMA . comparacion PUNTOCOMA idaumdec PARENTC bloque
 
-    AND      shift, and go to state 72
-    OR       shift, and go to state 73
-    NOT      shift, and go to state 74
-    PARENTA  shift, and go to state 75
-    ENTERO   shift, and go to state 76
-    CADENA   shift, and go to state 77
-    REAL     shift, and go to state 78
-    ID       shift, and go to state 79
+    AND      desplazar e ir al estado 72
+    OR       desplazar e ir al estado 73
+    NOT      desplazar e ir al estado 74
+    PARENTA  desplazar e ir al estado 75
+    ENTERO   desplazar e ir al estado 76
+    CADENA   desplazar e ir al estado 77
+    REAL     desplazar e ir al estado 78
+    ID       desplazar e ir al estado 79
 
-    comparacion       go to state 168
-    condicional_expr  go to state 118
-    not_ex            go to state 83
-    or_ex             go to state 84
-    and_ex            go to state 85
-    exp_simple        go to state 86
+    comparacion       ir al estado 168
+    condicional_expr  ir al estado 118
+    not_ex            ir al estado 83
+    or_ex             ir al estado 84
+    and_ex            ir al estado 85
+    exp_simple        ir al estado 86
 
 
-State 131
+Estado 131
 
    53 asig_simple: tipo ID . ASIG exp_simple
 
-    ASIG  shift, and go to state 169
+    ASIG  desplazar e ir al estado 169
 
 
-State 132
+Estado 132
 
    31 ciclo: WHILE PARENTA expre PARENTC . bloque
 
-    LLAVEA  shift, and go to state 157
+    LLAVEA  desplazar e ir al estado 157
 
-    bloque  go to state 170
+    bloque  ir al estado 170
 
 
-State 133
+Estado 133
 
     3 funct_init: PUBLIC CLASS ID LLAVEA . func_main LLAVEC
     4           | PUBLIC CLASS ID LLAVEA . LLAVEC
     5           | PUBLIC CLASS ID LLAVEA . error LLAVEC
 
-    error   shift, and go to state 171
-    PUBLIC  shift, and go to state 172
-    LLAVEC  shift, and go to state 173
+    error   desplazar e ir al estado 171
+    PUBLIC  desplazar e ir al estado 172
+    LLAVEC  desplazar e ir al estado 173
 
-    func_main  go to state 174
+    func_main  ir al estado 174
 
 
-State 134
+Estado 134
 
    58 operacionCompleja: '(' operacionCompleja . ')'
    59                  | operacionCompleja . operador exp_simple
 
-    MULT   shift, and go to state 135
-    SUMA   shift, and go to state 136
-    RESTA  shift, and go to state 137
-    DIV    shift, and go to state 138
-    MOD    shift, and go to state 139
-    ')'    shift, and go to state 175
+    MULT   desplazar e ir al estado 135
+    SUMA   desplazar e ir al estado 136
+    RESTA  desplazar e ir al estado 137
+    DIV    desplazar e ir al estado 138
+    MOD    desplazar e ir al estado 139
+    ')'    desplazar e ir al estado 175
 
-    operador  go to state 140
+    operador  ir al estado 140
 
 
-State 135
+Estado 135
 
    86 operador: MULT .
 
-    $default  reduce using rule 86 (operador)
+    $default  reduce usando la regla 86 (operador)
 
 
-State 136
+Estado 136
 
    84 operador: SUMA .
 
-    $default  reduce using rule 84 (operador)
+    $default  reduce usando la regla 84 (operador)
 
 
-State 137
+Estado 137
 
    85 operador: RESTA .
 
-    $default  reduce using rule 85 (operador)
+    $default  reduce usando la regla 85 (operador)
 
 
-State 138
+Estado 138
 
    87 operador: DIV .
 
-    $default  reduce using rule 87 (operador)
+    $default  reduce usando la regla 87 (operador)
 
 
-State 139
+Estado 139
 
    88 operador: MOD .
 
-    $default  reduce using rule 88 (operador)
+    $default  reduce usando la regla 88 (operador)
 
 
-State 140
+Estado 140
 
    59 operacionCompleja: operacionCompleja operador . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 176
+    exp_simple  ir al estado 176
 
 
-State 141
+Estado 141
 
    79 size: CORCHETEA ENTERO CORCHETEC .
 
-    $default  reduce using rule 79 (size)
+    $default  reduce usando la regla 79 (size)
 
 
-State 142
+Estado 142
 
    81 size: CORCHETEA ID CORCHETEC .
 
-    $default  reduce using rule 81 (size)
+    $default  reduce usando la regla 81 (size)
 
 
-State 143
+Estado 143
 
    75 asig_vec: ID size ASIG ID . size
    91 exp_simple: ID .
 
-    CORCHETEA  shift, and go to state 43
+    CORCHETEA  desplazar e ir al estado 43
 
-    $default  reduce using rule 91 (exp_simple)
+    $default  reduce usando la regla 91 (exp_simple)
 
-    size  go to state 177
+    size  ir al estado 177
 
 
-State 144
+Estado 144
 
    59 operacionCompleja: operacionCompleja . operador exp_simple
    76 asig_vec: ID size ASIG operacionCompleja .
 
-    MULT   shift, and go to state 135
-    SUMA   shift, and go to state 136
-    RESTA  shift, and go to state 137
-    DIV    shift, and go to state 138
-    MOD    shift, and go to state 139
+    MULT   desplazar e ir al estado 135
+    SUMA   desplazar e ir al estado 136
+    RESTA  desplazar e ir al estado 137
+    DIV    desplazar e ir al estado 138
+    MOD    desplazar e ir al estado 139
 
-    $default  reduce using rule 76 (asig_vec)
+    $default  reduce usando la regla 76 (asig_vec)
 
-    operador  go to state 140
+    operador  ir al estado 140
 
 
-State 145
+Estado 145
 
    80 size: size CORCHETEA ENTERO . CORCHETEC
 
-    CORCHETEC  shift, and go to state 178
+    CORCHETEC  desplazar e ir al estado 178
 
 
-State 146
+Estado 146
 
    82 size: size CORCHETEA ID . CORCHETEC
 
-    CORCHETEC  shift, and go to state 179
+    CORCHETEC  desplazar e ir al estado 179
 
 
-State 147
+Estado 147
 
    55 asig_oper: asig_oper ',' tipo ID . ASIG operacionCompleja
 
-    ASIG  shift, and go to state 180
+    ASIG  desplazar e ir al estado 180
 
 
-State 148
+Estado 148
 
    68 dcl_vector1: ID ASIG NEW . tipo
 
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
 
-    tipo  go to state 181
+    tipo  ir al estado 181
 
 
-State 149
+Estado 149
 
    54 asig_oper: tipo ID ASIG operacionCompleja .
    59 operacionCompleja: operacionCompleja . operador exp_simple
 
-    MULT   shift, and go to state 135
-    SUMA   shift, and go to state 136
-    RESTA  shift, and go to state 137
-    DIV    shift, and go to state 138
-    MOD    shift, and go to state 139
+    MULT   desplazar e ir al estado 135
+    SUMA   desplazar e ir al estado 136
+    RESTA  desplazar e ir al estado 137
+    DIV    desplazar e ir al estado 138
+    MOD    desplazar e ir al estado 139
 
-    $default  reduce using rule 54 (asig_oper)
+    $default  reduce usando la regla 54 (asig_oper)
 
-    operador  go to state 140
+    operador  ir al estado 140
 
 
-State 150
+Estado 150
 
    53 asig_simple: tipo ID ASIG exp_simple .
    60 operacionCompleja: exp_simple .
 
-    PUNTOCOMA  reduce using rule 53 (asig_simple)
-    PUNTOCOMA  [reduce using rule 60 (operacionCompleja)]
-    $default   reduce using rule 60 (operacionCompleja)
+    PUNTOCOMA  reduce usando la regla 53 (asig_simple)
+    PUNTOCOMA  [reduce usando la regla 60 (operacionCompleja)]
+    $default   reduce usando la regla 60 (operacionCompleja)
 
 
-State 151
+Estado 151
 
    77 asig_newvalorvec: tipo ID size ASIG . ID size
    78                 | tipo ID size ASIG . operacionCompleja
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 182
-    '('     shift, and go to state 93
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 182
+    '('     desplazar e ir al estado 93
 
-    operacionCompleja  go to state 183
-    exp_simple         go to state 103
+    operacionCompleja  ir al estado 183
+    exp_simple         ir al estado 103
 
 
-State 152
+Estado 152
 
    73 lista: lista ',' . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 184
+    exp_simple  ir al estado 184
 
 
-State 153
+Estado 153
 
    71 dcl_vector3: '{' lista '}' .
 
-    $default  reduce using rule 71 (dcl_vector3)
+    $default  reduce usando la regla 71 (dcl_vector3)
 
 
-State 154
+Estado 154
 
    68 dcl_vector1: ID ASIG . NEW tipo
 
-    NEW  shift, and go to state 148
+    NEW  desplazar e ir al estado 148
 
 
-State 155
+Estado 155
 
    67 dcl_vector1: corchetes dcl_vector1 size .
    80 size: size . CORCHETEA ENTERO CORCHETEC
    82     | size . CORCHETEA ID CORCHETEC
 
-    CORCHETEA  shift, and go to state 100
+    CORCHETEA  desplazar e ir al estado 100
 
-    CORCHETEA  [reduce using rule 67 (dcl_vector1)]
-    $default   reduce using rule 67 (dcl_vector1)
+    CORCHETEA  [reduce usando la regla 67 (dcl_vector1)]
+    $default   reduce usando la regla 67 (dcl_vector1)
 
 
-State 156
+Estado 156
 
    35 comparacion: PARENTA comparacion PARENTC .
 
-    $default  reduce using rule 35 (comparacion)
+    $default  reduce usando la regla 35 (comparacion)
 
 
-State 157
+Estado 157
 
    11 bloque: LLAVEA . LLAVEC
    12       | LLAVEA . contenido LLAVEC
 
-    error   shift, and go to state 185
-    IF      shift, and go to state 2
-    FOR     shift, and go to state 3
-    WHILE   shift, and go to state 4
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    LLAVEC  shift, and go to state 186
-    ID      shift, and go to state 12
+    error   desplazar e ir al estado 185
+    IF      desplazar e ir al estado 2
+    FOR     desplazar e ir al estado 3
+    WHILE   desplazar e ir al estado 4
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    LLAVEC  desplazar e ir al estado 186
+    ID      desplazar e ir al estado 12
 
-    contenido           go to state 187
-    statement           go to state 16
-    expresion           go to state 17
-    condicional         go to state 18
-    ciclo               go to state 19
-    asig_simple         go to state 20
-    asig_oper           go to state 21
-    asig_opernotipo     go to state 22
-    asig_oper2          go to state 23
-    declaracion         go to state 24
-    iniciar_vec         go to state 25
-    asig_vec            go to state 26
-    asig_newvalorvec    go to state 27
-    tipo                go to state 28
-    aumento_decremento  go to state 29
-    idaumdec            go to state 30
-    asig_dec_aum        go to state 31
+    contenido           ir al estado 187
+    statement           ir al estado 16
+    expresion           ir al estado 17
+    condicional         ir al estado 18
+    ciclo               ir al estado 19
+    asig_simple         ir al estado 20
+    asig_oper           ir al estado 21
+    asig_opernotipo     ir al estado 22
+    asig_oper2          ir al estado 23
+    declaracion         ir al estado 24
+    iniciar_vec         ir al estado 25
+    asig_vec            ir al estado 26
+    asig_newvalorvec    ir al estado 27
+    tipo                ir al estado 28
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 30
+    asig_dec_aum        ir al estado 31
 
 
-State 158
+Estado 158
 
    29 condicional: IF PARENTA expre PARENTC bloque .
    30            | IF PARENTA expre PARENTC bloque . ELSE bloque
 
-    ELSE  shift, and go to state 188
+    ELSE  desplazar e ir al estado 188
 
-    $default  reduce using rule 29 (condicional)
+    $default  reduce usando la regla 29 (condicional)
 
 
-State 159
+Estado 159
 
    48 or_ex: comparacion . OR comparacion
    50 and_ex: comparacion . AND comparacion
    50       | comparacion AND comparacion .
 
-    $default  reduce using rule 50 (and_ex)
+    $default  reduce usando la regla 50 (and_ex)
 
 
-State 160
+Estado 160
 
    48 or_ex: comparacion . OR comparacion
    48      | comparacion OR comparacion .
    50 and_ex: comparacion . AND comparacion
 
-    $default  reduce using rule 48 (or_ex)
+    $default  reduce usando la regla 48 (or_ex)
 
 
-State 161
+Estado 161
 
    39 comparacion: exp_simple IGUAL exp_simple .
 
-    $default  reduce using rule 39 (comparacion)
+    $default  reduce usando la regla 39 (comparacion)
 
 
-State 162
+Estado 162
 
    36 comparacion: exp_simple MENORIGUAL exp_simple .
 
-    $default  reduce using rule 36 (comparacion)
+    $default  reduce usando la regla 36 (comparacion)
 
 
-State 163
+Estado 163
 
    37 comparacion: exp_simple MAYORIGUAL exp_simple .
 
-    $default  reduce using rule 37 (comparacion)
+    $default  reduce usando la regla 37 (comparacion)
 
 
-State 164
+Estado 164
 
    38 comparacion: exp_simple DIFERENTE exp_simple .
 
-    $default  reduce using rule 38 (comparacion)
+    $default  reduce usando la regla 38 (comparacion)
 
 
-State 165
+Estado 165
 
    41 comparacion: exp_simple MAYOR exp_simple .
 
-    $default  reduce using rule 41 (comparacion)
+    $default  reduce usando la regla 41 (comparacion)
 
 
-State 166
+Estado 166
 
    40 comparacion: exp_simple MENOR exp_simple .
 
-    $default  reduce using rule 40 (comparacion)
+    $default  reduce usando la regla 40 (comparacion)
 
 
-State 167
+Estado 167
 
    52 asig_simple: ID ASIG exp_simple .
 
-    $default  reduce using rule 52 (asig_simple)
+    $default  reduce usando la regla 52 (asig_simple)
 
 
-State 168
+Estado 168
 
    32 ciclo: FOR PARENTA asig_simple PUNTOCOMA comparacion . PUNTOCOMA idaumdec PARENTC bloque
    48 or_ex: comparacion . OR comparacion
    50 and_ex: comparacion . AND comparacion
 
-    AND        shift, and go to state 121
-    OR         shift, and go to state 122
-    PUNTOCOMA  shift, and go to state 189
+    AND        desplazar e ir al estado 121
+    OR         desplazar e ir al estado 122
+    PUNTOCOMA  desplazar e ir al estado 189
 
 
-State 169
+Estado 169
 
    53 asig_simple: tipo ID ASIG . exp_simple
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
 
-    exp_simple  go to state 190
+    exp_simple  ir al estado 190
 
 
-State 170
+Estado 170
 
    31 ciclo: WHILE PARENTA expre PARENTC bloque .
 
-    $default  reduce using rule 31 (ciclo)
+    $default  reduce usando la regla 31 (ciclo)
 
 
-State 171
+Estado 171
 
     5 funct_init: PUBLIC CLASS ID LLAVEA error . LLAVEC
    10 func_main: error . func_main
 
-    error   shift, and go to state 191
-    PUBLIC  shift, and go to state 172
-    LLAVEC  shift, and go to state 192
+    error   desplazar e ir al estado 191
+    PUBLIC  desplazar e ir al estado 172
+    LLAVEC  desplazar e ir al estado 192
 
-    func_main  go to state 193
+    func_main  ir al estado 193
 
 
-State 172
+Estado 172
 
     9 func_main: PUBLIC . STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
 
-    STATIC  shift, and go to state 194
+    STATIC  desplazar e ir al estado 194
 
 
-State 173
+Estado 173
 
     4 funct_init: PUBLIC CLASS ID LLAVEA LLAVEC .
 
-    $default  reduce using rule 4 (funct_init)
+    $default  reduce usando la regla 4 (funct_init)
 
 
-State 174
+Estado 174
 
     3 funct_init: PUBLIC CLASS ID LLAVEA func_main . LLAVEC
 
-    LLAVEC  shift, and go to state 195
+    LLAVEC  desplazar e ir al estado 195
 
 
-State 175
+Estado 175
 
    58 operacionCompleja: '(' operacionCompleja ')' .
 
-    $default  reduce using rule 58 (operacionCompleja)
+    $default  reduce usando la regla 58 (operacionCompleja)
 
 
-State 176
+Estado 176
 
    59 operacionCompleja: operacionCompleja operador exp_simple .
 
-    $default  reduce using rule 59 (operacionCompleja)
+    $default  reduce usando la regla 59 (operacionCompleja)
 
 
-State 177
+Estado 177
 
    75 asig_vec: ID size ASIG ID size .
    80 size: size . CORCHETEA ENTERO CORCHETEC
    82     | size . CORCHETEA ID CORCHETEC
 
-    CORCHETEA  shift, and go to state 100
+    CORCHETEA  desplazar e ir al estado 100
 
-    $default  reduce using rule 75 (asig_vec)
+    $default  reduce usando la regla 75 (asig_vec)
 
 
-State 178
+Estado 178
 
    80 size: size CORCHETEA ENTERO CORCHETEC .
 
-    $default  reduce using rule 80 (size)
+    $default  reduce usando la regla 80 (size)
 
 
-State 179
+Estado 179
 
    82 size: size CORCHETEA ID CORCHETEC .
 
-    $default  reduce using rule 82 (size)
+    $default  reduce usando la regla 82 (size)
 
 
-State 180
+Estado 180
 
    55 asig_oper: asig_oper ',' tipo ID ASIG . operacionCompleja
 
-    ENTERO  shift, and go to state 76
-    CADENA  shift, and go to state 77
-    REAL    shift, and go to state 78
-    ID      shift, and go to state 101
-    '('     shift, and go to state 93
+    ENTERO  desplazar e ir al estado 76
+    CADENA  desplazar e ir al estado 77
+    REAL    desplazar e ir al estado 78
+    ID      desplazar e ir al estado 101
+    '('     desplazar e ir al estado 93
 
-    operacionCompleja  go to state 196
-    exp_simple         go to state 103
+    operacionCompleja  ir al estado 196
+    exp_simple         ir al estado 103
 
 
-State 181
+Estado 181
 
    68 dcl_vector1: ID ASIG NEW tipo .
 
-    $default  reduce using rule 68 (dcl_vector1)
+    $default  reduce usando la regla 68 (dcl_vector1)
 
 
-State 182
+Estado 182
 
    77 asig_newvalorvec: tipo ID size ASIG ID . size
    91 exp_simple: ID .
 
-    CORCHETEA  shift, and go to state 43
+    CORCHETEA  desplazar e ir al estado 43
 
-    $default  reduce using rule 91 (exp_simple)
+    $default  reduce usando la regla 91 (exp_simple)
 
-    size  go to state 197
+    size  ir al estado 197
 
 
-State 183
+Estado 183
 
    59 operacionCompleja: operacionCompleja . operador exp_simple
    78 asig_newvalorvec: tipo ID size ASIG operacionCompleja .
 
-    MULT   shift, and go to state 135
-    SUMA   shift, and go to state 136
-    RESTA  shift, and go to state 137
-    DIV    shift, and go to state 138
-    MOD    shift, and go to state 139
+    MULT   desplazar e ir al estado 135
+    SUMA   desplazar e ir al estado 136
+    RESTA  desplazar e ir al estado 137
+    DIV    desplazar e ir al estado 138
+    MOD    desplazar e ir al estado 139
 
-    $default  reduce using rule 78 (asig_newvalorvec)
+    $default  reduce usando la regla 78 (asig_newvalorvec)
 
-    operador  go to state 140
+    operador  ir al estado 140
 
 
-State 184
+Estado 184
 
    73 lista: lista ',' exp_simple .
 
-    $default  reduce using rule 73 (lista)
+    $default  reduce usando la regla 73 (lista)
 
 
-State 185
+Estado 185
 
    15 contenido: error . statement
 
-    IF      shift, and go to state 2
-    FOR     shift, and go to state 3
-    WHILE   shift, and go to state 4
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    ID      shift, and go to state 12
+    IF      desplazar e ir al estado 2
+    FOR     desplazar e ir al estado 3
+    WHILE   desplazar e ir al estado 4
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    ID      desplazar e ir al estado 12
 
-    statement           go to state 198
-    expresion           go to state 17
-    condicional         go to state 18
-    ciclo               go to state 19
-    asig_simple         go to state 20
-    asig_oper           go to state 21
-    asig_opernotipo     go to state 22
-    asig_oper2          go to state 23
-    declaracion         go to state 24
-    iniciar_vec         go to state 25
-    asig_vec            go to state 26
-    asig_newvalorvec    go to state 27
-    tipo                go to state 28
-    aumento_decremento  go to state 29
-    idaumdec            go to state 30
-    asig_dec_aum        go to state 31
+    statement           ir al estado 198
+    expresion           ir al estado 17
+    condicional         ir al estado 18
+    ciclo               ir al estado 19
+    asig_simple         ir al estado 20
+    asig_oper           ir al estado 21
+    asig_opernotipo     ir al estado 22
+    asig_oper2          ir al estado 23
+    declaracion         ir al estado 24
+    iniciar_vec         ir al estado 25
+    asig_vec            ir al estado 26
+    asig_newvalorvec    ir al estado 27
+    tipo                ir al estado 28
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 30
+    asig_dec_aum        ir al estado 31
 
 
-State 186
+Estado 186
 
    11 bloque: LLAVEA LLAVEC .
 
-    $default  reduce using rule 11 (bloque)
+    $default  reduce usando la regla 11 (bloque)
 
 
-State 187
+Estado 187
 
    12 bloque: LLAVEA contenido . LLAVEC
    14 contenido: contenido . statement
 
-    IF      shift, and go to state 2
-    FOR     shift, and go to state 3
-    WHILE   shift, and go to state 4
-    DOUBLE  shift, and go to state 5
-    INT     shift, and go to state 6
-    STRING  shift, and go to state 7
-    CHAR    shift, and go to state 8
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    LLAVEC  shift, and go to state 199
-    ID      shift, and go to state 12
+    IF      desplazar e ir al estado 2
+    FOR     desplazar e ir al estado 3
+    WHILE   desplazar e ir al estado 4
+    DOUBLE  desplazar e ir al estado 5
+    INT     desplazar e ir al estado 6
+    STRING  desplazar e ir al estado 7
+    CHAR    desplazar e ir al estado 8
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    LLAVEC  desplazar e ir al estado 199
+    ID      desplazar e ir al estado 12
 
-    statement           go to state 50
-    expresion           go to state 17
-    condicional         go to state 18
-    ciclo               go to state 19
-    asig_simple         go to state 20
-    asig_oper           go to state 21
-    asig_opernotipo     go to state 22
-    asig_oper2          go to state 23
-    declaracion         go to state 24
-    iniciar_vec         go to state 25
-    asig_vec            go to state 26
-    asig_newvalorvec    go to state 27
-    tipo                go to state 28
-    aumento_decremento  go to state 29
-    idaumdec            go to state 30
-    asig_dec_aum        go to state 31
+    statement           ir al estado 50
+    expresion           ir al estado 17
+    condicional         ir al estado 18
+    ciclo               ir al estado 19
+    asig_simple         ir al estado 20
+    asig_oper           ir al estado 21
+    asig_opernotipo     ir al estado 22
+    asig_oper2          ir al estado 23
+    declaracion         ir al estado 24
+    iniciar_vec         ir al estado 25
+    asig_vec            ir al estado 26
+    asig_newvalorvec    ir al estado 27
+    tipo                ir al estado 28
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 30
+    asig_dec_aum        ir al estado 31
 
 
-State 188
+Estado 188
 
    30 condicional: IF PARENTA expre PARENTC bloque ELSE . bloque
 
-    LLAVEA  shift, and go to state 157
+    LLAVEA  desplazar e ir al estado 157
 
-    bloque  go to state 200
+    bloque  ir al estado 200
 
 
-State 189
+Estado 189
 
    32 ciclo: FOR PARENTA asig_simple PUNTOCOMA comparacion PUNTOCOMA . idaumdec PARENTC bloque
 
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
-    ID      shift, and go to state 201
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
+    ID      desplazar e ir al estado 201
 
-    aumento_decremento  go to state 29
-    idaumdec            go to state 202
+    aumento_decremento  ir al estado 29
+    idaumdec            ir al estado 202
 
 
-State 190
+Estado 190
 
    53 asig_simple: tipo ID ASIG exp_simple .
 
-    $default  reduce using rule 53 (asig_simple)
+    $default  reduce usando la regla 53 (asig_simple)
 
 
-State 191
+Estado 191
 
    10 func_main: error . func_main
 
-    error   shift, and go to state 191
-    PUBLIC  shift, and go to state 172
+    error   desplazar e ir al estado 191
+    PUBLIC  desplazar e ir al estado 172
 
-    func_main  go to state 193
+    func_main  ir al estado 193
 
 
-State 192
+Estado 192
 
     5 funct_init: PUBLIC CLASS ID LLAVEA error LLAVEC .
 
-    $default  reduce using rule 5 (funct_init)
+    $default  reduce usando la regla 5 (funct_init)
 
 
-State 193
+Estado 193
 
    10 func_main: error func_main .
 
-    $default  reduce using rule 10 (func_main)
+    $default  reduce usando la regla 10 (func_main)
 
 
-State 194
+Estado 194
 
     9 func_main: PUBLIC STATIC . VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
 
-    VOID  shift, and go to state 203
+    VOID  desplazar e ir al estado 203
 
 
-State 195
+Estado 195
 
     3 funct_init: PUBLIC CLASS ID LLAVEA func_main LLAVEC .
 
-    $default  reduce using rule 3 (funct_init)
+    $default  reduce usando la regla 3 (funct_init)
 
 
-State 196
+Estado 196
 
    55 asig_oper: asig_oper ',' tipo ID ASIG operacionCompleja .
    59 operacionCompleja: operacionCompleja . operador exp_simple
 
-    MULT   shift, and go to state 135
-    SUMA   shift, and go to state 136
-    RESTA  shift, and go to state 137
-    DIV    shift, and go to state 138
-    MOD    shift, and go to state 139
+    MULT   desplazar e ir al estado 135
+    SUMA   desplazar e ir al estado 136
+    RESTA  desplazar e ir al estado 137
+    DIV    desplazar e ir al estado 138
+    MOD    desplazar e ir al estado 139
 
-    $default  reduce using rule 55 (asig_oper)
+    $default  reduce usando la regla 55 (asig_oper)
 
-    operador  go to state 140
+    operador  ir al estado 140
 
 
-State 197
+Estado 197
 
    77 asig_newvalorvec: tipo ID size ASIG ID size .
    80 size: size . CORCHETEA ENTERO CORCHETEC
    82     | size . CORCHETEA ID CORCHETEC
 
-    CORCHETEA  shift, and go to state 100
+    CORCHETEA  desplazar e ir al estado 100
 
-    $default  reduce using rule 77 (asig_newvalorvec)
+    $default  reduce usando la regla 77 (asig_newvalorvec)
 
 
-State 198
+Estado 198
 
    15 contenido: error statement .
 
-    $default  reduce using rule 15 (contenido)
+    $default  reduce usando la regla 15 (contenido)
 
 
-State 199
+Estado 199
 
    12 bloque: LLAVEA contenido LLAVEC .
 
-    $default  reduce using rule 12 (bloque)
+    $default  reduce usando la regla 12 (bloque)
 
 
-State 200
+Estado 200
 
    30 condicional: IF PARENTA expre PARENTC bloque ELSE bloque .
 
-    $default  reduce using rule 30 (condicional)
+    $default  reduce usando la regla 30 (condicional)
 
 
-State 201
+Estado 201
 
   103 idaumdec: ID . aumento_decremento
 
-    MASMAS  shift, and go to state 10
-    MENMEN  shift, and go to state 11
+    MASMAS  desplazar e ir al estado 10
+    MENMEN  desplazar e ir al estado 11
 
-    aumento_decremento  go to state 46
+    aumento_decremento  ir al estado 46
 
 
-State 202
+Estado 202
 
    32 ciclo: FOR PARENTA asig_simple PUNTOCOMA comparacion PUNTOCOMA idaumdec . PARENTC bloque
 
-    PARENTC  shift, and go to state 204
+    PARENTC  desplazar e ir al estado 204
 
 
-State 203
+Estado 203
 
     9 func_main: PUBLIC STATIC VOID . ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
 
-    ID  shift, and go to state 205
+    ID  desplazar e ir al estado 205
 
 
-State 204
+Estado 204
 
    32 ciclo: FOR PARENTA asig_simple PUNTOCOMA comparacion PUNTOCOMA idaumdec PARENTC . bloque
 
-    LLAVEA  shift, and go to state 157
+    LLAVEA  desplazar e ir al estado 157
 
-    bloque  go to state 206
+    bloque  ir al estado 206
 
 
-State 205
+Estado 205
 
     9 func_main: PUBLIC STATIC VOID ID . PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
 
-    PARENTA  shift, and go to state 207
+    PARENTA  desplazar e ir al estado 207
 
 
-State 206
+Estado 206
 
    32 ciclo: FOR PARENTA asig_simple PUNTOCOMA comparacion PUNTOCOMA idaumdec PARENTC bloque .
 
-    $default  reduce using rule 32 (ciclo)
+    $default  reduce usando la regla 32 (ciclo)
 
 
-State 207
+Estado 207
 
     9 func_main: PUBLIC STATIC VOID ID PARENTA . STRING CORCHETEA CORCHETEC ID PARENTC bloque
 
-    STRING  shift, and go to state 208
+    STRING  desplazar e ir al estado 208
 
 
-State 208
+Estado 208
 
     9 func_main: PUBLIC STATIC VOID ID PARENTA STRING . CORCHETEA CORCHETEC ID PARENTC bloque
 
-    CORCHETEA  shift, and go to state 209
+    CORCHETEA  desplazar e ir al estado 209
 
 
-State 209
+Estado 209
 
     9 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA . CORCHETEC ID PARENTC bloque
 
-    CORCHETEC  shift, and go to state 210
+    CORCHETEC  desplazar e ir al estado 210
 
 
-State 210
+Estado 210
 
     9 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC . ID PARENTC bloque
 
-    ID  shift, and go to state 211
+    ID  desplazar e ir al estado 211
 
 
-State 211
+Estado 211
 
     9 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID . PARENTC bloque
 
-    PARENTC  shift, and go to state 212
+    PARENTC  desplazar e ir al estado 212
 
 
-State 212
+Estado 212
 
     9 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC . bloque
 
-    LLAVEA  shift, and go to state 157
+    LLAVEA  desplazar e ir al estado 157
 
-    bloque  go to state 213
+    bloque  ir al estado 213
 
 
-State 213
+Estado 213
 
     9 func_main: PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque .
 
-    $default  reduce using rule 9 (func_main)
+    $default  reduce usando la regla 9 (func_main)
