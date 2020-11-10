@@ -205,17 +205,25 @@ asig_dec_aum: ID ASIG idaumdec
 
 %%
 
-int main(){
-	yyin=fopen("Archivo.txt","r");
-	yyout=fopen("ArchivoSalida.txt","w");
-	do {
-		yyparse();
-	} while(!feof(yyin));
+int main(int argc, char *argv[]){
+	if (argc == 2){
+        yyin = fopen (argv[1], "r");
+    	yyout=fopen("salida.txt","w");
 
-	if(errores==0){
-		fprintf(yyout, "No hubo ningun error sintactico.");
-		fprintf(stderr, "No hubo ningun error sintactico.\n");
-	}	
+        if (yyin == NULL) {
+            printf ("El fichero %s no se puede abrir\n", argv[1]);
+            exit (-1);
+        }else{
+			do {
+				yyparse();
+			} while(!feof(yyin));
+			if(errores==0){
+				fprintf(yyout, "No hubo ningun error sintactico.");
+				fprintf(stderr, "No hubo ningun error sintactico.\n");	
+			}
+		}
+			
+	}
 }
 
 void yyerror(const char *s) {
