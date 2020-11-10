@@ -10,9 +10,19 @@ z=12.9;
 cadena="Hola";
 c="a";
 i=i*2;
-for (k = 1; k < j; k++){
+for (k = 0; k < j; k++){
 i*=k;
 z/=2.0;
+vec[1] = vec[1];
+int vc[2] = vec[4];
+String [] vec = new String [20];
+String [][] vc = new String [5];
+int vc[3] = 3*4+1;
+vec[2];
+for(int i=1;i<10;i++){
+Vec[i]=0;
+}
+f[];
 }
 }
 }

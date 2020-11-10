@@ -60,7 +60,9 @@ expresion		:	iniciar_vec PUNTOCOMA
 				|	asig_dec_aum PUNTOCOMA
 				|	declaracion PUNTOCOMA
 				|	asig_oper2 PUNTOCOMA
+				|	asig_opernotipo PUNTOCOMA
 				|	asig_vec PUNTOCOMA
+				|	asig_newvalorvec PUNTOCOMA
 				;
 
 condicional	:	IF PARENTA expre PARENTC bloque
@@ -101,13 +103,20 @@ and_ex	:	comparacion AND	comparacion
 		|	AND condicional_expr
 		;
 asig_simple	:	ID ASIG exp_simple
+			| tipo ID ASIG exp_simple 
 			;
 
 asig_oper : tipo ID ASIG operacionCompleja
 		  | asig_oper ',' tipo ID ASIG operacionCompleja
 		  ;
+
+asig_opernotipo : ID ASIG operacionCompleja
+                  ;
+
 asig_oper2 : ID ope_especial operacionCompleja
 		   ;
+
+
 operacionCompleja :  '(' operacionCompleja ')'
 			|	operacionCompleja  operador exp_simple
 			| 	exp_simple 
@@ -117,6 +126,7 @@ operacionCompleja :  '(' operacionCompleja ')'
 declaracion		: tipo ID
 				| declaracion ',' ID
 		    	;
+
 iniciar_vec		:	tipo dcls_vector	
 			    ;
 
@@ -142,12 +152,19 @@ lista		: exp_simple
 			;
 
 asig_vec	:	ID size
-			|	ID size ASIG exp_simple
 			|	ID size ASIG ID size
+			|	ID size ASIG operacionCompleja
 			;
+
+asig_newvalorvec	:	tipo ID size ASIG ID size
+			|	tipo ID size ASIG operacionCompleja
+			;
+					 
 
 size        : CORCHETEA ENTERO CORCHETEC
 			| size CORCHETEA ENTERO CORCHETEC
+			| CORCHETEA ID CORCHETEC
+			| size CORCHETEA ID CORCHETEC
 			;
 
 corchetes	:	CORCHETEA CORCHETEC
