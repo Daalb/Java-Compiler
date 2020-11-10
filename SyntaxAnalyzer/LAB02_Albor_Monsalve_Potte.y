@@ -32,6 +32,7 @@ funct_init	:	PUBLIC CLASS ID LLAVEA func_main LLAVEC
 			|	PUBLIC CLASS ID LLAVEA error LLAVEC {yyerrok; yyclearin;}
 			|	error funct_init {yyerrok; yyclearin;}
 			|	funct_init error {yyerrok; yyclearin;} 
+			|   contenido 
 			;
 
 func_main	:	PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
@@ -52,13 +53,15 @@ statement	:	expresion
 			|	ciclo
 			;
 
-expresion	:		assig_st PUNTOCOMA
-				|	assig_st2 PUNTOCOMA
-				|	assig_st3 PUNTOCOMA
-				|	assig_especial PUNTOCOMA
-				|	operador_incre PUNTOCOMA
+expresion		:	iniciar_vec PUNTOCOMA
+				|	asig_simple PUNTOCOMA
+				|	asig_oper PUNTOCOMA
+				|	idaumdec PUNTOCOMA
+				|	asig_dec_aum PUNTOCOMA
+				|	declaracion PUNTOCOMA
+				|	asig_oper2 PUNTOCOMA
+				|	op PUNTOCOMA
 				|	asig_vec PUNTOCOMA
-				|	declaraciones PUNTOCOMA
 				;
 
 condicional	:	IF PARENTA expre PARENTC bloque
@@ -66,7 +69,7 @@ condicional	:	IF PARENTA expre PARENTC bloque
 			;
 
 ciclo	:	WHILE PARENTA expre PARENTC bloque
-		|	FOR PARENTA assig_st PUNTOCOMA comparacion PUNTOCOMA assig_especial PARENTC bloque
+		|	FOR PARENTA asig_simple PUNTOCOMA comparacion PUNTOCOMA idaumdec PARENTC bloque
 		;
 
 expre	:	condicional_expr
@@ -98,62 +101,58 @@ or_ex	:	comparacion OR comparacion
 and_ex	:	comparacion AND	comparacion
 		|	AND condicional_expr
 		;
-
-assig_especial	:	ID MENMEN 
-				|	ID MASMAS 
-				|	operador_incre
-				|	ID size	
-				;
-
-operador_incre	:	ID ope_espcial exp_simple
-				;
-
-declaraciones	:	tipo ID
-			| declaraciones ',' ID
-		;
-
-
-assig_st	:	tipo ID	
-			| assig_st ASIG exp_simple
-			| assig_st ASIG assig_st2
-			| assig_st ASIG anidar
-			| assig_st dcl_vector 
-			| assig_st ',' assig_st
+asig_simple	:	ID ASIG exp_simple
 			;
 
-dcl_vector		: corchetes dcl_vector size
-			|	ASIG NEW tipo
+asig_oper : tipo ID ASIG operacionCompleja
+		  | asig_oper ',' tipo ID ASIG operacionCompleja
+		  ;
+asig_oper2 : ID ope_especial operacionCompleja
+		   ;
+operacionCompleja :  '(' operacionCompleja ')'
+			|	operacionCompleja  operador exp_simple
+			| 	exp_simple 
+			;
+
+
+declaracion		: tipo ID
+				| declaracion ',' ID
+		    	;
+iniciar_vec		:	tipo dcls_vector	
+			    ;
+
+
+
+dcls_vector	:	dcl_vector1
+			|	dcl_vector2
+			|	dcl_vector3
+			;
+
+dcl_vector1	: corchetes dcl_vector1 size
+			|	ID ASIG NEW tipo
+			;
+
+dcl_vector2	: corchetes dcl_vector2 
+			|	corchetes  ID 
+			;
+dcl_vector3		: '{' lista '}'
+			;
+
+lista		: exp_simple
+			| lista ',' exp_simple
 			;
 
 asig_vec	:	ID size
 			|	ID size ASIG exp_simple
-			|	ID size ASIG assig_especial
+			|	ID size ASIG ID size
 			;
 
-size            :       CORCHETEA ENTERO CORCHETEC
+size        : CORCHETEA ENTERO CORCHETEC
 			| size CORCHETEA ENTERO CORCHETEC
 			;
 
 corchetes	:	CORCHETEA CORCHETEC
 			;
-        
-assig_st3	:	ID ASIG assig_st2
-			|	ID ASIG anidar
-			;
-
-assig_st2	:	exp_simple
-			|	assig_st2 operador asig_compleja
-			;
-
-anidar	:	PARENTA asig_compleja PARENTC
-		|	anidar operador anidar
-		;
-
-asig_compleja	:	exp_simple
-				|	asig_compleja operador asig_compleja
-				|	anidar operador asig_compleja
-				|	asig_compleja operador anidar
-				;
 
 operador	:	SUMA
 			|	RESTA
@@ -174,14 +173,24 @@ tipo	:	INT
 		|	CHAR
 		;
 
-ope_espcial	:	ASIGMAS
-			|	ASIGDIV
-			|	ASIGMEN
-			|	ASIGMULT
+ope_especial	:	ASIGMAS
+				|	ASIGDIV
+				|	ASIGMEN
+				|	ASIGMULT
+				;
+
+op		 :  tipo ID ASIG operacionCompleja
+	     |  op ',' ID ASIG operacionCompleja
+		 ;
+
+aumento_decremento		:	MASMAS
+						|	MENMEN
+						;
+idaumdec	:	ID aumento_decremento 
+			|	aumento_decremento ID
 			;
-
-	
-
+asig_dec_aum: ID ASIG idaumdec
+			;
 
 %%
 
