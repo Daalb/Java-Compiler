@@ -1,4 +1,4 @@
-/* A Bison parser, made by GNU Bison 3.7.1.  */
+/* A Bison parser, made by GNU Bison 3.5.1.  */
 
 /* Bison interface for Yacc-like parsers in C
 
@@ -31,9 +31,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
-   especially those whose name start with YY_ or yy_.  They are
-   private implementation details that can be changed or removed.  */
+/* Undocumented macros, especially those whose name start with YY_,
+   are private implementation details.  Do not rely on them.  */
 
 #ifndef YY_YY_LAB02_ALBOR_MONSALVE_POTTE_TAB_H_INCLUDED
 # define YY_YY_LAB02_ALBOR_MONSALVE_POTTE_TAB_H_INCLUDED
@@ -45,63 +44,58 @@
 extern int yydebug;
 #endif
 
-/* Token kinds.  */
+/* Token type.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
   enum yytokentype
   {
-    YYEMPTY = -2,
-    YYEOF = 0,                     /* "end of file"  */
-    YYerror = 256,                 /* error  */
-    YYUNDEF = 257,                 /* "invalid token"  */
-    IF = 258,                      /* IF  */
-    ELSE = 259,                    /* ELSE  */
-    FOR = 260,                     /* FOR  */
-    WHILE = 261,                   /* WHILE  */
-    DOUBLE = 262,                  /* DOUBLE  */
-    INT = 263,                     /* INT  */
-    STRING = 264,                  /* STRING  */
-    CHAR = 265,                    /* CHAR  */
-    NEW = 266,                     /* NEW  */
-    PUBLIC = 267,                  /* PUBLIC  */
-    CLASS = 268,                   /* CLASS  */
-    STATIC = 269,                  /* STATIC  */
-    VOID = 270,                    /* VOID  */
-    MULT = 271,                    /* MULT  */
-    SUMA = 272,                    /* SUMA  */
-    RESTA = 273,                   /* RESTA  */
-    DIV = 274,                     /* DIV  */
-    ASIG = 275,                    /* ASIG  */
-    MOD = 276,                     /* MOD  */
-    AND = 277,                     /* AND  */
-    OR = 278,                      /* OR  */
-    NOT = 279,                     /* NOT  */
-    MASMAS = 280,                  /* MASMAS  */
-    MENMEN = 281,                  /* MENMEN  */
-    ASIGMAS = 282,                 /* ASIGMAS  */
-    ASIGMEN = 283,                 /* ASIGMEN  */
-    ASIGMULT = 284,                /* ASIGMULT  */
-    ASIGDIV = 285,                 /* ASIGDIV  */
-    LLAVEA = 286,                  /* LLAVEA  */
-    LLAVEC = 287,                  /* LLAVEC  */
-    PARENTA = 288,                 /* PARENTA  */
-    PARENTC = 289,                 /* PARENTC  */
-    CORCHETEA = 290,               /* CORCHETEA  */
-    CORCHETEC = 291,               /* CORCHETEC  */
-    PUNTOCOMA = 292,               /* PUNTOCOMA  */
-    IGUAL = 293,                   /* IGUAL  */
-    MENORIGUAL = 294,              /* MENORIGUAL  */
-    MAYORIGUAL = 295,              /* MAYORIGUAL  */
-    DIFERENTE = 296,               /* DIFERENTE  */
-    MAYOR = 297,                   /* MAYOR  */
-    MENOR = 298,                   /* MENOR  */
-    ENTERO = 299,                  /* ENTERO  */
-    CADENA = 300,                  /* CADENA  */
-    COMENTARIO = 301,              /* COMENTARIO  */
-    REAL = 302,                    /* REAL  */
-    ID = 303                       /* ID  */
+    IF = 258,
+    ELSE = 259,
+    FOR = 260,
+    WHILE = 261,
+    DOUBLE = 262,
+    INT = 263,
+    STRING = 264,
+    CHAR = 265,
+    NEW = 266,
+    PUBLIC = 267,
+    CLASS = 268,
+    STATIC = 269,
+    VOID = 270,
+    MULT = 271,
+    SUMA = 272,
+    RESTA = 273,
+    DIV = 274,
+    ASIG = 275,
+    MOD = 276,
+    AND = 277,
+    OR = 278,
+    NOT = 279,
+    MASMAS = 280,
+    MENMEN = 281,
+    ASIGMAS = 282,
+    ASIGMEN = 283,
+    ASIGMULT = 284,
+    ASIGDIV = 285,
+    LLAVEA = 286,
+    LLAVEC = 287,
+    PARENTA = 288,
+    PARENTC = 289,
+    CORCHETEA = 290,
+    CORCHETEC = 291,
+    PUNTOCOMA = 292,
+    IGUAL = 293,
+    MENORIGUAL = 294,
+    MAYORIGUAL = 295,
+    DIFERENTE = 296,
+    MAYOR = 297,
+    MENOR = 298,
+    ENTERO = 299,
+    CADENA = 300,
+    COMENTARIO = 301,
+    REAL = 302,
+    ID = 303
   };
-  typedef enum yytokentype yytoken_kind_t;
 #endif
 
 /* Value type.  */

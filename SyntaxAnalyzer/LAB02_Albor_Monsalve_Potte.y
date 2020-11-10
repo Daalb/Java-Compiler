@@ -60,7 +60,6 @@ expresion		:	iniciar_vec PUNTOCOMA
 				|	asig_dec_aum PUNTOCOMA
 				|	declaracion PUNTOCOMA
 				|	asig_oper2 PUNTOCOMA
-				|	op PUNTOCOMA
 				|	asig_vec PUNTOCOMA
 				;
 
@@ -179,9 +178,6 @@ ope_especial	:	ASIGMAS
 				|	ASIGMULT
 				;
 
-op		 :  tipo ID ASIG operacionCompleja
-	     |  op ',' ID ASIG operacionCompleja
-		 ;
 
 aumento_decremento		:	MASMAS
 						|	MENMEN
