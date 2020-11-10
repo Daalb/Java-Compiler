@@ -24,45 +24,43 @@
 %%
 
 init    : funct_init
-		| init funct_init
+		| funct_init init
         ;
 
 funct_init	:	PUBLIC CLASS ID LLAVEA func_main LLAVEC
 			|	PUBLIC CLASS ID LLAVEA LLAVEC
-			|	PUBLIC CLASS ID LLAVEA error LLAVEC {yyerrok; yyclearin;}
-			|	error funct_init {yyerrok; yyclearin;}
-			|	funct_init error {yyerrok; yyclearin;} 
-			|   contenido 
 			;
 
 func_main	:	PUBLIC STATIC VOID ID PARENTA STRING CORCHETEA CORCHETEC ID PARENTC bloque
-			|	error func_main {yyerrok;yyclearin;}
 			;
 
 bloque	:	LLAVEA LLAVEC
 		|	LLAVEA contenido LLAVEC
+		|   LLAVEA bloque LLAVEC
 		;
 
 contenido	:	statement
-			|	contenido statement
-			| 	error statement {yyerrok; yyclearin;}
+			|	statement contenido 
 			;
 
-statement	:	expresion
+statement	:	expresion PUNTOCOMA
 			|	condicional
 			|	ciclo
+			|   error PUNTOCOMA {yyerrok; yyclearin;}
+			|	PUNTOCOMA
+			
 			;
 
-expresion		:	iniciar_vec PUNTOCOMA
-				|	asig_simple PUNTOCOMA
-				|	asig_oper PUNTOCOMA
-				|	idaumdec PUNTOCOMA
-				|	asig_dec_aum PUNTOCOMA
-				|	declaracion PUNTOCOMA
-				|	asig_oper2 PUNTOCOMA
-				|	asig_opernotipo PUNTOCOMA
-				|	asig_vec PUNTOCOMA
-				|	asig_newvalorvec PUNTOCOMA
+expresion		:	iniciar_vec 
+				|	asig_simple
+				|	asig_oper 
+				|	idaumdec 
+				|	asig_dec_aum 
+				|	declaracion 
+				|	asig_oper2 
+				|	asig_opernotipo 
+				|	asig_vec 
+				|	asig_newvalorvec 
 				;
 
 condicional	:	IF PARENTA expre PARENTC bloque
@@ -222,11 +220,6 @@ int main(){
 
 void yyerror(const char *s) {
     errores++;
-	if(strcmp(yytext,"\n")==0){
 		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
 		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
-	}else{
-		fprintf(yyout, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
-		fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",cerror+1,s);
-	}
 }

@@ -1,13 +1,5 @@
 public class AnyThing{
     public static void main (String[] args){
-        int i=1;
-        int j=20;
-        char c;
-        String cadena;
-        double z;
-        z=14.9e-8;
-        z=12.9;
-        cadena="Hola";
         c="a";
         i=i*2;
         for (int k = 0; k < j; k++){
@@ -17,15 +9,18 @@ public class AnyThing{
             int vc[2] = vec[4];
             String [] vec = new String [20];
             String [][] vc = new String [5];
-            int v[3] = 3*4+1;
+            int v[3] = 3*4
             vec[2];
-            for(int i=1;i<10;i+=2){
+            for(int i=1;i < a;i++){
                 Vec[i]=0;
             }
             f[];
-            if(i && 2+3){
-                
+            if(i && !v){
+                f[];
+                f[];
+                float 3;
             }
+            5;
         }
     }
 }

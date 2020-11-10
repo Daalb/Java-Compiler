@@ -1,4 +1,7 @@
+La línea 11 tiene un error de tipo: syntax error
+La línea 13 tiene un error de tipo: syntax error
+La línea 17 tiene un error de tipo: syntax error
 La línea 19 tiene un error de tipo: syntax error
-La línea 22 tiene un error de tipo: syntax error
-La línea 25 tiene un error de tipo: syntax error
-La línea 26 tiene un error de tipo: syntax error
+La línea 20 tiene un error de tipo: syntax error
+La línea 21 tiene un error de tipo: syntax error
+La línea 23 tiene un error de tipo: syntax error
